@@ -1,11 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from "../components/Hero.astro";
+import CategoryCarousel from "../components/sections/CategoryCarousel.astro";
+import Cta from "../components/sections/CTA.astro";
+import TextImage from "../components/sections/TextImage.astro";
+import ImageText from "../components/sections/ImageText.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { categories } from "../data/categories";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Crafted Living | Premium Furniture">
+  <Hero />
+  <TextImage />
+  <!-- Furniture Categories -->
+  <section class="py-24">
+    <!-- Heading -->
+    <div class="container mx-auto">
+      <div class="section-title">
+        <span class="eyebrow"> Our Collection </span>
+
+        <h2 class="heading-lg">Browse Furniture Categories</h2>
+
+        <p class="subtitle">
+          Discover handcrafted furniture designed for every room.
+        </p>
+      </div>
+    </div>
+
+    <!-- Full Width Carousel -->
+    <CategoryCarousel
+      items={categories}
+      autoplay={true}
+      autoplayDelay={1500}
+      showNavigation={true}
+      showDots={false}
+      loop={true}
+    />
+  </section>
+
+  <ImageText />
+  <Cta />
+</MainLayout>

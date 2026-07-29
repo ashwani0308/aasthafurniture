@@ -1,0 +1,169 @@
+---
+import CategoryCard from "../cards/CategoryCard.astro";
+
+interface Category {
+  title: string;
+  image: string;
+  href: string;
+}
+
+interface Props {
+  items: Category[];
+
+  showNavigation?: boolean;
+  showDots?: boolean;
+
+  loop?: boolean;
+
+  autoplay?: boolean;
+  autoplayDelay?: number;
+}
+
+const {
+  items,
+
+  showNavigation = true,
+  showDots = true,
+
+  loop = true,
+
+  autoplay = true,
+  autoplayDelay = 4000,
+} = Astro.props;
+---
+
+<section
+  class="relative"
+  data-loop={loop}
+  data-autoplay={autoplay}
+  data-delay={autoplayDelay}
+  data-show-navigation={showNavigation}
+  data-show-dots={showDots}
+>
+  <div class="embla overflow-hidden pt-4 pb-6">
+    <div class="embla__container">
+      {
+        items.map((item) => (
+          <div class="embla__slide px-3">
+            <CategoryCard
+              title={item.title}
+              image={item.image}
+              href={item.href}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  {
+    showNavigation && (
+      <>
+        <button type="button" class="embla-prev" aria-label="Previous">
+          ←
+        </button>
+
+        <button type="button" class="embla-next" aria-label="Next">
+          →
+        </button>
+      </>
+    )
+  }
+
+  {showDots && <div class="embla-dots" />}
+</section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+  import Autoplay from "embla-carousel-autoplay";
+
+  function initEmbla() {
+    document.querySelectorAll(".embla").forEach((viewport) => {
+      if (viewport.dataset.init) return;
+
+      viewport.dataset.init = "true";
+
+      const root = viewport.parentElement;
+
+      if (!root) return;
+
+      const loop = root.dataset.loop === "true";
+
+      const autoplay = root.dataset.autoplay === "true";
+
+      const delay = Number(root.dataset.delay) || 4000;
+
+      const plugins = [];
+
+      if (autoplay) {
+        plugins.push(
+          Autoplay({
+            delay,
+
+            stopOnInteraction: false,
+
+            stopOnMouseEnter: true,
+          }),
+        );
+      }
+
+      const embla = EmblaCarousel(
+        viewport,
+        {
+          align: "start",
+          loop,
+        },
+        plugins,
+      );
+
+      /* Navigation */
+
+      const prev = root.querySelector(".embla-prev");
+
+      const next = root.querySelector(".embla-next");
+
+      prev?.addEventListener("click", () => embla.scrollPrev());
+
+      next?.addEventListener("click", () => embla.scrollNext());
+
+      /* Dots */
+
+      const dots = root.querySelector(".embla-dots");
+
+      if (dots) {
+        dots.innerHTML = "";
+
+        embla.scrollSnapList().forEach((_, index) => {
+          const dot = document.createElement("button");
+
+          dot.className = "embla-dot";
+
+          dot.addEventListener("click", () => {
+            embla.scrollTo(index);
+          });
+
+          dots.appendChild(dot);
+        });
+
+        const updateDots = () => {
+          dots.querySelectorAll(".embla-dot").forEach((dot, index) => {
+            dot.classList.toggle(
+              "active",
+
+              embla.selectedScrollSnap() === index,
+            );
+          });
+        };
+
+        embla.on("select", updateDots);
+        embla.on("reInit", updateDots);
+
+        updateDots();
+      }
+    });
+  }
+
+  initEmbla();
+
+  document.addEventListener("astro:page-load", initEmbla);
+</script>

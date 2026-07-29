@@ -1,0 +1,219 @@
+---
+import { navigation } from "../../data/navigation";
+import { ChevronDown, Phone, Menu } from "@lucide/astro";
+---
+
+<header
+  id="navbar"
+  class="fixed inset-x-0 top-0 z-50 bg-cream shadow-sm transition-transform duration-500 ease-out"
+>
+  <div
+    class="mx-auto flex h-15 w-full items-center justify-between px-6 lg:px-8"
+  >
+    <!-- Logo -->
+    <a
+      href="/"
+      class="nav-color font-[var(--font-heading)] text-3xl font-semibold transition-colors duration-300"
+    >
+      Crafted Living
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:block h-full">
+      <ul class="flex items-center gap-10 h-full">
+        {
+          navigation.map((item) => (
+            <li class="group relative h-full flex items-center">
+              {item.children ? (
+                <>
+                  <button class="nav-color flex items-center gap-1 h-full text-[15px] font-medium transition-colors duration-300 hover:text-primary">
+                    {item.title}
+
+                    <ChevronDown class="h-4 w-4 transition duration-300 group-hover:rotate-180" />
+                  </button>
+
+                  <div class="absolute left-0 top-full hidden w-72 overflow-hidden bg-cream shadow-2xl group-hover:block">
+                    {item.children.map((child) => (
+                      <a
+                        href={child.url}
+                        class="block px-6 py-3 text-[15px] transition hover:bg-stone-50 hover:text-primary"
+                      >
+                        {child.title}
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <a
+                  href={item.url}
+                  class="nav-color h-full flex items-center text-[15px] font-medium transition-colors duration-300 hover:text-primary"
+                >
+                  {item.title}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <!-- Right -->
+    <div class="flex items-center gap-4">
+      <a
+        id="callButton"
+        href="tel:+919999999999"
+        class="btn btn-primary btn-sm hidden lg:inline-flex"
+      >
+        <Phone class="h-5 w-5" />
+        Call Now
+      </a>
+
+      <button
+        id="mobileToggle"
+        class="nav-color lg:hidden"
+        aria-label="Open menu"
+      >
+        <Menu class="h-7 w-7" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+
+  <div
+    id="mobileMenu"
+    class="hidden border-t border-stone-200 bg-white lg:hidden"
+  >
+    <nav class="px-6 py-6">
+      <ul class="space-y-1">
+        {
+          navigation.map((item) => (
+            <li>
+              {item.children ? (
+                <details>
+                  <summary class="cursor-pointer py-3 text-[15px] font-medium">
+                    {item.title}
+                  </summary>
+
+                  <ul class="ml-5 mt-2 space-y-2">
+                    {item.children.map((child) => (
+                      <li>
+                        <a
+                          href={child.url}
+                          class="block py-2 text-sm text-stone-600"
+                        >
+                          {child.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <a href={item.url} class="block py-3 text-[15px] font-medium">
+                  {item.title}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+
+      <a href="tel:+919999999999" class="btn btn-primary btn-md mt-8 w-full">
+        <Phone class="h-5 w-5" />
+        Call Now
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const delta = 10;
+
+    function updateNavbar() {
+      const currentScrollY = window.scrollY;
+
+      // Always show near the top
+      if (currentScrollY <= 80) {
+        navbar.classList.remove("-translate-y-full");
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      // Ignore tiny movements
+      if (Math.abs(currentScrollY - lastScrollY) < delta) {
+        return;
+      }
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        navbar.classList.add("-translate-y-full");
+      } else {
+        // Scrolling up
+        navbar.classList.remove("-translate-y-full");
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateNavbar();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
+  })();
+</script>
+
+<script is:inline>
+  function initMobileMenu() {
+    const toggle = document.getElementById("mobileToggle");
+    const menu = document.getElementById("mobileMenu");
+
+    if (!toggle || !menu) return;
+
+    // Prevent duplicate listeners
+    toggle.onclick = () => {
+      menu.classList.toggle("hidden");
+    };
+  }
+
+  // Initial page load
+  initMobileMenu();
+
+  // Re-initialize after Astro client-side navigation
+  document.addEventListener("astro:page-load", initMobileMenu);
+</script>
+
+<script is:inline>
+  function initAccordion() {
+    const details = document.querySelectorAll("#mobileMenu details");
+
+    details.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+
+        details.forEach((other) => {
+          if (other !== item) {
+            other.open = false;
+          }
+        });
+      });
+    });
+  }
+
+  initAccordion();
+  document.addEventListener("astro:page-load", initAccordion);
+</script>

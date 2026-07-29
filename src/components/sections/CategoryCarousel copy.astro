@@ -1,0 +1,118 @@
+---
+import CategoryCard from "../cards/CategoryCard.astro";
+
+interface Category {
+  title: string;
+  image: string;
+  href: string;
+}
+
+interface Props {
+  items: Category[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="relative">
+  <!-- Viewport -->
+  <div class="embla overflow-hidden pt-4 pb-6">
+    <!-- Container -->
+    <div class="embla__container flex">
+      {
+        items.map((item) => (
+          <div class="embla__slide min-w-0 flex-[0_0_100%] px-3 sm:flex-[0_0_33.333%] lg:flex-[0_0_25%] xl:flex-[0_0_20%]">
+            <CategoryCard
+              title={item.title}
+              image={item.image}
+              href={item.href}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Previous -->
+
+  <button
+    class="embla-prev absolute left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg"
+  >
+    ←
+  </button>
+
+  <!-- Next -->
+
+  <button
+    class="embla-next absolute right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg"
+  >
+    →
+  </button>
+
+  <!-- Dots -->
+
+  <div class="embla-dots mt-8 flex justify-center gap-2"></div>
+</section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+
+  function initEmbla() {
+    document.querySelectorAll<HTMLElement>(".embla").forEach((viewport) => {
+      if (viewport.dataset.init) return;
+
+      viewport.dataset.init = "true";
+
+      const root = viewport.parentElement;
+      if (!root) return;
+
+      const prev = root.querySelector<HTMLButtonElement>(".embla-prev");
+      const next = root.querySelector<HTMLButtonElement>(".embla-next");
+      const dots = root.querySelector<HTMLDivElement>(".embla-dots");
+
+      if (!prev || !next || !dots) return;
+
+      const embla = EmblaCarousel(viewport, {
+        loop: true,
+        align: "start",
+      });
+
+      prev.addEventListener("click", () => embla.scrollPrev());
+      next.addEventListener("click", () => embla.scrollNext());
+
+      dots.innerHTML = "";
+
+      embla.scrollSnapList().forEach((_, index) => {
+        const dot = document.createElement("button");
+
+        dot.className =
+          "h-2 w-2 rounded-full bg-stone-300 transition-all duration-300";
+
+        dot.addEventListener("click", () => embla.scrollTo(index));
+
+        dots.appendChild(dot);
+      });
+
+      function update() {
+        dots
+          .querySelectorAll<HTMLButtonElement>("button")
+          .forEach((dot, index) => {
+            const active = index === embla.selectedScrollSnap();
+
+            dot.classList.toggle("bg-primary", active);
+            dot.classList.toggle("w-8", active);
+            dot.classList.toggle("bg-stone-300", !active);
+          });
+      }
+
+      embla.on("select", update);
+      embla.on("reInit", update);
+
+      update();
+    });
+  }
+
+  initEmbla();
+
+  document.addEventListener("astro:page-load", initEmbla);
+</script>

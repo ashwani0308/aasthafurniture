@@ -1,0 +1,56 @@
+---
+import { Phone, ArrowRight } from "@lucide/astro";
+---
+
+<section
+  class="relative flex h-[60vh] min-h-[600px] items-center justify-center overflow-hidden"
+>
+  <!-- Background Video -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    class="absolute inset-0 h-full w-full object-cover"
+  >
+    <source src="/images/videos/hero.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/30"
+  >
+  </div>
+
+  <!-- Content -->
+  <div class="container relative z-10 mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-4xl text-center">
+      <!-- Tagline -->
+      <span
+        class="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-medium tracking-[0.3em] uppercase text-white backdrop-blur"
+      >
+        Premium Furniture Since 1998
+      </span>
+
+      <h1 class="display text-cream">Crafted Living</h1>
+
+      <p class="lead text-white/90">
+        Premium handcrafted furniture for modern homes.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/gallery" class="btn btn-primary btn-lg btn-icon-right">
+          <ArrowRight />
+          View Collection
+        </a>
+
+        <a href="tel:+919999999999" class="btn btn-secondary btn-lg">
+          <Phone class="h-5 w-5" />
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
