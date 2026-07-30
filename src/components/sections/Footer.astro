@@ -1,15 +1,16 @@
 ---
 import { Phone, Mail, MapPin, Clock3, ArrowRight } from "@lucide/astro";
+import Container from "../Container.astro";
 ---
 
-<footer class="bg-[var(--color-primary-900)] text-white">
+<footer class="bg-[var(--color-primary-900)] text-cream">
   <!-- ===================================================== -->
   <!-- CTA -->
   <!-- ===================================================== -->
 
-  <section class="border-b border-white/10">
+  <Container class="border-b border-white/10">
     <div
-      class="container-custom flex flex-col items-center justify-between gap-10 py-16 lg:flex-row"
+      class="flex flex-col items-center justify-between gap-10 py-16 lg:flex-row"
     >
       <div class="max-w-2xl">
         <span
@@ -40,13 +41,13 @@ import { Phone, Mail, MapPin, Clock3, ArrowRight } from "@lucide/astro";
         </a>
       </div>
     </div>
-  </section>
+  </Container>
 
   <!-- ===================================================== -->
   <!-- Main Footer -->
   <!-- ===================================================== -->
 
-  <section class="container-custom py-20">
+  <Container class="container-custom py-20">
     <div class="grid gap-14 lg:grid-cols-12">
       <!-- ================================================= -->
       <!-- Company -->
@@ -381,15 +382,15 @@ import { Phone, Mail, MapPin, Clock3, ArrowRight } from "@lucide/astro";
         </div>
       </div>
     </div>
-  </section>
+  </Container>
 
   <!-- ===================================================== -->
   <!-- Bottom Footer -->
   <!-- ===================================================== -->
 
-  <section class="border-t border-white/10">
+  <Container class="border-t border-white/10">
     <div
-      class="container-custom flex flex-col items-center justify-between gap-6 py-8 lg:flex-row"
+      class="flex flex-col items-center justify-between gap-6 py-8 lg:flex-row"
     >
       <!-- Copyright -->
 
@@ -435,5 +436,5 @@ import { Phone, Mail, MapPin, Clock3, ArrowRight } from "@lucide/astro";
         </ul>
       </nav>
     </div>
-  </section>
+  </Container>
 </footer>
