@@ -1,21 +1,60 @@
 ---
-import Hero from "../components/Hero.astro";
+import HeroSlider from "../components/sections/HeroSlider.astro";
 import CategoryCarousel from "../components/sections/CategoryCarousel.astro";
-import Cta from "../components/sections/CTA.astro";
+import CtaImageBg from "../components/sections/CTAImageBg.astro";
+import CTAText from "../components/sections/CTAText.astro";
 import TextImage from "../components/sections/TextImage.astro";
 import ImageText from "../components/sections/ImageText.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { categories } from "../data/categories";
 import Section from "../components/Section.astro";
+import FeaturedFurniture from "../components/sections/FeaturedFurniture.astro";
+import TheProcess from "../components/sections/TheProcess.astro";
+import InstagramSlider from "../components/sections/InstagramSlider.astro";
+import Testimonials from "../components/sections/Testimonials.astro";
+import RecentWorks from "../components/sections/RecentWorks.astro";
+
+const heroSlides = [
+  {
+    image: "/images/hero/hero-1.jpg",
+    eyebrow: "SINCE 1920",
+    heading: "Our Family Tradition",
+    description: "A love for wood, passed down through five generations.",
+    primaryButton: {
+      label: "Discover Our Story",
+      href: "/about",
+    },
+    secondaryButton: { label: "Get in Touch", href: "/contact" },
+  },
+  {
+    image: "/images/hero/hero-2.jpg",
+    eyebrow: "Factory-direct savings",
+    heading: "Luxury Furniture. Less Markup.",
+    description: "Exceptional furniture, straight from the source.",
+    primaryButton: {
+      label: "Discover the Difference",
+      href: "/furniture/bedroom",
+    },
+    secondaryButton: { label: "Contact Us", href: "/contact" },
+  },
+  {
+    image: "/images/hero/hero-3.jpg",
+    eyebrow: "Custom furniture",
+    heading: "Made for Your Space. Made for You.",
+    description: "Your vision, crafted to perfection.",
+    primaryButton: { label: "Explore More", href: "/furniture/dining-room" },
+    secondaryButton: { label: "Contact Us", href: "/contact" },
+  },
+];
 ---
 
 <MainLayout title="Crafted Living | Premium Furniture">
-  <Hero />
-  <TextImage />
+  <HeroSlider slides={heroSlides} />
+
   <!-- Furniture Categories -->
-  <Section class="py-24">
+  <Section padding="py-4 sm:py-4 lg:py-6">
     <!-- Heading -->
-    <div class="container mx-auto">
+    <!-- <div class="container mx-auto">
       <div class="section-title">
         <span class="eyebrow"> Our Collection </span>
 
@@ -25,7 +64,7 @@ import Section from "../components/Section.astro";
           Discover handcrafted furniture designed for every room.
         </p>
       </div>
-    </div>
+    </div> -->
 
     <!-- Full Width Carousel -->
     <CategoryCarousel
@@ -37,7 +76,13 @@ import Section from "../components/Section.astro";
       loop={true}
     />
   </Section>
-
-  <ImageText />
-  <Cta />
+  <TextImage />
+  <CTAText />
+  <TheProcess />
+  <!-- <ImageText /> -->
+  <RecentWorks />
+  <!-- <FeaturedFurniture /> -->
+  <CtaImageBg />
+  <Testimonials />
+  <InstagramSlider />
 </MainLayout>

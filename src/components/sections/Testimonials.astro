@@ -1,0 +1,85 @@
+---
+import Container from "../Container.astro";
+---
+
+<section class="px-4 py-16 sm:px-8 sm:py-20 lg:px-10">
+  <Container
+    className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16"
+  >
+    <div>
+      <span class="eyebrow">A Few Words from Happy Clients</span>
+      <h2 class="heading-lg mt-3">Want a Beautiful Custom Piece?</h2>
+      <p class="subtitle mt-4 max-w-xl">
+        Our start-to-finish attention to detail and hands-on management bring
+        visions to life – as custom furnishings of incomparable quality and
+        construction.
+      </p>
+      <a href="/contact" class="btn btn-primary btn-lg mt-7"> Contact Us </a>
+    </div>
+
+    <article
+      class="testimonial-quote relative isolate flex min-h-[380px] flex-col justify-center overflow-hidden rounded-2xl bg-white p-7 sm:p-10"
+    >
+      <svg
+        class="testimonial-quote__decoration testimonial-quote__decoration--start"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 197.27 161.58"
+        aria-hidden="true"
+      >
+        <path
+          d="m83.65,5.9c-21.31,12.18-33.51,30.97-33.51,50.77,0,22.35,18.29,44.17,42.15,57.36l-31.98,45.21C26.8,150.08,1.92,124.2,1.92,89.68,1.92,48.54,45.08,18.07,81.13,2.34l2.52,3.56Zm102.57,0c-21.33,12.18-32.99,30.97-32.99,50.77,0,22.35,18.27,44.17,42.13,57.36l-32.5,45.21c-33.51-9.16-58.38-35.04-58.38-69.56,0-41.14,43.66-71.61,79.19-87.34l2.54,3.56Z"
+        ></path>
+      </svg>
+      <div class="relative z-10">
+        <h3 class="heading-md">A note from our customers</h3>
+        <blockquote class="subtitle mt-4">
+          “Your customer testimonial will go here. Replace this placeholder with
+          feedback about their experience and the furniture they chose.”
+        </blockquote>
+        <p class="mt-6 font-semibold text-primary">Customer Name</p>
+      </div>
+      <svg
+        class="testimonial-quote__decoration testimonial-quote__decoration--end"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 197.27 161.58"
+        aria-hidden="true"
+      >
+        <path
+          d="m113.62,155.68c21.31-12.18,33.51-30.97,33.51-50.77,0-22.35-18.29-44.17-42.15-57.36L136.96,2.34c33.51,9.16,58.4,35.04,58.4,69.56,0,41.14-43.16,71.61-79.21,87.34l-2.52-3.56Zm-102.57,0c21.33-12.18,32.99-30.97,32.99-50.77,0-22.35-18.27-44.17-42.13-57.36L34.41,2.34c33.51,9.16,58.38,35.04,58.38,69.56,0,41.14-43.66,71.61-79.19,87.34l-2.54-3.56Z"
+        ></path>
+      </svg>
+    </article>
+  </Container>
+</section>
+
+<style>
+  .testimonial-quote::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: url("/images/bg/wood-texture-cream.svg") center / cover
+      no-repeat;
+    content: "";
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .testimonial-quote__decoration {
+    position: absolute;
+    z-index: 0;
+    width: 5rem;
+    fill: var(--color-primary);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .testimonial-quote__decoration--start {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .testimonial-quote__decoration--end {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import { Phone, ArrowRight } from "@lucide/astro";
+import Container from "../Container.astro";
+---
+
+<section
+  class="relative isolate flex min-h-104 items-center overflow-hidden py-16 sm:min-h-120 sm:py-20 lg:min-h-136 lg:py-24"
+>
+  <img
+    src="/images/cta/cta-bg.jpg"
+    alt=""
+    aria-hidden="true"
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="lazy"
+  />
+
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/30"
+  >
+  </div>
+
+  <Container
+    maxWidth="1280px"
+    className="relative z-10 flex w-full items-center justify-center"
+  >
+    <div class="w-full max-w-4xl text-center">
+      <h2 class="heading-lg text-cream">Browse Furniture Categories</h2>
+
+      <p class="subtitle mx-auto mt-4 max-w-2xl text-cream sm:mt-5">
+        Discover handcrafted furniture designed for every room.
+      </p>
+
+      <div
+        class="mt-7 flex w-full flex-col justify-center gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:gap-4"
+      >
+        <a href="/gallery" class="btn btn-primary btn-lg w-full sm:w-auto">
+          View Collection
+          <ArrowRight class="h-5 w-5" />
+        </a>
+
+        <a
+          href="tel:+919999999999"
+          class="btn btn-secondary btn-lg w-full sm:w-auto"
+        >
+          <Phone class="h-5 w-5" />
+          Call Now
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>

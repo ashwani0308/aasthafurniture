@@ -1,0 +1,160 @@
+---
+import { readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import Container from "../Container.astro";
+const galleryDirectory = fileURLToPath(
+  new URL("../../../public/images/gallery/recent/", import.meta.url),
+);
+const works = readdirSync(galleryDirectory, { withFileTypes: true })
+  .flatMap((file) => {
+    const match = file.name.match(/^recent-(\d+)\.(?:jpe?g|png|webp)$/i);
+    if (!file.isFile() || !match) return [];
+
+    const number = Number(match[1]);
+    if (!Number.isSafeInteger(number) || number < 1) return [];
+
+    return [
+      {
+        number,
+        src: `/images/gallery/recent/${file.name}`,
+        alt: `Recent furniture project ${number}`,
+      },
+    ];
+  })
+  .sort((first, second) => first.number - second.number);
+---
+
+<section class="text-image-section bg-white px-4 py-16 sm:px-8 lg:px-10">
+  <Container>
+    <div class="section-title">
+      <span
+        class="inline-block rounded-full py-2 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
+        data-astro-cid-pa7cogu7="">FA selection of our projects</span
+      >
+      <h2 id="recent-works-title" class="heading-lg">Recent works</h2>
+      <p class="subtitle">
+        Thoughtful spaces, considered details, and furniture made to feel at
+        home.
+      </p>
+    </div>
+
+    <div class="justified-gallery">
+      {
+        works.map((work, index) => (
+          <a
+            class="gallery-item"
+            href={work.src}
+            data-fancybox="recent-works"
+            aria-label={`View ${work.alt} full size`}
+          >
+            <img
+              src={work.src}
+              alt={work.alt}
+              loading={index < 4 ? "eager" : "lazy"}
+              decoding="async"
+            />
+            <span class="zoom-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <>
+                  <circle cx="10.8" cy="10.8" r="6.8" />
+                  <path d="m16 16 5 5M10.8 7.5v6.6M7.5 10.8h6.6" />
+                </>
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center">
+      <a class="btn btn-primary btn-lg" href="#">Show all works</a>
+    </div>
+  </Container>
+</section>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+
+  Fancybox.bind("[data-fancybox='recent-works']", {
+    theme: "auto",
+    Carousel: {
+      Arrows: false,
+      Toolbar: {
+        display: {
+          left: [],
+          middle: [],
+          right: ["close"],
+        },
+      },
+      transition: "slide",
+    },
+  });
+</script>
+
+<style>
+  .justified-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.55rem, 1.5vw, 1rem);
+  }
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #e7e3dc;
+    cursor: zoom-in;
+  }
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+  .gallery-item:hover img,
+  .gallery-item:focus-visible img {
+    transform: scale(1.04);
+  }
+  .zoom-icon {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: white;
+    background: rgb(25 24 21 / 0%);
+    opacity: 0;
+    transition:
+      opacity 0.25s ease,
+      background 0.25s ease;
+  }
+  .gallery-item:hover .zoom-icon,
+  .gallery-item:focus-visible .zoom-icon {
+    opacity: 1;
+    background: rgb(25 24 21 / 28%);
+  }
+  .zoom-icon svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  @media (min-width: 640px) {
+    .justified-gallery {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) {
+    .justified-gallery {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-item img,
+    .zoom-icon {
+      transition: none;
+    }
+  }
+</style>

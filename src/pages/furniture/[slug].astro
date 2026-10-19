@@ -1,0 +1,29 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import CategoryHero from "../../components/furniture/CategoryHero.astro";
+
+import { furnitureCategories } from "../../data/furniture";
+
+export function getStaticPaths() {
+  return furnitureCategories.map((category) => ({
+    params: {
+      slug: category.slug,
+    },
+    props: {
+      category,
+    },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<MainLayout title={category.title}>
+
+  <CategoryHero
+    title={category.title}
+    subtitle={category.description}
+    image={category.hero.image}
+  />
+
+</MainLayout>

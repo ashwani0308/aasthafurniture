@@ -1,0 +1,307 @@
+---
+interface Slide {
+  image: string;
+  eyebrow: string;
+  heading: string;
+  description: string;
+  primaryButton: {
+    label: string;
+    href: string;
+  };
+  secondaryButton: {
+    label: string;
+    href: string;
+  };
+}
+
+interface Props {
+  slides: Slide[];
+  showNavigation?: boolean;
+  showDots?: boolean;
+  autoplay?: boolean;
+  autoplayDelay?: number;
+}
+
+const {
+  slides,
+  showNavigation = true,
+  showDots = true,
+  autoplay = true,
+  autoplayDelay = 5000,
+} = Astro.props;
+
+const loop = slides.length > 1;
+---
+
+<section
+  class="hero-slider relative isolate h-[70svh] min-h-140 overflow-hidden bg-primary-900"
+  aria-label="Featured furniture"
+  aria-roledescription="carousel"
+  role="region"
+  data-autoplay={autoplay}
+  data-delay={autoplayDelay}
+>
+  {
+    slides.map((slide, index) => (
+      <article
+        class:list={["hero-slider__slide", { "is-active": index === 0 }]}
+        aria-hidden={index === 0 ? "false" : "true"}
+        aria-label={`${index + 1} of ${slides.length}`}
+        aria-roledescription="slide"
+        role="group"
+      >
+        <img
+          class="absolute inset-0 h-full w-full object-cover"
+          src={slide.image}
+          alt=""
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchpriority={index === 0 ? "high" : "auto"}
+        />
+        <div class="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/20" />
+        <div class="container relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 py-20">
+          <div class="max-w-3xl text-cream">
+            <span class="eyebrow mb-5 inline-block text-cream">
+              {slide.eyebrow}
+            </span>
+            {index === 0 ? (
+              <h1 class="display heading-lg pb-5 text-cream">
+                {slide.heading}
+              </h1>
+            ) : (
+              <h2 class="display heading-lg pb-5 text-cream">
+                {slide.heading}
+              </h2>
+            )}
+            <p class="lead max-w-2xl text-white/90">{slide.description}</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a class="btn btn-primary btn-lg" href={slide.primaryButton.href}>
+                {slide.primaryButton.label}
+              </a>
+              <a
+                class="btn btn-secondary btn-lg"
+                href={slide.secondaryButton.href}
+              >
+                {slide.secondaryButton.label}
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+
+  {
+    showNavigation && slides.length > 1 && (
+      <>
+        <button
+          type="button"
+          class="hero-slider__arrow hero-slider__arrow--previous"
+          aria-label="Previous slide"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        <button
+          type="button"
+          class="hero-slider__arrow hero-slider__arrow--next"
+          aria-label="Next slide"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </>
+    )
+  }
+
+  {
+    showDots && slides.length > 1 && (
+      <div class="hero-slider__dots" aria-label="Choose a slide">
+        {slides.map((slide, index) => (
+          <button
+            type="button"
+            class:list={["hero-slider__dot", { "is-active": index === 0 }]}
+            aria-label={`Show slide ${index + 1}: ${slide.eyebrow}`}
+            aria-current={index === 0 ? "true" : undefined}
+          />
+        ))}
+      </div>
+    )
+  }
+</section>
+
+<script>
+  function initHeroSliders() {
+    document.querySelectorAll<HTMLElement>(".hero-slider").forEach((slider) => {
+      if (slider.dataset.init === "true") return;
+      slider.dataset.init = "true";
+
+      const slides = Array.from(
+        slider.querySelectorAll<HTMLElement>(".hero-slider__slide"),
+      );
+      const dots = Array.from(
+        slider.querySelectorAll<HTMLButtonElement>(".hero-slider__dot"),
+      );
+
+      if (slides.length < 2) return;
+
+      let currentIndex = slides.findIndex((slide) =>
+        slide.classList.contains("is-active"),
+      );
+      if (currentIndex < 0) currentIndex = 0;
+
+      const updateSlide = (nextIndex: number) => {
+        currentIndex = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, index) => {
+          const isActive = index === currentIndex;
+          slide.classList.toggle("is-active", isActive);
+          slide.setAttribute("aria-hidden", String(!isActive));
+        });
+        dots.forEach((dot, index) => {
+          const isActive = index === currentIndex;
+          dot.classList.toggle("is-active", isActive);
+          if (isActive) {
+            dot.setAttribute("aria-current", "true");
+          } else {
+            dot.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      slider
+        .querySelector<HTMLButtonElement>(".hero-slider__arrow--previous")
+        ?.addEventListener("click", () => updateSlide(currentIndex - 1));
+      slider
+        .querySelector<HTMLButtonElement>(".hero-slider__arrow--next")
+        ?.addEventListener("click", () => updateSlide(currentIndex + 1));
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => updateSlide(index));
+      });
+
+      if (
+        slider.dataset.autoplay === "true" &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        const delay = Number(slider.dataset.delay) || 5000;
+        let timer = window.setInterval(
+          () => updateSlide(currentIndex + 1),
+          delay,
+        );
+
+        slider.addEventListener("mouseenter", () =>
+          window.clearInterval(timer),
+        );
+        slider.addEventListener("mouseleave", () => {
+          window.clearInterval(timer);
+          timer = window.setInterval(
+            () => updateSlide(currentIndex + 1),
+            delay,
+          );
+        });
+      }
+    });
+  }
+
+  initHeroSliders();
+  document.addEventListener("astro:page-load", initHeroSliders);
+</script>
+
+<style>
+  .hero-slider__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 800ms ease,
+      visibility 0s linear 800ms;
+  }
+
+  .hero-slider__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 800ms ease,
+      visibility 0s;
+  }
+
+  .hero-slider__arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 55%);
+    border-radius: 9999px;
+    background: rgb(0 0 0 / 20%);
+    color: white;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    transition: background-color 200ms ease;
+  }
+
+  .hero-slider__arrow:hover {
+    background: rgb(0 0 0 / 55%);
+  }
+
+  .hero-slider__arrow--previous {
+    left: 1.5rem;
+  }
+
+  .hero-slider__arrow--next {
+    right: 1.5rem;
+  }
+
+  .hero-slider__dots {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 1.5rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .hero-slider__dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 55%);
+    transition:
+      width 200ms ease,
+      background-color 200ms ease;
+  }
+
+  .hero-slider__dot.is-active {
+    width: 1.75rem;
+    background: white;
+  }
+
+  @media (max-width: 640px) {
+    .hero-slider__arrow {
+      top: auto;
+      bottom: 1.15rem;
+      transform: none;
+    }
+
+    .hero-slider__arrow--previous {
+      left: 1rem;
+    }
+
+    .hero-slider__arrow--next {
+      right: 1rem;
+    }
+
+    .hero-slider__dots {
+      bottom: 2.35rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slider__slide,
+    .hero-slider__dot,
+    .hero-slider__arrow {
+      transition: none;
+    }
+  }
+</style>

@@ -1,3 +1,5 @@
+import { furnitureCategories } from "./furniture";
+
 export const navigation = [
   {
     title: "Home",
@@ -6,40 +8,10 @@ export const navigation = [
 
   {
     title: "Furniture",
-    children: [
-      {
-        title: "Living Room",
-        url: "/furniture/living-room",
-      },
-      {
-        title: "Bedroom",
-        url: "/furniture/bedroom",
-      },
-      {
-        title: "Dining",
-        url: "/furniture/dining",
-      },
-      {
-        title: "Office Furniture",
-        url: "/furniture/office",
-      },
-      {
-        title: "TV Units",
-        url: "/furniture/tv-units",
-      },
-      {
-        title: "Wardrobes",
-        url: "/furniture/wardrobes",
-      },
-      {
-        title: "Outdoor Furniture",
-        url: "/furniture/outdoor",
-      },
-      {
-        title: "Modular Kitchen",
-        url: "/furniture/modular-kitchen",
-      },
-    ],
+    children: furnitureCategories.map((category) => ({
+      title: category.title,
+      url: `/furniture/${category.slug}`,
+    })),
   },
 
   {
