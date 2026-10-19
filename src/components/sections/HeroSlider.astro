@@ -146,6 +146,7 @@ const loop = slides.length > 1;
         slide.classList.contains("is-active"),
       );
       if (currentIndex < 0) currentIndex = 0;
+      let swipeStart: { x: number; y: number } | null = null;
 
       const updateSlide = (nextIndex: number) => {
         currentIndex = (nextIndex + slides.length) % slides.length;
@@ -173,6 +174,35 @@ const loop = slides.length > 1;
         ?.addEventListener("click", () => updateSlide(currentIndex + 1));
       dots.forEach((dot, index) => {
         dot.addEventListener("click", () => updateSlide(index));
+      });
+
+      slider.addEventListener("pointerdown", (event: PointerEvent) => {
+        if (
+          event.pointerType === "mouse" ||
+          (event.target instanceof Element && event.target.closest("a, button"))
+        ) {
+          swipeStart = null;
+          return;
+        }
+
+        swipeStart = { x: event.clientX, y: event.clientY };
+      });
+
+      slider.addEventListener("pointerup", (event: PointerEvent) => {
+        if (!swipeStart) return;
+
+        const deltaX = event.clientX - swipeStart.x;
+        const deltaY = event.clientY - swipeStart.y;
+        swipeStart = null;
+
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY))
+          return;
+
+        updateSlide(currentIndex + (deltaX < 0 ? 1 : -1));
+      });
+
+      slider.addEventListener("pointercancel", () => {
+        swipeStart = null;
       });
 
       if (
@@ -204,6 +234,10 @@ const loop = slides.length > 1;
 </script>
 
 <style>
+  .hero-slider {
+    touch-action: pan-y pinch-zoom;
+  }
+
   .hero-slider__slide {
     position: absolute;
     inset: 0;
@@ -277,23 +311,9 @@ const loop = slides.length > 1;
     background: white;
   }
 
-  @media (max-width: 640px) {
+  @media (hover: none) and (pointer: coarse) {
     .hero-slider__arrow {
-      top: auto;
-      bottom: 1.15rem;
-      transform: none;
-    }
-
-    .hero-slider__arrow--previous {
-      left: 1rem;
-    }
-
-    .hero-slider__arrow--next {
-      right: 1rem;
-    }
-
-    .hero-slider__dots {
-      bottom: 2.35rem;
+      display: none;
     }
   }
 

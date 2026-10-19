@@ -44,11 +44,13 @@ const processSteps = [
   <Container
     className="relative z-10 grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 md:gap-10 lg:gap-14"
   >
-    <div class="relative min-h-[500px] md:col-span-1">
+    <div
+      class="relative aspect-[4/3] overflow-hidden rounded-2xl md:col-span-1 md:aspect-auto md:min-h-[500px]"
+    >
       <img
         src="/images/hero/hero-2.jpg"
         alt="Furniture crafted for a welcoming home"
-        class="absolute inset-0 h-auto md:h-full w-full rounded-2xl object-cover h-[inherit]"
+        class="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
       />
     </div>
