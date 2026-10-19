@@ -1,47 +1,27 @@
 ---
-import { readdirSync } from "node:fs";
-import { fileURLToPath } from "node:url";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import Container from "../Container.astro";
-const galleryDirectory = fileURLToPath(
-  new URL("../../../public/images/gallery/recent/", import.meta.url),
-);
-const works = readdirSync(galleryDirectory, { withFileTypes: true })
-  .flatMap((file) => {
-    const match = file.name.match(/^recent-(\d+)\.(?:jpe?g|png|webp)$/i);
-    if (!file.isFile() || !match) return [];
+import SectionHeading from "../SectionHeading.astro";
+import type { RecentWorkContent } from "../../data/homepage_recent_work";
 
-    const number = Number(match[1]);
-    if (!Number.isSafeInteger(number) || number < 1) return [];
+interface Props {
+  content: RecentWorkContent;
+}
 
-    return [
-      {
-        number,
-        src: `/images/gallery/recent/${file.name}`,
-        alt: `Recent furniture project ${number}`,
-      },
-    ];
-  })
-  .sort((first, second) => first.number - second.number);
+const { content } = Astro.props;
 ---
 
-<section class="text-image-section bg-white px-4 py-16 sm:px-8 lg:px-10">
-  <Container>
-    <div class="section-title">
-      <span
-        class="inline-block rounded-full py-2 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
-        data-astro-cid-pa7cogu7="">FA selection of our projects</span
-      >
-      <h2 id="recent-works-title" class="heading-lg">Recent works</h2>
-      <p class="subtitle">
-        Thoughtful spaces, considered details, and furniture made to feel at
-        home.
-      </p>
-    </div>
-
+<section class="section-background bg-white px-4 py-16 sm:px-8 lg:px-10">
+  <SectionHeading
+    eyebrow={content.eyebrow}
+    heading={content.heading}
+    subtext={content.description}
+    headingId="recent-works-title"
+  />
+  <Container className="relative z-10">
     <div class="justified-gallery">
       {
-        works.map((work, index) => (
+        content.works.map((work, index) => (
           <a
             class="gallery-item"
             href={work.src}
@@ -68,7 +48,9 @@ const works = readdirSync(galleryDirectory, { withFileTypes: true })
     </div>
 
     <div class="mt-10 text-center">
-      <a class="btn btn-primary btn-lg" href="#">Show all works</a>
+      <a class="btn btn-primary btn-lg" href={content.button.href}>
+        {content.button.label}
+      </a>
     </div>
   </Container>
 </section>

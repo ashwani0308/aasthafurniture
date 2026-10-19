@@ -1,6 +1,13 @@
 ---
 import { Phone, ArrowRight } from "@lucide/astro";
 import Container from "../Container.astro";
+import type { HomepageCtaContent } from "../../data/homepage_cta";
+
+interface Props {
+  content: HomepageCtaContent;
+}
+
+const { content } = Astro.props;
 ---
 
 <section class="px-4 py-8 sm:px-8 lg:px-10">
@@ -15,18 +22,15 @@ import Container from "../Container.astro";
       <div>
         <span
           class="inline-block rounded-full py-2 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
-          >Premium Furniture Manufacturer</span
+          >{content.eyebrow}</span
         >
 
-        <h2 class="heading-lg mt-0 color-heading">
-          Your Space. Your Style. Our Craft.
-        </h2>
+        <h2 class="heading-lg mt-0 color-heading">{content.heading}</h2>
 
         <p
           class="mt-4 max-w-xl text-base leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8 md:max-w-xl"
         >
-          Explore our furniture collection and talk to us about finding the
-          right pieces for your home or business.
+          {content.description}
         </p>
       </div>
 
@@ -34,19 +38,19 @@ import Container from "../Container.astro";
         class="flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap md:justify-end"
       >
         <a
-          href="/contact"
+          href={content.quoteButton.href}
           class="btn btn-secondary btn-lg btn-icon-right w-full sm:w-auto"
         >
-          Get Free Quote
+          {content.quoteButton.label}
           <ArrowRight />
         </a>
 
         <a
-          href="tel:+919999999999"
+          href={content.callButton.href}
           class="btn btn-primary btn-lg w-full sm:w-auto"
         >
           <Phone />
-          Call Now
+          {content.callButton.label}
         </a>
       </div>
     </div>

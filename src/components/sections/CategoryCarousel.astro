@@ -1,5 +1,6 @@
 ---
 import CategoryCard from "../cards/CategoryCard.astro";
+import SectionHeading from "../SectionHeading.astro";
 
 interface Category {
   title: string;
@@ -40,6 +41,11 @@ const {
   data-show-navigation={showNavigation}
   data-show-dots={showDots}
 >
+  <SectionHeading
+    eyebrow="Explore Our Collections"
+    heading="Furniture Categories"
+    subtext="Discover handcrafted furniture designed for every room."
+  />
   <div class="embla overflow-hidden pt-4 pb-6">
     <div class="embla__container">
       {

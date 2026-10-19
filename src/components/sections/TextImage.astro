@@ -1,70 +1,53 @@
 ---
 import Container from "../Container.astro";
+import type { FactoryDirectContent } from "../../data/factory_direct";
+
+interface Props {
+  content: FactoryDirectContent;
+}
+
+const { content } = Astro.props;
 ---
 
-<section class="text-image-section bg-white px-4 py-8 sm:px-8 lg:px-10">
+<section
+  class="section-background text-image-section bg-white px-4 py-8 sm:px-8 lg:px-10"
+>
   <Container
     className="relative z-10 flex flex-col gap-10 overflow-hidden sm:gap-4 md:gap-8 lg:flex-row lg:gap-16"
   >
     <div class="flex flex-col justify-center lg:w-1/2">
       <span
         class="inline-block rounded-full py-2 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
-        >FACTORY DIRECT. BETTER VALUE.</span
+        >{content.eyebrow}</span
       >
 
-      <h2 class="heading-lg pb-3">Why Pay for the Showroom?</h2>
+      <h2 class="heading-lg pb-3">{content.heading}</h2>
 
       <p class="subtitle text-md">
-        We manufacture our furniture ourselves.<br />
-        By selling directly, we reduce unnecessary overheads and middlemen — giving
-        you better value without compromising on quality.
+        {content.description}
       </p>
       <div class="mt-6 space-y-4">
-        <div class="border-b border-t border-gray-200 pb-4 pt-4">
-          <h3 class="heading-sm">Made by Us</h3>
-          <p class="subtitle">Furniture manufactured in our own facility.</p>
-        </div>
-        <div class="border-b border-gray-200 pb-4">
-          <h3 class="heading-sm">Factory Direct Pricing</h3>
-          <p class="subtitle">Fewer middlemen means better value.</p>
-        </div>
-        <div class="border-b border-gray-200 pb-4">
-          <h3 class="heading-sm">Quality Craftsmanship</h3>
-          <p class="subtitle">
-            Built with attention to materials and finishing.
-          </p>
-        </div>
-        <div class="border-b border-gray-200 pb-4">
-          <h3 class="heading-sm">For Homes & Businesses</h3>
-          <p class="subtitle">
-            Individual customers and furniture retailers welcome.
-          </p>
-        </div>
+        {
+          content.features.map((feature, index) => (
+            <div
+              class:list={[
+                "border-b border-gray-200 pb-4",
+                { "border-t pt-4": index === 0 },
+              ]}
+            >
+              <h3 class="heading-md">{feature.heading}</h3>
+              <p class="subtitle">{feature.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
     <div class="flex lg:w-1/2">
       <img
-        src="/images/hero/three.image.png"
-        alt="Custom-made furniture showcase"
+        src={content.image.src}
+        alt={content.image.alt}
         class="h-full min-h-125 w-full object-contain"
       />
     </div>
   </Container>
 </section>
-
-<style>
-  .text-image-section {
-    position: relative;
-    isolation: isolate;
-  }
-
-  .text-image-section::before {
-    position: absolute;
-    inset: 0;
-    background-image: url("/images/bg/wood-texture-primary.svg");
-    background-size: repeat;
-    content: "";
-    opacity: 0.03;
-    pointer-events: none;
-  }
-</style>

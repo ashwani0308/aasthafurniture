@@ -1,0 +1,25 @@
+---
+import Container from "./Container.astro";
+
+interface Props {
+  eyebrow: string;
+  heading: string;
+  subtext: string;
+  headingId?: string;
+}
+
+const { eyebrow, heading, subtext, headingId } = Astro.props;
+---
+
+<Container className="relative z-10">
+  <header
+    class="section-title mb-3 pt-6 flex flex-col items-center gap-1 text-center"
+  >
+    <span
+      class="inline-block rounded-full pt-1 pb-0 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
+      >{eyebrow}</span
+    >
+    <h2 id={headingId} class="heading-lg">{heading}</h2>
+    <p class="subtitle">{subtext}</p>
+  </header>
+</Container>

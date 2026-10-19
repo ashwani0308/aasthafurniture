@@ -1,13 +1,20 @@
 ---
 import { Phone, ArrowRight } from "@lucide/astro";
 import Container from "../Container.astro";
+import type { CTAImageContent } from "../../data/homepage_cta_image";
+
+interface Props {
+  content: CTAImageContent;
+}
+
+const { content } = Astro.props;
 ---
 
 <section
   class="relative isolate flex min-h-80 items-center overflow-hidden px-4 py-16 sm:min-h-90 sm:px-8 sm:py-20 lg:min-h-100 lg:px-10 lg:py-24"
 >
   <img
-    src="/images/cta/cta-bg.jpg"
+    src={content.backgroundImage}
     alt=""
     aria-hidden="true"
     class="absolute inset-0 h-full w-full object-cover"
@@ -25,26 +32,29 @@ import Container from "../Container.astro";
     className="relative z-10 flex w-full items-center justify-center"
   >
     <div class="w-full max-w-4xl text-center">
-      <h2 class="heading-lg text-cream">Browse Furniture Categories</h2>
+      <h2 class="heading-lg text-cream">{content.heading}</h2>
 
       <p class="subtitle mx-auto mt-4 max-w-2xl text-cream sm:mt-5">
-        Discover handcrafted furniture designed for every room.
+        {content.description}
       </p>
 
       <div
         class="mt-7 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
       >
-        <a href="/gallery" class="btn btn-primary btn-lg w-full sm:w-auto">
-          View Collection
+        <a
+          href={content.primaryButton.href}
+          class="btn btn-primary btn-lg w-full sm:w-auto"
+        >
+          {content.primaryButton.label}
           <ArrowRight class="h-5 w-5" />
         </a>
 
         <a
-          href="tel:+919999999999"
+          href={content.secondaryButton.href}
           class="btn btn-secondary btn-lg w-full sm:w-auto"
         >
           <Phone class="h-5 w-5" />
-          Call Now
+          {content.secondaryButton.label}
         </a>
       </div>
     </div>
