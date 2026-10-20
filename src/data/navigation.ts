@@ -1,4 +1,4 @@
-import { furnitureCategories } from "./furniture";
+import { furnitureCategories } from "./furniture/index";
 
 export const navigation = [
   {

@@ -8,8 +8,15 @@ interface Category {
   href: string;
 }
 
+interface HeadingContent {
+  eyebrow: string;
+  heading: string;
+  subtext: string;
+}
+
 interface Props {
-  items: Category[];
+  items: readonly Category[];
+  headingContent?: HeadingContent;
 
   showNavigation?: boolean;
   showDots?: boolean;
@@ -22,6 +29,11 @@ interface Props {
 
 const {
   items,
+  headingContent = {
+    eyebrow: "Explore Our Collections",
+    heading: "Furniture Categories",
+    subtext: "Discover handcrafted furniture designed for every room.",
+  },
 
   showNavigation = true,
   showDots = true,
@@ -42,9 +54,9 @@ const {
   data-show-dots={showDots}
 >
   <SectionHeading
-    eyebrow="Explore Our Collections"
-    heading="Furniture Categories"
-    subtext="Discover handcrafted furniture designed for every room."
+    eyebrow={headingContent.eyebrow}
+    heading={headingContent.heading}
+    subtext={headingContent.subtext}
   />
   <div class="embla overflow-hidden pt-4 pb-6">
     <div class="embla__container">

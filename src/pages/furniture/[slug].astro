@@ -1,8 +1,16 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import CategoryHero from "../../components/furniture/CategoryHero.astro";
+import Section from "../../components/Section.astro";
+import CategoryCarousel from "../../components/sections/CategoryCarousel.astro";
+import TextImage from "../../components/sections/TextImage.astro";
+import CTAImageBg from "../../components/sections/CTAImageBg.astro";
+import Testimonials from "../../components/sections/Testimonials.astro";
+import InstagramSlider from "../../components/sections/InstagramSlider.astro";
 
-import { furnitureCategories } from "../../data/furniture";
+import { homepageCTAImageContent } from "../../data";
+import { furnitureCategories } from "../../data/furniture/index";
+import bedroomFurniture from "../../data/furniture/bedroom";
 
 export function getStaticPaths() {
   return furnitureCategories.map((category) => ({
@@ -19,11 +27,30 @@ const { category } = Astro.props;
 ---
 
 <MainLayout title={category.title}>
-
   <CategoryHero
     title={category.title}
     subtitle={category.description}
     image={category.hero.image}
   />
 
+  <Section padding="py-4 sm:py-4 lg:py-6">
+    <CategoryCarousel
+      items={bedroomFurniture.subcategories}
+      headingContent={bedroomFurniture.subcategorySection}
+      autoplay={true}
+      autoplayDelay={1500}
+      showNavigation={true}
+      showDots={false}
+      loop={true}
+    />
+  </Section>
+
+  <TextImage content={bedroomFurniture.textImageContent} />
+  <Testimonials />
+  <CTAImageBg
+    content={category.slug === bedroomFurniture.slug
+      ? bedroomFurniture.ctaImageContent
+      : homepageCTAImageContent}
+  />
+  <InstagramSlider />
 </MainLayout>

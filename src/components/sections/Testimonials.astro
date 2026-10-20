@@ -1,5 +1,6 @@
 ---
 import Container from "../Container.astro";
+import { testimonialContent } from "../../data/testimonials";
 ---
 
 <section class="px-4 py-16 sm:px-8 sm:py-20 lg:px-10">
@@ -7,14 +8,17 @@ import Container from "../Container.astro";
     className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16"
   >
     <div>
-      <span class="eyebrow">A Few Words from Happy Clients</span>
-      <h2 class="heading-lg mt-3">Want a Beautiful Custom Piece?</h2>
+      <span class="eyebrow">{testimonialContent.eyebrow}</span>
+      <h2 class="heading-lg mt-3">{testimonialContent.heading}</h2>
       <p class="subtitle mt-4 max-w-xl">
-        Our start-to-finish attention to detail and hands-on management bring
-        visions to life – as custom furnishings of incomparable quality and
-        construction.
+        {testimonialContent.description}
       </p>
-      <a href="/contact" class="btn btn-primary btn-lg mt-7"> Contact Us </a>
+      <a
+        href={testimonialContent.contactButton.href}
+        class="btn btn-primary btn-lg mt-7"
+      >
+        {testimonialContent.contactButton.label}
+      </a>
     </div>
 
     <article
@@ -31,12 +35,13 @@ import Container from "../Container.astro";
         ></path>
       </svg>
       <div class="relative z-10">
-        <h3 class="heading-md">A note from our customers</h3>
+        <h3 class="heading-md">{testimonialContent.quoteHeading}</h3>
         <blockquote class="subtitle mt-4">
-          “Your customer testimonial will go here. Replace this placeholder with
-          feedback about their experience and the furniture they chose.”
+          {testimonialContent.quote}
         </blockquote>
-        <p class="mt-6 font-semibold text-primary">Customer Name</p>
+        <p class="mt-6 font-semibold text-primary">
+          {testimonialContent.customerName}
+        </p>
       </div>
       <svg
         class="testimonial-quote__decoration testimonial-quote__decoration--end"
