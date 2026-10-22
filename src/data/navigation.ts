@@ -1,4 +1,4 @@
-import { furnitureCategories } from "./furniture/index";
+import { furnitureCategories } from "./furniture.ts";
 
 export const navigation = [
   {

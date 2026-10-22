@@ -9,8 +9,7 @@ import Testimonials from "../../components/sections/Testimonials.astro";
 import InstagramSlider from "../../components/sections/InstagramSlider.astro";
 
 import { homepageCTAImageContent } from "../../data";
-import { furnitureCategories } from "../../data/furniture/index";
-import bedroomFurniture from "../../data/furniture/bedroom";
+import { furnitureCategories } from "../../data/furniture.ts";
 
 export function getStaticPaths() {
   return furnitureCategories.map((category) => ({
@@ -33,23 +32,25 @@ const { category } = Astro.props;
     image={category.hero.image}
   />
 
-  <Section padding="py-4 sm:py-4 lg:py-6">
-    <CategoryCarousel
-      items={bedroomFurniture.subcategories}
-      headingContent={bedroomFurniture.subcategorySection}
-      autoplay={true}
-      autoplayDelay={1500}
-      showDots={false}
-      loop={true}
-    />
-  </Section>
+  {
+    category.subcategories && category.subcategorySection && (
+      <Section padding="py-4 sm:py-4 lg:py-6">
+        <CategoryCarousel
+          items={category.subcategories}
+          headingContent={category.subcategorySection}
+          autoplay={true}
+          autoplayDelay={1500}
+          showDots={false}
+          loop={true}
+        />
+      </Section>
+    )
+  }
 
-  <TextImage content={bedroomFurniture.textImageContent} />
+  {category.textImageContent && <TextImage content={category.textImageContent} />}
   <Testimonials />
   <CTAImageBg
-    content={category.slug === bedroomFurniture.slug
-      ? bedroomFurniture.ctaImageContent
-      : homepageCTAImageContent}
+    content={category.ctaImageContent ?? homepageCTAImageContent}
   />
   <InstagramSlider />
 </MainLayout>

@@ -1,6 +1,7 @@
 ---
 import { Phone, Mail, MapPin, Clock3, ArrowRight } from "@lucide/astro";
 import Container from "../Container.astro";
+import { furnitureCategories } from "../../data/furniture.ts";
 ---
 
 <!-- ===================================================== --><!-- Main Footer --><!-- ===================================================== -->
@@ -66,68 +67,18 @@ import Container from "../Container.astro";
           <h3 class="heading-sm text-cream">Furniture</h3>
 
           <ul class="mt-8 space-y-4">
-            <li>
-              <a
-                href="/living-room"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Living Room
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/bedroom"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Bedroom
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/dining-room"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Dining Room
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/office"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Office Furniture
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/kitchen"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Kitchen
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/wardrobes"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Wardrobes
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/storage"
-                class="text-white/70 transition hover:text-secondary"
-              >
-                Storage Furniture
-              </a>
-            </li>
+            {
+              furnitureCategories.map((category) => (
+                <li>
+                  <a
+                    href={`/furniture/${category.slug}`}
+                    class="text-white/70 transition hover:text-secondary"
+                  >
+                    {category.title}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
 

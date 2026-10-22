@@ -1,10 +1,13 @@
+import type { FurnitureCategory } from "../furniture.ts";
+
 const bedroomFurniture = {
   slug: "bedroom",
   title: "Bedroom Furniture",
   description:
     "Create a comfortable and beautiful bedroom with thoughtfully crafted furniture.",
+  cardImage: "/images/furniture/bedroom.jpg",
   hero: {
-    image: "/images/furniture/bedroom/hero.jpg",
+    image: "/images/furniture/bedroom.jpg",
   },
   subcategorySection: {
     eyebrow: "Explore Our Collections",
@@ -17,7 +20,7 @@ const bedroomFurniture = {
     description:
       "We believe bedroom furniture should do more than look good. It should fit your space, support your everyday routine, and offer lasting value. By manufacturing our furniture ourselves and selling directly, we aim to bring you thoughtfully made furniture without unnecessary middlemen.",
     image: {
-      src: "/images/categories/bedroom/beds.jpg",
+      src: "/images/furniture/bedroom/beds.jpg",
       alt: "Thoughtfully crafted bedroom bed",
     },
     features: [
@@ -55,40 +58,40 @@ const bedroomFurniture = {
   subcategories: [
     {
       title: "Beds",
-      image: "/images/categories/bedroom/beds.jpg",
+      image: "/images/furniture/bedroom/beds.jpg",
       href: "/contact",
     },
     {
       title: "King Size Beds",
-      image: "/images/categories/bedroom/king_size_beds.jpg",
+      image: "/images/furniture/bedroom/king_size_beds.jpg",
       href: "/contact",
     },
     {
       title: "Queen Size Beds",
-      image: "/images/categories/bedroom/queen_size_beds.jpg",
+      image: "/images/furniture/bedroom/queen_size_beds.jpg",
       href: "/contact",
     },
     {
       title: "Wardrobes",
-      image: "/images/categories/bedroom/wardrobes.jpg",
+      image: "/images/furniture/bedroom/wardrobes.jpg",
       href: "/contact",
     },
     {
       title: "Bedside Tables",
-      image: "/images/categories/bedroom/bedside_tables.jpg",
+      image: "/images/furniture/bedroom/bedside_tables.jpg",
       href: "/contact",
     },
     {
       title: "Dressing Tables",
-      image: "/images/categories/bedroom/dressing_tables.jpg",
+      image: "/images/furniture/bedroom/dressing_tables.jpg",
       href: "/contact",
     },
     {
       title: "Chest of Drawers",
-      image: "/images/categories/bedroom/chest_of_drawers.jpg",
+      image: "/images/furniture/bedroom/chest_of_drawers.jpg",
       href: "/contact",
     },
   ],
-} as const;
+} as const satisfies FurnitureCategory;
 
 export default bedroomFurniture;
