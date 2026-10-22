@@ -958,57 +958,30 @@ button {
 }
 
 .embla__slide {
-  flex: 0 0 100%;
+  flex: 0 0 50%;
   min-width: 0;
 }
 
 @media (min-width: 640px) {
   .embla__slide {
-    flex: 0 0 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .embla__slide {
     flex: 0 0 25%;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 25%;
+  }
+}
+@media (min-width: 1200px) {
   .embla__slide {
     flex: 0 0 20%;
   }
 }
-
-.embla-prev,
-.embla-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-  z-index: 10;
-}
-
-.embla-prev {
-  left: 16px;
-}
-
-.embla-next {
-  right: 16px;
-}
-
-.embla-prev:hover,
-.embla-next:hover {
-  background: var(--color-primary);
-  color: white;
+@media (min-width: 1400px) {
+  .embla__slide {
+    flex: 0 0 16.666667%;
+  }
 }
 
 .embla-dots {

@@ -9,7 +9,7 @@ const bedroomFurniture = {
   subcategorySection: {
     eyebrow: "Explore Our Collections",
     heading: "Bedroom Furniture",
-    description: "Find the right pieces to make your bedroom feel like home.",
+    subtext: "Find the right pieces to make your bedroom feel like home.",
   },
   textImageContent: {
     eyebrow: "MADE WITH CARE",

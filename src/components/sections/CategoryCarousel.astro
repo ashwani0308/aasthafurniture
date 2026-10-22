@@ -18,7 +18,6 @@ interface Props {
   items: readonly Category[];
   headingContent?: HeadingContent;
 
-  showNavigation?: boolean;
   showDots?: boolean;
 
   loop?: boolean;
@@ -35,7 +34,6 @@ const {
     subtext: "Discover handcrafted furniture designed for every room.",
   },
 
-  showNavigation = true,
   showDots = true,
 
   loop = true,
@@ -50,7 +48,6 @@ const {
   data-loop={loop}
   data-autoplay={autoplay}
   data-delay={autoplayDelay}
-  data-show-navigation={showNavigation}
   data-show-dots={showDots}
 >
   <SectionHeading
@@ -74,20 +71,6 @@ const {
     </div>
   </div>
 
-  {
-    showNavigation && (
-      <>
-        <button type="button" class="embla-prev" aria-label="Previous">
-          ←
-        </button>
-
-        <button type="button" class="embla-next" aria-label="Next">
-          →
-        </button>
-      </>
-    )
-  }
-
   {showDots && <div class="embla-dots" />}
 </section>
 
@@ -96,7 +79,7 @@ const {
   import Autoplay from "embla-carousel-autoplay";
 
   function initEmbla() {
-    document.querySelectorAll(".embla").forEach((viewport) => {
+    document.querySelectorAll<HTMLElement>(".embla").forEach((viewport) => {
       if (viewport.dataset.init) return;
 
       viewport.dataset.init = "true";
@@ -133,16 +116,6 @@ const {
         },
         plugins,
       );
-
-      /* Navigation */
-
-      const prev = root.querySelector(".embla-prev");
-
-      const next = root.querySelector(".embla-next");
-
-      prev?.addEventListener("click", () => embla.scrollPrev());
-
-      next?.addEventListener("click", () => embla.scrollNext());
 
       /* Dots */
 

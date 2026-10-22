@@ -35,7 +35,9 @@ const { content } = Astro.props;
                 { "border-t pt-4": index === 0 },
               ]}
             >
-              <h3 class="heading-md">{feature.heading}</h3>
+              <h3 class="heading-lg pb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
+                {feature.heading}
+              </h3>
               <p class="subtitle">{feature.description}</p>
             </div>
           ))
