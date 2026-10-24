@@ -1,0 +1,36 @@
+---
+import HeroSlider from "../components/sections/HeroSlider.astro";
+import CategoryCarousel from "../components/sections/CategoryCarousel.astro";
+import CtaImageBg from "../components/sections/CTAImageBg.astro";
+import CTAText from "../components/sections/CTAText.astro";
+import TextImage from "../components/sections/TextImage.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../components/Section.astro";
+import TheProcess from "../components/sections/TheProcess.astro";
+import InstagramSlider from "../components/sections/InstagramSlider.astro";
+import Testimonials from "../components/sections/Testimonials.astro";
+import ImageGallery from "../components/sections/ImageGallery.astro";
+import {
+  homepageCategoryCarousel,
+  factoryDirectContent,
+  homepageHeroSlides,
+  homepageCtaContent,
+  homepageCTAImageContent,
+  homepageRecentWorkContent,
+} from "../data";
+---
+
+<MainLayout title="Crafted Living | Premium Furniture">
+  <HeroSlider slides={homepageHeroSlides} />
+
+  <Section padding="py-4 sm:py-4 lg:py-6">
+    <CategoryCarousel {...homepageCategoryCarousel} />
+  </Section>
+  <TextImage content={factoryDirectContent} />
+  <CTAText content={homepageCtaContent} />
+  <TheProcess />
+  <ImageGallery content={homepageRecentWorkContent} />
+  <CtaImageBg content={homepageCTAImageContent} />
+  <Testimonials />
+  <InstagramSlider />
+</MainLayout>

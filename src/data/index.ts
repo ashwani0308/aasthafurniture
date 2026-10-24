@@ -1,6 +1,51 @@
-import { furnitureCategoryCards } from "./furniture.ts";
-
-export const categories = furnitureCategoryCards;
+export const homepageCategoryCarousel = {
+  items: [
+    {
+      title: "Bedroom Furniture",
+      image: "/images/furniture/bedroom.jpg",
+      href: "/furniture/bedroom",
+    },
+    {
+      title: "Dining Room Furniture",
+      image: "/images/furniture/dining-room.jpg",
+      href: "/furniture/dining-room",
+    },
+    {
+      title: "Doors & Windows",
+      image: "/images/furniture/door-and-window.jpg",
+      href: "/furniture/door-window",
+    },
+    {
+      title: "Living Room Furniture",
+      image: "/images/furniture/living-room.jpg",
+      href: "/furniture/living-room",
+    },
+    {
+      title: "Office Furniture",
+      image: "/images/furniture/office-furniture.jpg",
+      href: "/furniture/office",
+    },
+    {
+      title: "Outdoor Furniture",
+      image: "/images/furniture/outdoor-furniture.jpg",
+      href: "/furniture/outdoor-furniture",
+    },
+    {
+      title: "Pooja Unit",
+      image: "/images/furniture/pooja-mandap.jpg",
+      href: "/furniture/pooja-unit",
+    },
+    {
+      title: "Storage Furniture",
+      image: "/images/furniture/storage-furniture.jpg",
+      href: "/furniture/storage",
+    },
+  ],
+  autoplay: true,
+  autoplayDelay: 1500,
+  showDots: false,
+  loop: true,
+} as const;
 
 export interface FactoryDirectContent {
   eyebrow: string;

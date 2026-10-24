@@ -36,7 +36,7 @@ const { category } = Astro.props;
     category.subcategories && category.subcategorySection && (
       <Section padding="py-4 sm:py-4 lg:py-6">
         <CategoryCarousel
-          items={category.subcategories}
+          items={[...category.subcategories, ...category.subcategories]}
           headingContent={category.subcategorySection}
           autoplay={true}
           autoplayDelay={1500}
@@ -47,10 +47,12 @@ const { category } = Astro.props;
     )
   }
 
-  {category.textImageContent && <TextImage content={category.textImageContent} />}
+  {
+    category.textImageContent && (
+      <TextImage content={category.textImageContent} />
+    )
+  }
   <Testimonials />
-  <CTAImageBg
-    content={category.ctaImageContent ?? homepageCTAImageContent}
-  />
+  <CTAImageBg content={category.ctaImageContent ?? homepageCTAImageContent} />
   <InstagramSlider />
 </MainLayout>

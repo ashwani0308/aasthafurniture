@@ -1,44 +1,408 @@
 ---
-import HeroSlider from "../components/sections/HeroSlider.astro";
-import CategoryCarousel from "../components/sections/CategoryCarousel.astro";
-import CtaImageBg from "../components/sections/CTAImageBg.astro";
-import CTAText from "../components/sections/CTAText.astro";
-import TextImage from "../components/sections/TextImage.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import Section from "../components/Section.astro";
-import TheProcess from "../components/sections/TheProcess.astro";
-import InstagramSlider from "../components/sections/InstagramSlider.astro";
-import Testimonials from "../components/sections/Testimonials.astro";
-import ImageGallery from "../components/sections/ImageGallery.astro";
-import {
-  categories,
-  factoryDirectContent,
-  homepageHeroSlides,
-  homepageCtaContent,
-  homepageCTAImageContent,
-  homepageRecentWorkContent,
-} from "../data";
+import "../styles/global.css";
+
+const phoneNumber = "+91 9310244463";
+const phoneLink = "tel:+919310244463";
+const whatsappLink = "https://wa.me/919310244463";
 ---
 
-<MainLayout title="Crafted Living | Premium Furniture">
-  <HeroSlider slides={homepageHeroSlides} />
-
-  <!-- Furniture Categories -->
-  <Section padding="py-4 sm:py-4 lg:py-6">
-    <!-- Full Width Carousel -->
-    <CategoryCarousel
-      items={categories}
-      autoplay={true}
-      autoplayDelay={1500}
-      showDots={false}
-      loop={true}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aastha Furniture is getting ready to bring thoughtful, beautiful furniture to your home. Get in touch with us today."
     />
-  </Section>
-  <TextImage content={factoryDirectContent} />
-  <CTAText content={homepageCtaContent} />
-  <TheProcess />
-  <ImageGallery content={homepageRecentWorkContent} />
-  <CtaImageBg content={homepageCTAImageContent} />
-  <Testimonials />
-  <InstagramSlider />
-</MainLayout>
+    <meta name="theme-color" content="#f7f3eb" />
+    <title>Aastha Furniture | Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="coming-soon">
+      <div class="coming-soon__content">
+        <header class="brand" aria-label="Aastha Furniture">
+          <span class="brand__mark" aria-hidden="true">A</span>
+          <span class="brand__name">
+            <span>Aastha</span>
+            <span class="brand__descriptor">FURNITURE</span>
+          </span>
+        </header>
+
+        <section class="message" aria-labelledby="page-title">
+          <p class="message__eyebrow">
+            <span class="message__line" aria-hidden="true"></span>
+            A NEW CHAPTER IN COMFORT
+          </p>
+          <h1 id="page-title">A little more comfort is <em>on its way.</em></h1>
+          <p class="message__copy">
+            We’re putting the finishing touches on something special. Aastha
+            Furniture is getting ready to help you make your house feel more
+            like home.
+          </p>
+          <p class="message__note">Our website is coming soon.</p>
+
+          <div class="contact">
+            <a class="contact__primary btn btn-primary btn-lg" href={phoneLink}>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.2 3.75h2.1l1.1 4.1-1.8 1.8a15 15 0 0 0 5.75 5.75l1.8-1.8 4.1 1.1v2.1a2 2 0 0 1-2.15 2 16.5 16.5 0 0 1-14.9-14.9 2 2 0 0 1 2-2.15Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Call us
+            </a>
+            <a
+              class="contact__secondary btn btn-secondary btn-lg"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.2 10h11.6m-4.8-4.8L15.8 10 11 14.8"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+          <a class="contact__number" href={phoneLink}>{phoneNumber}</a>
+        </section>
+
+        <footer class="page-footer">
+          <span>Thoughtfully made for the way you live.</span>
+          <a href="https://aasthafurniture.in">aasthafurniture.in</a>
+        </footer>
+      </div>
+
+      <figure class="coming-soon__visual">
+        <img
+          src="/images/hero/hero-1.jpg"
+          alt="A warm, softly lit bedroom furnished for comfort"
+          fetchpriority="high"
+        />
+        <figcaption class="visual-caption">
+          <span class="visual-caption__dot" aria-hidden="true"></span>
+          MADE FOR YOUR HOME
+        </figcaption>
+      </figure>
+    </main>
+  </body>
+</html>
+
+<style>
+  .coming-soon {
+    --ink: #2f3029;
+    --muted: #79766c;
+    --olive: #656b4f;
+    --paper: #f7f3eb;
+    display: grid;
+    grid-template-columns: minmax(25rem, 0.88fr) minmax(0, 1.12fr);
+    gap: clamp(2rem, 5.5vw, 6rem);
+    width: min(100%, 100rem);
+    min-height: 100svh;
+    margin-inline: auto;
+    padding: clamp(1.25rem, 4.2vw, 4.5rem);
+    color: var(--ink);
+    background: var(--paper);
+  }
+
+  .coming-soon__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding-block: clamp(0.75rem, 1.8vw, 1.75rem);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.9rem;
+  }
+
+  .brand__mark {
+    display: grid;
+    width: 3.6rem;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid #9e9b89;
+    border-radius: 50%;
+    color: var(--olive);
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  .brand__name {
+    display: flex;
+    flex-direction: column;
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 3vw, 2.6rem);
+    font-weight: 600;
+    line-height: 0.9;
+  }
+
+  .brand__descriptor {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.23em;
+  }
+
+  .message {
+    width: min(100%, 34rem);
+    padding-block: 3rem;
+  }
+
+  .message__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.4rem;
+    color: var(--olive);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.19em;
+  }
+
+  .message__line {
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--olive);
+  }
+
+  h1 {
+    max-width: 10ch;
+    color: var(--ink);
+    font-size: clamp(3.6rem, 6.2vw, 6rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 0.94;
+  }
+
+  h1 em {
+    color: var(--olive);
+    font-weight: 400;
+  }
+
+  .message__copy {
+    max-width: 27rem;
+    margin-top: 1.6rem;
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.85;
+  }
+
+  .message__note {
+    margin-top: 1rem;
+    color: var(--ink);
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact__primary,
+  .contact__secondary {
+    text-decoration: none;
+  }
+
+  .contact__number {
+    display: inline-block;
+    margin-top: 0.85rem;
+    color: var(--muted);
+    font-size: 0.79rem;
+    text-decoration: none;
+  }
+
+  .contact__number:hover {
+    color: var(--olive);
+  }
+
+  .page-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+    color: var(--muted);
+    font-size: 0.71rem;
+  }
+
+  .page-footer a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .page-footer a:hover {
+    color: var(--olive);
+  }
+
+  .coming-soon__visual {
+    position: relative;
+    min-height: 38rem;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 1.2rem;
+    background: #d5c8b2;
+  }
+
+  .coming-soon__visual::after {
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(transparent, rgb(27 25 20 / 36%));
+    content: "";
+    pointer-events: none;
+  }
+
+  .coming-soon__visual img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .visual-caption {
+    position: absolute;
+    z-index: 1;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+
+  .visual-caption__dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: #d7c49c;
+  }
+
+  @media (min-width: 1500px) {
+    .coming-soon__visual {
+      min-height: 44rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .coming-soon {
+      grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 1.05fr);
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 7vw, 5rem);
+    }
+
+    .coming-soon__visual {
+      min-height: 34rem;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .coming-soon {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.75rem;
+      min-height: 100svh;
+      padding: 1.25rem;
+    }
+
+    .coming-soon__content {
+      display: contents;
+    }
+
+    .brand {
+      grid-row: 1;
+      padding-block: 0.35rem;
+    }
+
+    .message {
+      grid-row: 2;
+      padding-block: 2.3rem 1.6rem;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(3.4rem, 15vw, 5rem);
+    }
+
+    .message__copy {
+      max-width: 32rem;
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      gap: 0.8rem 1.1rem;
+      margin-top: 1.5rem;
+    }
+
+    .coming-soon__visual {
+      grid-row: 3;
+      min-height: 16rem;
+      max-height: 30svh;
+      border-radius: 0.8rem;
+    }
+
+    .page-footer {
+      grid-row: 4;
+      padding-block: 0.8rem 0.35rem;
+      font-size: 0.68rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .coming-soon {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 3.1rem;
+    }
+
+    .contact {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
