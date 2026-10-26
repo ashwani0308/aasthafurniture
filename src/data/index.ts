@@ -92,7 +92,11 @@ export const factoryDirectContent: FactoryDirectContent = {
 
 export const homepageHeroSlides = [
   {
-    image: "/images/hero/hero-1.jpg",
+    image: {
+      desktop: "/images/hero/slider_image_1_1600.webp",
+      tablet: "/images/hero/slider_image_1_1024.webp",
+      mobile: "/images/hero/slider_image_1_640.webp",
+    },
     eyebrow: "SINCE 1920",
     heading: "Our Family Tradition",
     description: "A love for wood, passed down through five generations.",
@@ -103,7 +107,11 @@ export const homepageHeroSlides = [
     secondaryButton: { label: "Get in Touch", href: "/contact" },
   },
   {
-    image: "/images/hero/hero-2.jpg",
+    image: {
+      desktop: "/images/hero/slider_image_2_1600.webp",
+      tablet: "/images/hero/slider_image_2_1024.webp",
+      mobile: "/images/hero/slider_image_2_640.webp",
+    },
     eyebrow: "Factory-direct savings",
     heading: "Luxury Furniture. Less Markup.",
     description: "Exceptional furniture, straight from the source.",
@@ -114,11 +122,35 @@ export const homepageHeroSlides = [
     secondaryButton: { label: "Contact Us", href: "/contact" },
   },
   {
-    image: "/images/hero/hero-3.jpg",
-    eyebrow: "Custom furniture",
-    heading: "Made for Your Space. Made for You.",
-    description: "Your vision, crafted to perfection.",
-    primaryButton: { label: "Explore More", href: "/furniture/dining-room" },
+    image: {
+      desktop: "/images/hero/slider_image_2_1600.webp",
+      tablet: "/images/hero/slider_image_2_1024.webp",
+      mobile: "/images/hero/slider_image_2_640.webp",
+    },
+    eyebrow: "CUSTOM DESIGNS. PERSONAL TOUCH.",
+    heading: "Furniture Made for Your Space. Crafted for Your Style.",
+    description:
+      "From your ideas to the final finish, we create custom wooden furniture tailored to your space, style, and requirements.",
+    primaryButton: {
+      label: "Explore Custom Furniture",
+      href: "/furniture/bedroom",
+    },
+    secondaryButton: { label: "Contact Us", href: "/contact" },
+  },
+  {
+    image: {
+      desktop: "/images/hero/slider_image_2_1600.webp",
+      tablet: "/images/hero/slider_image_2_1024.webp",
+      mobile: "/images/hero/slider_image_2_640.webp",
+    },
+    eyebrow: "FOR DEALERS. BUSINESSES. BULK BUYERS.",
+    heading: "Bulk Furniture Orders. Factory-Direct Value.",
+    description:
+      "Source furniture directly from the manufacturer for your business, project, or showroom. Discuss your quantities, designs, and requirements with our team.",
+    primaryButton: {
+      label: "Enquire for Bulk Orders",
+      href: "/furniture/bedroom",
+    },
     secondaryButton: { label: "Contact Us", href: "/contact" },
   },
 ];

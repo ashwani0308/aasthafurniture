@@ -1,6 +1,10 @@
 ---
 interface Slide {
-  image: string;
+  image: {
+    desktop: string;
+    tablet: string;
+    mobile: string;
+  };
   eyebrow: string;
   heading: string;
   description: string;
@@ -50,13 +54,17 @@ const loop = slides.length > 1;
         aria-roledescription="slide"
         role="group"
       >
-        <img
-          class="absolute inset-0 h-full w-full object-cover"
-          src={slide.image}
-          alt=""
-          loading={index === 0 ? "eager" : "lazy"}
-          fetchpriority={index === 0 ? "high" : "auto"}
-        />
+        <picture class="absolute inset-0 h-full w-full">
+          <source media="(max-width: 640px)" srcset={slide.image.mobile} />
+          <source media="(max-width: 1024px)" srcset={slide.image.tablet} />
+          <img
+            class="h-full w-full object-cover"
+            src={slide.image.desktop}
+            alt=""
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "auto"}
+          />
+        </picture>
         <div class="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/20" />
         <div class="container relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 py-20">
           <div class="max-w-3xl text-cream">
