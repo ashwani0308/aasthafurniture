@@ -1,7 +1,6 @@
-export interface FurnitureSubcategory {
-  title: string;
-  image: string;
-  href: string;
+export interface FurnitureGalleryImage {
+  src: string;
+  alt: string;
 }
 
 export interface FurnitureCategory {
@@ -12,10 +11,10 @@ export interface FurnitureCategory {
   hero: {
     image: string;
   };
-  subcategorySection?: {
+  gallerySection?: {
     eyebrow: string;
     heading: string;
-    subtext: string;
+    description: string;
   };
   textImageContent?: {
     eyebrow: string;
@@ -43,7 +42,7 @@ export interface FurnitureCategory {
       href: string;
     };
   };
-  subcategories?: readonly FurnitureSubcategory[];
+  gallery: readonly FurnitureGalleryImage[];
 }
 
 const furnitureModules = import.meta.glob<{ default: FurnitureCategory }>(

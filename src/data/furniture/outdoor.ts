@@ -5,14 +5,14 @@ const outdoorFurniture = {
   title: "Outdoor Furniture",
   description:
     "Transform your outdoor spaces with thoughtfully crafted furniture designed for relaxation, entertaining, and everyday enjoyment.",
-  cardImage: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
+  cardImage: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
   hero: {
-    image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
+    image: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
   },
-  subcategorySection: {
+  gallerySection: {
     eyebrow: "Explore Our Collections",
     heading: "Outdoor Furniture",
-    subtext:
+    description:
       "Discover inviting outdoor furniture for gardens, balconies, patios, terraces, and open-air spaces.",
   },
   textImageContent: {
@@ -21,7 +21,7 @@ const outdoorFurniture = {
     description:
       "Make the most of your outdoor spaces with furniture that brings comfort, style, and functionality together. From garden seating and patio tables to outdoor benches and balcony furniture, our collection helps you create welcoming spaces for relaxing and spending time together. By manufacturing our furniture ourselves and selling directly, we aim to offer thoughtful design and lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
+      src: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
       alt: "Comfortable outdoor garden furniture in a welcoming garden setting",
     },
     features: [
@@ -61,41 +61,10 @@ const outdoorFurniture = {
       href: "tel:+919999999999",
     },
   },
-  subcategories: [
+  gallery: [
     {
-      title: "Garden Furniture",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Patio Furniture",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Outdoor Seating",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Outdoor Tables",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Garden Benches",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Balcony Furniture",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Outdoor Lounge Furniture",
-      image: "/images/furniture/outdoor-furniture/outdoor-furniture.jpg",
-      href: "/contact",
+      src: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
+      alt: "Outdoor furniture",
     },
   ],
 } as const satisfies FurnitureCategory;

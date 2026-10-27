@@ -1,5 +1,5 @@
 ---
-import { Phone, Mail, MapPin, Clock3, ArrowRight } from "@lucide/astro";
+import { Phone, Mail, MapPin, Clock3, Globe } from "@lucide/astro";
 import Container from "../Container.astro";
 import { furnitureCategories } from "../../data/furniture.ts";
 ---
@@ -16,20 +16,17 @@ import { furnitureCategories } from "../../data/furniture.ts";
         <!-- ================================================= -->
 
         <div class="sm:col-span-2 lg:col-span-4">
-          <a
-            href="/"
-            class="inline-flex rounded bg-cream px-4 py-2"
-          >
+          <a href="/" class="inline-flex rounded bg-cream px-4 py-2">
             <img
               src="/images/brand/aastha_furniture.svg"
-              alt="Aastha Furniture"
+              alt="Aashta Furniture"
               class="h-auto w-52"
             />
           </a>
 
           <p class="mt-8 max-w-md leading-4 text-white/70">
-            Woodsy is a premium furniture manufacturer creating handcrafted
-            furniture for homes, offices and commercial spaces.
+            Aashta Furniture is a premium furniture manufacturer creating
+            handcrafted furniture for homes, offices and commercial spaces.
           </p>
 
           <div class="mt-10 space-y-5">
@@ -37,19 +34,28 @@ import { furnitureCategories } from "../../data/furniture.ts";
               <MapPin class="mt-1 h-5 w-5 shrink-0 text-secondary" />
 
               <span class="text-white/70">
-                Furniture Market,
+                Basanti Lane, Dewan Road
                 <br />
-                Noida, Uttar Pradesh, India
+                Muzaffarpur, Bihar 842001, India
               </span>
             </div>
 
             <a
-              href="tel:+919999999999"
+              href="tel:+919310244463"
               class="flex items-center gap-3 text-white/70 transition hover:text-secondary"
             >
               <Phone class="h-5 w-5 shrink-0 text-secondary" />
 
-              +91 99999 99999
+              +91 93102 44463
+            </a>
+
+            <a
+              href="https://aasthafurniture.in"
+              class="flex items-center gap-3 text-white/70 transition hover:text-secondary"
+            >
+              <Globe class="h-5 w-5 shrink-0 text-secondary" />
+
+              aasthafurniture.in
             </a>
 
             <a
@@ -303,7 +309,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
         <div class="text-center lg:text-left">
           <p class="text-sm text-white/60">
             © {new Date().getFullYear()}
-            <span class="font-medium text-white"> Woodsy </span>
+            <span class="font-medium text-white"> Aashta Furniture </span>
 
             All Rights Reserved.
           </p>

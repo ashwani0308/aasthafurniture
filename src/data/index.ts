@@ -2,42 +2,42 @@ export const homepageCategoryCarousel = {
   items: [
     {
       title: "Bedroom Furniture",
-      image: "/images/furniture/bedroom.jpg",
+      image: "/images/furniture/bedroom.webp",
       href: "/furniture/bedroom",
     },
     {
       title: "Dining Room Furniture",
-      image: "/images/furniture/dining-room.jpg",
+      image: "/images/furniture/dining-room.webp",
       href: "/furniture/dining-room",
     },
     {
       title: "Doors & Windows",
-      image: "/images/furniture/door-and-window.jpg",
+      image: "/images/furniture/door-and-window.webp",
       href: "/furniture/door-window",
     },
     {
       title: "Living Room Furniture",
-      image: "/images/furniture/living-room.jpg",
+      image: "/images/furniture/living-room.webp",
       href: "/furniture/living-room",
     },
     {
       title: "Office Furniture",
-      image: "/images/furniture/office-furniture.jpg",
+      image: "/images/furniture/office-furniture.webp",
       href: "/furniture/office",
     },
     {
       title: "Outdoor Furniture",
-      image: "/images/furniture/outdoor-furniture.jpg",
+      image: "/images/furniture/outdoor-furniture.webp",
       href: "/furniture/outdoor-furniture",
     },
     {
       title: "Pooja Unit",
-      image: "/images/furniture/pooja-mandap.jpg",
+      image: "/images/furniture/pooja-mandap.webp",
       href: "/furniture/pooja-unit",
     },
     {
       title: "Storage Furniture",
-      image: "/images/furniture/storage-furniture.jpg",
+      image: "/images/furniture/storage-furniture.webp",
       href: "/furniture/storage",
     },
   ],
@@ -128,9 +128,9 @@ export const homepageHeroSlides = [
       mobile: "/images/hero/slider_image_2_640.webp",
     },
     eyebrow: "CUSTOM DESIGNS. PERSONAL TOUCH.",
-    heading: "Furniture Made for Your Space. Crafted for Your Style.",
+    heading: "Furniture Made for Your Space.",
     description:
-      "From your ideas to the final finish, we create custom wooden furniture tailored to your space, style, and requirements.",
+      "We create custom wooden furniture tailored to your space, style, and requirements.",
     primaryButton: {
       label: "Explore Custom Furniture",
       href: "/furniture/bedroom",
@@ -144,9 +144,8 @@ export const homepageHeroSlides = [
       mobile: "/images/hero/slider_image_2_640.webp",
     },
     eyebrow: "FOR DEALERS. BUSINESSES. BULK BUYERS.",
-    heading: "Bulk Furniture Orders. Factory-Direct Value.",
-    description:
-      "Source furniture directly from the manufacturer for your business, project, or showroom. Discuss your quantities, designs, and requirements with our team.",
+    heading: "Bulk Furniture Orders.",
+    description: "Discuss your quantities, designs, and requirements with us.",
     primaryButton: {
       label: "Enquire for Bulk Orders",
       href: "/furniture/bedroom",

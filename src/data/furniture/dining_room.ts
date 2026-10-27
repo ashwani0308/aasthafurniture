@@ -5,14 +5,14 @@ const diningRoomFurniture = {
   title: "Dining Room Furniture",
   description:
     "Create a welcoming dining space with thoughtfully crafted furniture designed for everyday meals and special gatherings.",
-  cardImage: "/images/furniture/dining-room.jpg",
+  cardImage: "/images/furniture/dining-room.webp",
   hero: {
-    image: "/images/furniture/dining-room.jpg",
+    image: "/images/furniture/dining-room.webp",
   },
-  subcategorySection: {
+  gallerySection: {
     eyebrow: "Explore Our Collections",
     heading: "Dining Room Furniture",
-    subtext:
+    description:
       "Discover dining furniture that brings people together in comfort and style.",
   },
   textImageContent: {
@@ -21,7 +21,7 @@ const diningRoomFurniture = {
     description:
       "Your dining space is where everyday meals become meaningful moments. From inviting dining tables and comfortable chairs to practical crockery units and bar cabinets, our furniture is designed to balance style, functionality, and lasting value. By manufacturing our furniture ourselves and selling directly, we aim to offer quality craftsmanship without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/dining_room/dining_tables.jpg",
+      src: "/images/furniture/dining_room/dining_tables.webp",
       alt: "Thoughtfully crafted wooden dining table",
     },
     features: [
@@ -61,41 +61,34 @@ const diningRoomFurniture = {
       href: "tel:+919999999999",
     },
   },
-  subcategories: [
+  gallery: [
     {
-      title: "Dining Tables",
-      image: "/images/furniture/dining_room/dining_tables.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/dining_tables.webp",
+      alt: "Dining table",
     },
     {
-      title: "4 Seater Dining Sets",
-      image: "/images/furniture/dining_room/4_seater_dining_sets.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/4_seater_dining_sets.webp",
+      alt: "Four-seater dining set",
     },
     {
-      title: "6 Seater Dining Sets",
-      image: "/images/furniture/dining_room/6_seater_dining_sets.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/6_seater_dining_sets.webp",
+      alt: "Six-seater dining set",
     },
     {
-      title: "8 Seater Dining Sets",
-      image: "/images/furniture/dining_room/8_seater_dining_sets.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/8_seater_dining_sets.webp",
+      alt: "Eight-seater dining set",
     },
     {
-      title: "Dining Chairs",
-      image: "/images/furniture/dining_room/dining_chairs.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/dining_chairs.webp",
+      alt: "Dining chairs",
     },
     {
-      title: "Crockery Units",
-      image: "/images/furniture/dining_room/crockery_units.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/crockery_units.webp",
+      alt: "Crockery unit",
     },
     {
-      title: "Bar Cabinets",
-      image: "/images/furniture/dining_room/bar_cabinets.jpg",
-      href: "/contact",
+      src: "/images/furniture/dining_room/bar_cabinets.webp",
+      alt: "Bar cabinet",
     },
   ],
 } as const satisfies FurnitureCategory;

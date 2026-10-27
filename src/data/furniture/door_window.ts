@@ -5,14 +5,14 @@ const doorWindowFurniture = {
   title: "Doors & Windows",
   description:
     "Enhance your home with thoughtfully crafted wooden doors and windows that combine timeless style, functionality, and quality craftsmanship.",
-  cardImage: "/images/furniture/door-and-window/door-and-window.jpg",
+  cardImage: "/images/furniture/door-and-window/door-and-window.webp",
   hero: {
-    image: "/images/furniture/door-and-window/door-and-window.jpg",
+    image: "/images/furniture/door-and-window/door-and-window.webp",
   },
-  subcategorySection: {
+  gallerySection: {
     eyebrow: "Explore Our Collections",
     heading: "Doors & Windows",
-    subtext:
+    description:
       "Discover beautifully crafted doors and windows designed to complement your architecture and everyday living.",
   },
   textImageContent: {
@@ -21,7 +21,7 @@ const doorWindowFurniture = {
     description:
       "Doors and windows help define the character of your home, bringing together privacy, natural light, security, and style. From elegant main doors and practical interior doors to beautifully finished wooden window frames, our collection focuses on thoughtful design and careful craftsmanship. By manufacturing our products ourselves and selling directly, we aim to offer lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/door-and-window/door-and-window.jpg",
+      src: "/images/furniture/door-and-window/door-and-window.webp",
       alt: "Beautifully crafted wooden main door",
     },
     features: [
@@ -61,41 +61,10 @@ const doorWindowFurniture = {
       href: "tel:+919999999999",
     },
   },
-  subcategories: [
+  gallery: [
     {
-      title: "Main Doors",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Interior Doors",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Panel Doors",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Carved Wooden Doors",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Wooden Window Frames",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Wooden Windows",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
-    },
-    {
-      title: "Custom Doors & Windows",
-      image: "/images/furniture/door-and-window/door-and-window.jpg",
-      href: "/contact",
+      src: "/images/furniture/door-and-window/door-and-window.webp",
+      alt: "Wooden doors and windows",
     },
   ],
 } as const satisfies FurnitureCategory;

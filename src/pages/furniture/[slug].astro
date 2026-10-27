@@ -1,8 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import CategoryHero from "../../components/furniture/CategoryHero.astro";
-import Section from "../../components/Section.astro";
-import CategoryCarousel from "../../components/sections/CategoryCarousel.astro";
+import ImageGallery from "../../components/sections/ImageGallery.astro";
 import TextImage from "../../components/sections/TextImage.astro";
 import CTAImageBg from "../../components/sections/CTAImageBg.astro";
 import Testimonials from "../../components/sections/Testimonials.astro";
@@ -23,6 +22,16 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.props;
+const galleryContent = {
+  eyebrow: category.gallerySection?.eyebrow ?? "Explore Our Collection",
+  heading: category.gallerySection?.heading ?? category.title,
+  description: category.gallerySection?.description ?? category.description,
+  works: category.gallery,
+  button: category.ctaImageContent?.primaryButton ?? {
+    label: "Contact Us",
+    href: "/contact",
+  },
+};
 ---
 
 <MainLayout title={category.title}>
@@ -32,20 +41,7 @@ const { category } = Astro.props;
     image={category.hero.image}
   />
 
-  {
-    category.subcategories && category.subcategorySection && (
-      <Section padding="py-4 sm:py-4 lg:py-6">
-        <CategoryCarousel
-          items={[...category.subcategories, ...category.subcategories]}
-          headingContent={category.subcategorySection}
-          autoplay={true}
-          autoplayDelay={1500}
-          showDots={false}
-          loop={true}
-        />
-      </Section>
-    )
-  }
+  <ImageGallery content={galleryContent} />
 
   {
     category.textImageContent && (
