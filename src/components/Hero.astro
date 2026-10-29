@@ -1,21 +1,23 @@
 ---
+import type { ServiceHeroContent } from "../data/services/types";
 import { Phone, ArrowRight } from "@lucide/astro";
+
+interface Props {
+  content: ServiceHeroContent;
+}
+
+const { content } = Astro.props;
 ---
 
 <section
   class="relative flex h-[60vh] min-h-[600px] items-center justify-center overflow-hidden"
 >
-  <!-- Background Video -->
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
+  <img
+    src={content.image}
+    alt=""
     class="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/images/videos/hero.mp4" type="video/mp4" />
-  </video>
+    loading="eager"
+  />
 
   <!-- Overlay -->
   <div
@@ -30,29 +32,30 @@ import { Phone, ArrowRight } from "@lucide/astro";
       <span
         class="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-medium tracking-[0.3em] uppercase text-white backdrop-blur"
       >
-        Premium Furniture Since 1998
+        {content.eyebrow}
       </span>
 
       <h1 class="display text-cream heading-lg pb-4">
-        Beautiful Furniture.<br />
-        Without the Showroom Markup.
+        {content.heading}
       </h1>
 
       <p class="lead text-white/90">
-        Crafted in our own factory and delivered directly to retailers and
-        customers.
+        {content.description}
       </p>
 
       <!-- Buttons -->
       <div class="flex flex-wrap justify-center gap-4 mt-10">
-        <a href="/gallery" class="btn btn-primary btn-lg btn-icon-right">
+        <a
+          href={content.primaryButton.href}
+          class="btn btn-primary btn-lg btn-icon-right"
+        >
           <ArrowRight />
-          View Collection
+          {content.primaryButton.label}
         </a>
 
-        <a href="tel:+919999999999" class="btn btn-secondary btn-lg">
+        <a href={content.secondaryButton.href} class="btn btn-secondary btn-lg">
           <Phone class="h-5 w-5" />
-          Call Now
+          {content.secondaryButton.label}
         </a>
       </div>
     </div>

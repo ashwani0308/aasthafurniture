@@ -1,0 +1,51 @@
+---
+import Hero from "../../components/Hero.astro";
+import Container from "../../components/Container.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+import CTAText from "../../components/sections/CTAText.astro";
+import TextImage from "../../components/sections/TextImage.astro";
+import { ArrowRight } from "@lucide/astro";
+import { homepageCtaContent } from "../../data";
+import { servicePages } from "../../data/services";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export function getStaticPaths() {
+  return servicePages.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<MainLayout title={service.title}>
+  <Hero content={service.hero} />
+  <TextImage content={service.textImageContent} />
+  <CTAText content={homepageCtaContent} />
+  <section
+    class="relative isolate bg-cover bg-center bg-fixed px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
+    style="background-image: url('/images/cta/cta-bg.jpg');"
+  >
+    <div aria-hidden="true" class="absolute inset-0 bg-primary opacity-85">
+    </div>
+    <Container
+      className="relative z-10 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-20"
+    >
+      <div>
+        <h2 class="heading-lg text-cream">{service.faqSection.heading}</h2>
+        <p class="subtitle mt-4 max-w-xl text-cream">
+          {service.faqSection.description}
+        </p>
+        <a
+          href={service.faqSection.primaryButton.href}
+          class="btn btn-secondary btn-lg btn-icon-right mt-7"
+        >
+          {service.faqSection.primaryButton.label}
+          <ArrowRight />
+        </a>
+      </div>
+      <FAQAccordion items={service.faqSection.faqs} />
+    </Container>
+  </section>
+</MainLayout>

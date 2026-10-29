@@ -228,9 +228,13 @@ select {
   font: inherit;
 }
 
-button {
+button:not(.btn) {
   border: none;
   background: none;
+}
+
+button[type="submit"] {
+  cursor: pointer;
 }
 
 /* ==========================================================

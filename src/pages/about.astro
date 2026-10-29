@@ -1,13 +1,14 @@
 ---
+import Hero from "../components/Hero.astro";
+import TextImage from "../components/sections/TextImage.astro";
+import CTAText from "../components/sections/CTAText.astro";
+import { homepageCtaContent } from "../data";
+import { aboutHeroContent, aboutTextImageContent } from "../data/about";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="About Us">
-
-<section class="container mx-auto py-20">
-    <h1 class="text-5xl font-bold">
-        About Us
-    </h1>
-</section>
-
+  <Hero content={aboutHeroContent} />
+  <TextImage content={aboutTextImageContent} />
+  <CTAText content={homepageCtaContent} />
 </MainLayout>

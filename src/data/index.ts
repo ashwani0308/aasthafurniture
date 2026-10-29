@@ -47,6 +47,38 @@ export const homepageCategoryCarousel = {
   loop: true,
 } as const;
 
+export const homepageServices = {
+  eyebrow: "HOW WE CAN HELP",
+  heading: "Our Services",
+  subtext:
+    "From made-to-measure pieces to workspaces and repairs, find the right support for your furniture needs.",
+  items: [
+    {
+      title: "Custom Furniture",
+      image: "/images/hero/slider_image_2_1600.webp",
+      href: "/service/custom-furniture",
+    },
+    {
+      title: "Office Furniture",
+      image: "/images/furniture/office-furniture/office-furniture.webp",
+      href: "/service/office-furniture",
+    },
+    {
+      title: "Furniture Repair",
+      image: "/images/furniture/bedroom/beds.webp",
+      href: "/service/furniture-repair",
+    },
+    {
+      type: "cta",
+      heading: "Contact Us",
+      subheading:
+        "Have a question or a project in mind? Talk to our team about how we can help.",
+      buttonLabel: "Get in Touch",
+      href: "/contact",
+    },
+  ],
+} as const;
+
 export interface FactoryDirectContent {
   eyebrow: string;
   heading: string;

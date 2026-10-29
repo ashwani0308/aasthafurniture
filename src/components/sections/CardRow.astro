@@ -1,0 +1,47 @@
+---
+import CategoryCard from "../cards/CategoryCard.astro";
+import CTACard from "../cards/CTACard.astro";
+
+type CardRowItem =
+  | {
+      title: string;
+      image: string;
+      href: string;
+    }
+  | {
+      type: "cta";
+      heading: string;
+      subheading: string;
+      buttonLabel: string;
+      href: string;
+    };
+
+interface Props {
+  items: readonly CardRowItem[];
+}
+
+const { items } = Astro.props;
+
+const isCTACardItem = (
+  item: CardRowItem,
+): item is Extract<CardRowItem, { type: "cta" }> => "type" in item;
+---
+
+<div
+  class="container mx-auto grid max-w-7xl grid-cols-2 gap-5 px-6 pt-4 lg:grid-cols-4"
+>
+  {
+    items.map((item) =>
+      isCTACardItem(item) ? (
+        <CTACard
+          heading={item.heading}
+          subheading={item.subheading}
+          buttonLabel={item.buttonLabel}
+          href={item.href}
+        />
+      ) : (
+        <CategoryCard title={item.title} image={item.image} href={item.href} />
+      ),
+    )
+  }
+</div>

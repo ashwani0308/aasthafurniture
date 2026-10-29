@@ -15,28 +15,19 @@ export const navigation = [
   },
 
   {
-    title: "Gallery",
-    url: "/gallery",
-  },
-
-  {
     title: "Services",
     children: [
       {
         title: "Custom Furniture",
-        url: "/services/custom-furniture",
-      },
-      {
-        title: "Interior Design",
-        url: "/services/interior-design",
+        url: "/service/custom-furniture",
       },
       {
         title: "Office Furniture",
-        url: "/services/office-furniture",
+        url: "/service/office-furniture",
       },
       {
         title: "Furniture Repair",
-        url: "/services/furniture-repair",
+        url: "/service/furniture-repair",
       },
     ],
   },

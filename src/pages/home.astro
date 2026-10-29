@@ -10,6 +10,8 @@ import TheProcess from "../components/sections/TheProcess.astro";
 import InstagramSlider from "../components/sections/InstagramSlider.astro";
 import Testimonials from "../components/sections/Testimonials.astro";
 import ImageGallery from "../components/sections/ImageGallery.astro";
+import CardRow from "../components/sections/CardRow.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 import {
   homepageCategoryCarousel,
   factoryDirectContent,
@@ -17,6 +19,7 @@ import {
   homepageCtaContent,
   homepageCTAImageContent,
   homepageRecentWorkContent,
+  homepageServices,
 } from "../data";
 ---
 
@@ -29,6 +32,14 @@ import {
   <TextImage content={factoryDirectContent} />
   <CTAText content={homepageCtaContent} />
   <TheProcess />
+  <Section padding="py-12 sm:py-16 lg:py-20">
+    <SectionHeading
+      eyebrow={homepageServices.eyebrow}
+      heading={homepageServices.heading}
+      subtext={homepageServices.subtext}
+    />
+    <CardRow items={homepageServices.items} />
+  </Section>
   <ImageGallery content={homepageRecentWorkContent} />
   <CtaImageBg content={homepageCTAImageContent} />
   <Testimonials />
