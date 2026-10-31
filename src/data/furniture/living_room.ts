@@ -7,7 +7,11 @@ const livingRoomFurniture = {
     "Create a welcoming living room with thoughtfully crafted furniture designed for comfort, style, and everyday living.",
   cardImage: "/images/furniture/living-room.webp",
   hero: {
-    image: "/images/furniture/living_room/hero.webp",
+    image: {
+      mobile: "/images/hero/living-room-furniture-640.webp",
+      tablet: "/images/hero/living-room-furniture-1024.webp",
+      desktop: "/images/hero/living-room-furniture-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",

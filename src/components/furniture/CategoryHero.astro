@@ -2,24 +2,43 @@
 interface Props {
   title: string;
   subtitle: string;
-  image: string;
+  image:
+    | string
+    | {
+        desktop: string;
+        tablet: string;
+        mobile: string;
+      };
 }
 
 import { Phone, ArrowRight } from "@lucide/astro";
 
 const { title, subtitle, image } = Astro.props;
+const imageSource = typeof image === "string" ? image : image.desktop;
+const responsiveImage = typeof image === "string" ? undefined : image;
 ---
 
 <section
   class="relative flex h-[60vh] min-h-[600px] items-center justify-center overflow-hidden"
 >
-  <!-- Background Image -->
-  <img
-    src={image}
-    alt={title}
-    class="absolute inset-0 h-full w-full object-cover"
-    loading="eager"
-  />
+  <picture class="absolute inset-0 h-full w-full">
+    {
+      responsiveImage && (
+        <source
+          type="image/webp"
+          srcset={`${responsiveImage.mobile} 640w, ${responsiveImage.tablet} 1024w, ${responsiveImage.desktop} 1600w`}
+          sizes="100vw"
+        />
+      )
+    }
+    <img
+      src={imageSource}
+      alt={title}
+      class="h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
 
   <!-- Overlay -->
   <div

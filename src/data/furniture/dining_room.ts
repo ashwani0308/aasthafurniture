@@ -7,7 +7,11 @@ const diningRoomFurniture = {
     "Create a welcoming dining space with thoughtfully crafted furniture designed for everyday meals and special gatherings.",
   cardImage: "/images/furniture/dining-room.webp",
   hero: {
-    image: "/images/furniture/dining-room.webp",
+    image: {
+      mobile: "/images/hero/dining-room-furniture-640.webp",
+      tablet: "/images/hero/dining-room-furniture-1024.webp",
+      desktop: "/images/hero/dining-room-furniture-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",

@@ -9,7 +9,13 @@ export interface FurnitureCategory {
   description: string;
   cardImage: string;
   hero: {
-    image: string;
+    image:
+      | string
+      | {
+          desktop: string;
+          tablet: string;
+          mobile: string;
+        };
   };
   gallerySection?: {
     eyebrow: string;

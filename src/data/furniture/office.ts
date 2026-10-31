@@ -7,7 +7,11 @@ const officeFurniture = {
     "Create a productive and professional workspace with thoughtfully crafted office furniture designed for comfort, functionality, and style.",
   cardImage: "/images/furniture/office-furniture/office-furniture.webp",
   hero: {
-    image: "/images/furniture/office-furniture/office-furniture.webp",
+    image: {
+      mobile: "/images/hero/office-furniture-640.webp",
+      tablet: "/images/hero/office-furniture-1024.webp",
+      desktop: "/images/hero/office-furniture-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",

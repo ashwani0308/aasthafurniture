@@ -7,7 +7,11 @@ const bedroomFurniture = {
     "Create a comfortable and beautiful bedroom with thoughtfully crafted furniture.",
   cardImage: "/images/furniture/bedroom.webp",
   hero: {
-    image: "/images/furniture/bedroom.webp",
+    image: {
+      mobile: "/images/hero/bedroom-furniture-640.webp",
+      tablet: "/images/hero/bedroom-furniture-1024.webp",
+      desktop: "/images/hero/bedroom-furniture-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",

@@ -7,7 +7,11 @@ const outdoorFurniture = {
     "Transform your outdoor spaces with thoughtfully crafted furniture designed for relaxation, entertaining, and everyday enjoyment.",
   cardImage: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
   hero: {
-    image: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
+    image: {
+      mobile: "/images/hero/outdoor-furniture-640.webp",
+      tablet: "/images/hero/outdoor-furniture-1024.webp",
+      desktop: "/images/hero/outdoor-furniture-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",

@@ -7,7 +7,11 @@ const storageFurniture = {
     "Keep your home organised with thoughtfully crafted storage furniture that combines practical functionality with timeless style.",
   cardImage: "/images/furniture/storage/storage_cabinets.webp",
   hero: {
-    image: "/images/furniture/storage/storage_cabinets.webp",
+    image: {
+      mobile: "/images/hero/storage-furniture-640.webp",
+      tablet: "/images/hero/storage-furniture-1024.webp",
+      desktop: "/images/hero/storage-furniture-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",
