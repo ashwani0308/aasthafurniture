@@ -18,16 +18,16 @@ export const navigation = [
     title: "Services",
     children: [
       {
-        title: "Custom Furniture",
-        url: "/service/custom-furniture",
+        title: "Custom-Made Furniture",
+        url: "/service/custom-made-furniture",
       },
       {
-        title: "Office Furniture",
-        url: "/service/office-furniture",
+        title: "Bulk & Wholesale Furniture",
+        url: "/service/bulk-wholesale-furniture",
       },
       {
-        title: "Furniture Repair",
-        url: "/service/furniture-repair",
+        title: "Furniture Repair & Restoration",
+        url: "/service/furniture-repair-restoration",
       },
     ],
   },

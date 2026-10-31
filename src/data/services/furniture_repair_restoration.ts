@@ -1,14 +1,18 @@
 import type { ServicePageContent } from "./types";
 
 const furnitureRepair: ServicePageContent = {
-  slug: "furniture-repair",
-  title: "Furniture Repair",
+  slug: "furniture-repair-restoration",
+  title: "Furniture Repair & Restoration",
   hero: {
     eyebrow: "GIVE GOOD FURNITURE MORE TIME",
     heading: "Bring Your Furniture Back to Life",
     description:
       "From worn finishes to loose joints, talk to our team about restoring the furniture you already know and love.",
-    image: "/images/furniture/bedroom/beds.webp",
+    image: {
+      mobile: "/images/hero/furniture_restoration-640.webp",
+      tablet: "/images/hero/furniture_restoration-1024.webp",
+      desktop: "/images/hero/furniture_restoration-1600.webp",
+    },
     primaryButton: { label: "Ask About a Repair", href: "/contact" },
     secondaryButton: { label: "Call Now", href: "tel:+919999999999" },
   },

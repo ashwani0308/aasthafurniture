@@ -24,25 +24,20 @@ import { furnitureCategories } from "../../data/furniture.ts";
             />
           </a>
 
-          <p class="mt-8 max-w-md leading-3 text-white/70">
-            Aashta Furniture is a premium furniture manufacturer creating
-            handcrafted furniture for homes, offices and commercial spaces.
-          </p>
-
-          <div class="mt-10 space-y-5">
+          <div class="mt-4 space-y-5">
             <div class="flex items-start gap-3">
               <MapPin class="mt-1 h-5 w-5 shrink-0 text-secondary" />
 
-              <span class="text-white/70">
+              <p class="text-white/70">
                 Basanti Lane, Dewan Road
                 <br />
                 Muzaffarpur, Bihar 842001, India
-              </span>
+              </p>
             </div>
 
             <a
               href="tel:+919310244463"
-              class="flex items-center gap-3 text-white/70 transition hover:text-secondary"
+              class="footer-link flex items-center gap-3 transition"
             >
               <Phone class="h-5 w-5 shrink-0 text-secondary" />
 
@@ -51,7 +46,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
 
             <a
               href="https://aasthafurniture.in"
-              class="flex items-center gap-3 text-white/70 transition hover:text-secondary"
+              class="footer-link flex items-center gap-3 transition"
             >
               <Globe class="h-5 w-5 shrink-0 text-secondary" />
 
@@ -60,7 +55,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
 
             <a
               href="mailto:hello@woodsy.in"
-              class="flex items-center gap-3 text-white/70 transition hover:text-secondary"
+              class="footer-link flex items-center gap-3 transition"
             >
               <Mail class="h-5 w-5 shrink-0 text-secondary" />
 
@@ -76,13 +71,13 @@ import { furnitureCategories } from "../../data/furniture.ts";
         <div class="lg:col-span-2">
           <h3 class="heading-sm text-cream">Furniture</h3>
 
-          <ul class="mt-8 space-y-4">
+          <ul class="mt-4 space-y-2">
             {
               furnitureCategories.map((category) => (
                 <li>
                   <a
                     href={`/furniture/${category.slug}`}
-                    class="text-white/70 transition hover:text-secondary"
+                    class="footer-link transition"
                   >
                     {category.title}
                   </a>
@@ -99,39 +94,25 @@ import { furnitureCategories } from "../../data/furniture.ts";
         <div class="lg:col-span-2">
           <h3 class="heading-sm text-cream">Quick Links</h3>
 
-          <ul class="mt-8 space-y-4">
+          <ul class="mt-4 space-y-2">
             <li>
-              <a
-                href="/"
-                class="text-white/70 transition duration-300 hover:text-secondary"
-              >
-                Home
-              </a>
+              <a href="/" class="footer-link transition duration-300"> Home </a>
             </li>
 
             <li>
-              <a
-                href="/about"
-                class="text-white/70 transition duration-300 hover:text-secondary"
-              >
+              <a href="/about" class="footer-link transition duration-300">
                 About Us
               </a>
             </li>
 
             <li>
-              <a
-                href="/blog"
-                class="text-white/70 transition duration-300 hover:text-secondary"
-              >
+              <a href="/blog" class="footer-link transition duration-300">
                 Blog
               </a>
             </li>
 
             <li>
-              <a
-                href="/contact"
-                class="text-white/70 transition duration-300 hover:text-secondary"
-              >
+              <a href="/contact" class="footer-link transition duration-300">
                 Contact
               </a>
             </li>
@@ -145,31 +126,31 @@ import { furnitureCategories } from "../../data/furniture.ts";
         <div class="lg:col-span-2">
           <h3 class="heading-sm text-cream">Our Services</h3>
 
-          <ul class="mt-8 space-y-4">
+          <ul class="mt-4 space-y-2">
             <li>
               <a
-                href="/service/custom-furniture"
-                class="text-white/70 transition duration-300 hover:text-secondary"
+                href="/service/custom-made-furniture"
+                class="footer-link transition duration-300"
               >
-                Custom Furniture
+                Custom-Made Furniture
               </a>
             </li>
 
             <li>
               <a
-                href="/service/office-furniture"
-                class="text-white/70 transition duration-300 hover:text-secondary"
+                href="/service/bulk-wholesale-furniture"
+                class="footer-link transition duration-300"
               >
-                Office Furniture
+                Bulk & Wholesale Furniture
               </a>
             </li>
 
             <li>
               <a
-                href="/service/furniture-repair"
-                class="text-white/70 transition duration-300 hover:text-secondary"
+                href="/service/furniture-repair-restoration"
+                class="footer-link transition duration-300"
               >
-                Furniture Repair
+                Furniture Repair & Restoration
               </a>
             </li>
           </ul>
@@ -182,12 +163,12 @@ import { furnitureCategories } from "../../data/furniture.ts";
         <div class="lg:col-span-2">
           <h3 class="heading-sm text-cream">Follow Us</h3>
 
-          <p class="mt-8 leading-7 text-white/70">
+          <p class="mt-4 space-y-8 leading-7 text-white/70">
             Follow us for our latest furniture collections, completed projects
             and design inspiration.
           </p>
 
-          <div class="mt-8 flex gap-4">
+          <div class="mt-4 flex gap-4">
             <!-- Facebook -->
             <a
               href="#"
@@ -279,7 +260,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
             <li>
               <a
                 href="/privacy-policy"
-                class="text-sm text-white/60 transition duration-300 hover:text-secondary"
+                class="footer-link text-sm transition duration-300"
               >
                 Privacy Policy
               </a>
@@ -288,7 +269,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
             <li>
               <a
                 href="/terms-and-conditions"
-                class="text-sm text-white/60 transition duration-300 hover:text-secondary"
+                class="footer-link text-sm transition duration-300"
               >
                 Terms & Conditions
               </a>
@@ -297,7 +278,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
             <li>
               <a
                 href="/sitemap.xml"
-                class="text-sm text-white/60 transition duration-300 hover:text-secondary"
+                class="footer-link text-sm transition duration-300"
               >
                 Sitemap
               </a>

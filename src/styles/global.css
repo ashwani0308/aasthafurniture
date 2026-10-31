@@ -194,6 +194,16 @@ a:hover {
   color: var(--color-primary);
 }
 
+.footer-link,
+footer p {
+  font-size: 0.875rem;
+  color: var(--color-primary-400);
+}
+
+.footer-link:hover {
+  color: var(--color-primary-300);
+}
+
 /* Button links should stay light */
 
 .btn,

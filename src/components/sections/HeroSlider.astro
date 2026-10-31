@@ -58,7 +58,7 @@ const loop = slides.length > 1;
           <source media="(max-width: 640px)" srcset={slide.image.mobile} />
           <source media="(max-width: 1024px)" srcset={slide.image.tablet} />
           <img
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover object-center"
             src={slide.image.desktop}
             alt=""
             loading={index === 0 ? "eager" : "lazy"}
@@ -68,20 +68,20 @@ const loop = slides.length > 1;
         <div class="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/20" />
         <div class="container relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 py-20">
           <div class="max-w-3xl text-cream">
-            <span class="eyebrow mb-5 inline-block text-cream">
+            <span class="eyebrow mb-0 inline-block text-cream">
               {slide.eyebrow}
             </span>
             {index === 0 ? (
-              <h1 class="display heading-xl pb-5 text-cream">
+              <h1 class="display heading-xl pb-2 text-cream">
                 {slide.heading}
               </h1>
             ) : (
-              <h2 class="display heading-xl pb-5 text-cream">
+              <h2 class="display heading-xl pb-2 text-cream">
                 {slide.heading}
               </h2>
             )}
             <p class="lead max-w-2xl text-white/90">{slide.description}</p>
-            <div class="mt-8 flex flex-wrap gap-4">
+            <div class="mt-4 flex flex-wrap gap-4">
               <a class="btn btn-primary btn-lg" href={slide.primaryButton.href}>
                 {slide.primaryButton.label}
               </a>

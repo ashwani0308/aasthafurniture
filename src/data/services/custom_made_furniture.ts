@@ -1,14 +1,18 @@
 import type { ServicePageContent } from "./types";
 
 const customFurniture: ServicePageContent = {
-  slug: "custom-furniture",
-  title: "Custom Furniture",
+  slug: "custom-made-furniture",
+  title: "Custom-Made Furniture",
   hero: {
     eyebrow: "DESIGNED AROUND YOU",
     heading: "Furniture Made for Your Space",
     description:
       "Bring us your ideas, dimensions, and inspiration. We will shape them into furniture made to fit your home and the way you live.",
-    image: "/images/hero/slider_image_2_1600.webp",
+    image: {
+      mobile: "/images/hero/custom_furniture_640.webp",
+      tablet: "/images/hero/custom_furniture_1024.webp",
+      desktop: "/images/hero/custom_furniture_1600.webp",
+    },
     primaryButton: { label: "Discuss Your Project", href: "/contact" },
     secondaryButton: { label: "Call Now", href: "tel:+919999999999" },
   },

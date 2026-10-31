@@ -48,7 +48,7 @@ const processSteps = [
       class="relative aspect-[4/3] overflow-hidden rounded-xl md:col-span-1 md:aspect-auto md:min-h-[500px]"
     >
       <img
-        src="/images/hero/slider_image_2_1024.webp"
+        src="/images/section_image/the_process.jpg"
         alt="Furniture crafted for a welcoming home"
         class="absolute inset-0 h-full w-full object-cover object-center"
         loading="lazy"
@@ -68,12 +68,12 @@ const processSteps = [
       </p>
 
       <div
-        class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-2"
+        class="mt-3 grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-0 lg:grid-cols-2"
       >
         {
           processSteps.map((step) => (
-            <article>
-              <p class="heading-lg font-semibold leading-none text-secondary sm:text-4xl">
+            <article class="p-4 pt-0 pb-0">
+              <p class="heading-xl font-semibold leading-none text-secondary sm:text-2xl md:text-4xl xl:text-5xl">
                 {step.number}
               </p>
               <h3 class="heading-lg pb-3 leading-none text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 text-cream">
@@ -82,24 +82,27 @@ const processSteps = [
               <p class="subtitle mt-2 text-cream">{step.description}</p>
             </article>
           ))
-        }
-        <article
-          class="rounded-xl flex flex-col bg-white p-6 gap-3 text-center sm:flex sm:justify-between sm:gap-3 sm:text-left"
-        >
-          <div>
-            <h3 class="heading-sm text-primary">Let's Talk About Your Ideas</h3>
-            <p class="subtitle mt-2 text-slate-700">
-              Call us to discuss your requirements
-            </p>
-          </div>
-          <a
-            href="tel:+919999999999"
-            class="btn btn-secondary btn-md mt-2 w-full sm:mt-0 sm:w-auto"
+        }<div class="p-x-4 pt-4">
+          <article
+            class="rounded-xl flex flex-col bg-white p-6 gap-3 text-center sm:flex sm:justify-between sm:gap-3 sm:text-left"
           >
-            <Phone />
-            Call Us Now
-          </a>
-        </article>
+            <div>
+              <h3 class="heading-sm text-primary">
+                Let's Talk About Your Ideas
+              </h3>
+              <p class="subtitle mt-2 text-slate-700">
+                Call us to discuss your requirements
+              </p>
+            </div>
+            <a
+              href="tel:+9310244463"
+              class="btn btn-secondary btn-md mt-2 w-full sm:mt-0 sm:w-auto"
+            >
+              <Phone />
+              Call Us Now
+            </a>
+          </article>
+        </div>
       </div>
     </div>
   </Container>

@@ -4,7 +4,13 @@ export interface ServiceHeroContent {
   eyebrow: string;
   heading: string;
   description: string;
-  image: string;
+  image:
+    | string
+    | {
+        desktop: string;
+        tablet: string;
+        mobile: string;
+      };
   primaryButton: {
     label: string;
     href: string;

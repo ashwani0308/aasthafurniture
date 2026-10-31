@@ -51,22 +51,22 @@ export const homepageServices = {
   eyebrow: "HOW WE CAN HELP",
   heading: "Our Services",
   subtext:
-    "From made-to-measure pieces to workspaces and repairs, find the right support for your furniture needs.",
+    "From made-to-measure pieces to bulk orders and restoration, find the right support for your furniture needs.",
   items: [
     {
-      title: "Custom Furniture",
-      image: "/images/hero/slider_image_2_1600.webp",
-      href: "/service/custom-furniture",
+      title: "Custom-Made Furniture",
+      image: "/images/furniture/custom-furniture.jpg",
+      href: "/service/custom-made-furniture",
     },
     {
-      title: "Office Furniture",
-      image: "/images/furniture/office-furniture/office-furniture.webp",
-      href: "/service/office-furniture",
+      title: "Bulk & Wholesale Furniture",
+      image: "/images/hero/slider_image_4_1600.webp",
+      href: "/service/bulk-wholesale-furniture",
     },
     {
-      title: "Furniture Repair",
-      image: "/images/furniture/bedroom/beds.webp",
-      href: "/service/furniture-repair",
+      title: "Furniture Repair & Restoration",
+      image: "/images/furniture/furniture-restoration.jpg",
+      href: "/service/furniture-repair-restoration",
     },
     {
       type: "cta",
@@ -99,7 +99,7 @@ export const factoryDirectContent: FactoryDirectContent = {
   description:
     "We manufacture our furniture ourselves. By selling directly, we reduce unnecessary overheads and middlemen — giving you better value without compromising on quality.",
   image: {
-    src: "/images/hero/three.image.png",
+    src: "/images/section_image/why_pay_showroom.png",
     alt: "Custom-made furniture showcase",
   },
   features: [
@@ -155,9 +155,9 @@ export const homepageHeroSlides = [
   },
   {
     image: {
-      desktop: "/images/hero/slider_image_2_1600.webp",
-      tablet: "/images/hero/slider_image_2_1024.webp",
-      mobile: "/images/hero/slider_image_2_640.webp",
+      desktop: "/images/hero/slider_image_3_1600.webp",
+      tablet: "/images/hero/slider_image_3_1024.webp",
+      mobile: "/images/hero/slider_image_3_640.webp",
     },
     eyebrow: "CUSTOM DESIGNS. PERSONAL TOUCH.",
     heading: "Furniture Made for Your Space.",
@@ -171,9 +171,9 @@ export const homepageHeroSlides = [
   },
   {
     image: {
-      desktop: "/images/hero/slider_image_2_1600.webp",
-      tablet: "/images/hero/slider_image_2_1024.webp",
-      mobile: "/images/hero/slider_image_2_640.webp",
+      desktop: "/images/hero/slider_image_4_1600.webp",
+      tablet: "/images/hero/slider_image_4_1024.webp",
+      mobile: "/images/hero/slider_image_4_640.webp",
     },
     eyebrow: "FOR DEALERS. BUSINESSES. BULK BUYERS.",
     heading: "Bulk Furniture Orders.",

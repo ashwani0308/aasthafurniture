@@ -7,17 +7,33 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const imageSource =
+  typeof content.image === "string" ? content.image : content.image.desktop;
+const responsiveImage =
+  typeof content.image === "string" ? undefined : content.image;
 ---
 
 <section
   class="relative flex h-[60vh] min-h-[600px] items-center justify-center overflow-hidden"
 >
-  <img
-    src={content.image}
-    alt=""
-    class="absolute inset-0 h-full w-full object-cover"
-    loading="eager"
-  />
+  <picture class="absolute inset-0 h-full w-full">
+    {
+      responsiveImage && (
+        <source
+          type="image/webp"
+          srcset={`${responsiveImage.mobile} 640w, ${responsiveImage.tablet} 1024w, ${responsiveImage.desktop} 1600w`}
+          sizes="100vw"
+        />
+      )
+    }
+    <img
+      src={imageSource}
+      alt=""
+      class="h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
 
   <!-- Overlay -->
   <div
