@@ -37,10 +37,9 @@ const processSteps = [
 ---
 
 <section
-  class="relative isolate bg-cover bg-center bg-fixed px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
-  style="background-image: url('/images/cta/cta-bg.jpg');"
+  class="process-background relative isolate bg-cover bg-center bg-fixed px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
 >
-  <div aria-hidden="true" class="absolute inset-0 bg-primary opacity-85"></div>
+  <div aria-hidden="true" class="absolute inset-0 bg-primary opacity-92"></div>
   <Container
     className="relative z-10 grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 md:gap-10 lg:gap-14"
   >
@@ -48,7 +47,13 @@ const processSteps = [
       class="relative aspect-[4/3] overflow-hidden rounded-xl md:col-span-1 md:aspect-auto md:min-h-[500px]"
     >
       <img
-        src="/images/section_image/the_process.jpg"
+        src="/images/bg/the-process-1600.webp"
+        srcset="
+          /images/bg/the-process-640.webp 640w,
+          /images/bg/the-process-1024.webp 1024w,
+          /images/bg/the-process-1600.webp 1600w
+        "
+        sizes="(min-width: 768px) 33vw, 100vw"
         alt="Furniture crafted for a welcoming home"
         class="absolute inset-0 h-full w-full object-cover object-center"
         loading="lazy"
@@ -107,3 +112,21 @@ const processSteps = [
     </div>
   </Container>
 </section>
+
+<style>
+  .process-background {
+    background-image: url("/images/bg/the-process-640.webp");
+  }
+
+  @media (min-width: 640px) {
+    .process-background {
+      background-image: url("/images/bg/the-process-1024.webp");
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-background {
+      background-image: url("/images/bg/the-process-1600.webp");
+    }
+  }
+</style>

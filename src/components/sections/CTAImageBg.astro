@@ -15,17 +15,19 @@ const { content } = Astro.props;
 >
   <img
     src={content.backgroundImage}
+    srcset="
+      /images/bg/cta-bg-640.webp 640w,
+      /images/bg/cta-bg-1024.webp 1024w,
+      /images/bg/cta-bg-1600.webp 1600w
+    "
+    sizes="100vw"
     alt=""
     aria-hidden="true"
     class="absolute inset-0 h-full w-full object-cover"
     loading="lazy"
   />
 
-  <div
-    aria-hidden="true"
-    class="absolute inset-0 bg-linear-to-r from-black/70 via-black/45 to-black/30"
-  >
-  </div>
+  <div aria-hidden="true" class="absolute inset-0 bg-primary opacity-86"></div>
 
   <Container
     maxWidth="1280px"

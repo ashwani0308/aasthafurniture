@@ -2,12 +2,13 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import CategoryHero from "../../components/furniture/CategoryHero.astro";
 import ImageGallery from "../../components/sections/ImageGallery.astro";
+import CTAText from "../../components/sections/CTAText.astro";
 import TextImage from "../../components/sections/TextImage.astro";
 import CTAImageBg from "../../components/sections/CTAImageBg.astro";
 import Testimonials from "../../components/sections/Testimonials.astro";
 import InstagramSlider from "../../components/sections/InstagramSlider.astro";
 
-import { homepageCTAImageContent } from "../../data";
+import { homepageCTAImageContent, homepageCtaContent } from "../../data";
 import { furnitureCategories } from "../../data/furniture.ts";
 
 export function getStaticPaths() {
@@ -26,7 +27,7 @@ const galleryContent = {
   eyebrow: category.gallerySection?.eyebrow ?? "Explore Our Collection",
   heading: category.gallerySection?.heading ?? category.title,
   description: category.gallerySection?.description ?? category.description,
-  works: category.gallery,
+  works: [...category.gallery],
   button: category.ctaImageContent?.primaryButton ?? {
     label: "Contact Us",
     href: "/contact",
@@ -41,8 +42,9 @@ const galleryContent = {
     image={category.hero.image}
   />
 
-  <ImageGallery content={galleryContent} />
+  {category.gallery.length > 0 && <ImageGallery content={galleryContent} />}
 
+  <CTAText content={homepageCtaContent} />
   {
     category.textImageContent && (
       <TextImage content={category.textImageContent} />
