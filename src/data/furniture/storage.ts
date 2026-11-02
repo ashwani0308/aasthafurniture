@@ -25,7 +25,7 @@ const storageFurniture = {
     description:
       "A well-organised home starts with furniture that gives everything its place. From versatile cabinets and spacious chests of drawers to elegant display units and practical storage shelves, our furniture helps you make the most of your space without compromising on style. By manufacturing our furniture ourselves and selling directly, we aim to offer lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/storage/storage_cabinets.webp",
+      src: "/images/section_image/storage-sec.png",
       alt: "Thoughtfully crafted wooden storage cabinet",
     },
     features: [

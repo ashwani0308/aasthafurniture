@@ -25,7 +25,7 @@ const livingRoomFurniture = {
     description:
       "Your living room is where you relax, welcome guests, and spend time with the people who matter most. From comfortable sofa sets and elegant coffee tables to practical TV units and stylish accent chairs, our furniture brings comfort and functionality together. By manufacturing our furniture ourselves and selling directly, we aim to deliver lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/living_room/sofa_set.webp",
+      src: "/images/section_image/livingroom-sec.png",
       alt: "Thoughtfully crafted sofa set in a modern living room",
     },
     features: [

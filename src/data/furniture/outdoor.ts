@@ -25,7 +25,7 @@ const outdoorFurniture = {
     description:
       "Make the most of your outdoor spaces with furniture that brings comfort, style, and functionality together. From garden seating and patio tables to outdoor benches and balcony furniture, our collection helps you create welcoming spaces for relaxing and spending time together. By manufacturing our furniture ourselves and selling directly, we aim to offer thoughtful design and lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
+      src: "/images/section_image/outdoor-sec.png",
       alt: "Comfortable outdoor garden furniture in a welcoming garden setting",
     },
     features: [

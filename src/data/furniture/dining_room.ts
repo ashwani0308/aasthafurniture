@@ -25,7 +25,7 @@ const diningRoomFurniture = {
     description:
       "Your dining space is where everyday meals become meaningful moments. From inviting dining tables and comfortable chairs to practical crockery units and bar cabinets, our furniture is designed to balance style, functionality, and lasting value. By manufacturing our furniture ourselves and selling directly, we aim to offer quality craftsmanship without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/dining_room/dining_tables.webp",
+      src: "/images/section_image/dining-sec.png",
       alt: "Thoughtfully crafted wooden dining table",
     },
     features: [

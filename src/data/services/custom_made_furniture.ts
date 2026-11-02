@@ -22,7 +22,7 @@ const customFurniture: ServicePageContent = {
     description:
       "From a single statement piece to a complete room, our team works with you to select the right proportions, materials, and finish for your space.",
     image: {
-      src: "/images/hero/three.image.png",
+      src: "/images/section_image/custom-furniture-sec.png",
       alt: "Furniture crafted for a considered home interior",
     },
     features: [

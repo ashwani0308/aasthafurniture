@@ -7,7 +7,11 @@ const doorWindowFurniture = {
     "Enhance your home with thoughtfully crafted wooden doors and windows that combine timeless style, functionality, and quality craftsmanship.",
   cardImage: "/images/furniture/door-and-window/door-and-window.webp",
   hero: {
-    image: "/images/furniture/door-and-window/door-and-window.webp",
+    image: {
+      mobile: "/images/hero/doors-window-640.webp",
+      tablet: "/images/hero/doors-window-1024.webp",
+      desktop: "/images/hero/doors-window-1600.webp",
+    },
   },
   gallerySection: {
     eyebrow: "Explore Our Collections",
@@ -21,7 +25,7 @@ const doorWindowFurniture = {
     description:
       "Doors and windows help define the character of your home, bringing together privacy, natural light, security, and style. From elegant main doors and practical interior doors to beautifully finished wooden window frames, our collection focuses on thoughtful design and careful craftsmanship. By manufacturing our products ourselves and selling directly, we aim to offer lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/door-and-window/door-and-window.webp",
+      src: "/images/section_image/doors-window-sec.png",
       alt: "Beautifully crafted wooden main door",
     },
     features: [

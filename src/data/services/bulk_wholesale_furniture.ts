@@ -22,7 +22,7 @@ const bulkWholesaleFurniture: ServicePageContent = {
     description:
       "Whether you are a retailer, business, or planning a larger project, tell us what you need and we can discuss suitable furniture and order requirements.",
     image: {
-      src: "/images/hero/slider_image_4_1600.webp",
+      src: "/images/section_image/wholesale-furniture-sec.png",
       alt: "Furniture for bulk and wholesale orders",
     },
     features: [

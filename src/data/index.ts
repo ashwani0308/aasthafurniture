@@ -31,11 +31,6 @@ export const homepageCategoryCarousel = {
       href: "/furniture/outdoor-furniture",
     },
     {
-      title: "Pooja Unit",
-      image: "/images/furniture/pooja-mandap.webp",
-      href: "/furniture/pooja-unit",
-    },
-    {
       title: "Storage Furniture",
       image: "/images/furniture/storage-furniture.webp",
       href: "/furniture/storage",

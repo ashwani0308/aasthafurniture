@@ -24,7 +24,7 @@ const bedroomFurniture = {
     description:
       "We believe bedroom furniture should do more than look good. It should fit your space, support your everyday routine, and offer lasting value. By manufacturing our furniture ourselves and selling directly, we aim to bring you thoughtfully made furniture without unnecessary middlemen.",
     image: {
-      src: "/images/furniture/bedroom/beds.webp",
+      src: "/images/section_image/bedroom-sec.png",
       alt: "Thoughtfully crafted bedroom bed",
     },
     features: [

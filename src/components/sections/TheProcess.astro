@@ -44,20 +44,10 @@ const processSteps = [
     className="relative z-10 grid grid-cols-1 items-stretch gap-8 md:grid-cols-3 md:gap-10 lg:gap-14"
   >
     <div
-      class="relative aspect-[4/3] overflow-hidden rounded-xl md:col-span-1 md:aspect-auto md:min-h-[500px]"
+      role="img"
+      aria-label="Furniture crafted for a welcoming home"
+      class="process-image relative hidden aspect-[4/3] overflow-hidden rounded-xl md:col-span-1 md:block md:aspect-auto md:min-h-[500px]"
     >
-      <img
-        src="/images/bg/the-process-1600.webp"
-        srcset="
-          /images/bg/the-process-640.webp 640w,
-          /images/bg/the-process-1024.webp 1024w,
-          /images/bg/the-process-1600.webp 1600w
-        "
-        sizes="(min-width: 768px) 33vw, 100vw"
-        alt="Furniture crafted for a welcoming home"
-        class="absolute inset-0 h-full w-full object-cover object-center"
-        loading="lazy"
-      />
     </div>
 
     <div class="md:col-span-2">
@@ -116,6 +106,16 @@ const processSteps = [
 <style>
   .process-background {
     background-image: url("/images/bg/the-process-640.webp");
+  }
+
+  .process-image {
+    background: center / cover no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    .process-image {
+      background-image: url("/images/section_image/the_process.webp");
+    }
   }
 
   @media (min-width: 640px) {
