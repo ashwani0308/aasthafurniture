@@ -22,7 +22,7 @@ const furnitureRepair: ServicePageContent = {
     description:
       "Furniture can have a long life with the right attention. Tell us what needs care, and we will help you understand the next step for your piece.",
     image: {
-      src: "/images/furniture/bedroom/beds.webp",
+      src: "/images/section_image/restoration-sec.png",
       alt: "Well-crafted wooden furniture ready for renewed use",
     },
     features: [

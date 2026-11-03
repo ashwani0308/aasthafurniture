@@ -514,6 +514,21 @@ button[type="submit"] {
   }
 }
 
+@media (max-width: 639px) {
+  p {
+    line-height: 1.6;
+  }
+
+  .subtitle,
+  .small-text {
+    line-height: 1.5;
+  }
+
+  .lead {
+    line-height: 1.6;
+  }
+}
+
 /* ==========================================================
    BUTTONS
 ========================================================== */
