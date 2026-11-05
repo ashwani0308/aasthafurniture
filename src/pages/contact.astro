@@ -192,7 +192,7 @@ const contactHeroContent: ServiceHeroContent = {
           failureMessage = result.error;
         } else if (response.status === 404 || response.status === 405) {
           failureMessage =
-            "The contact form service is unavailable. Please call us at +91 93102 44463.";
+            "The contact form endpoint is not available on this deployment. Redeploy the Cloudflare Pages project with the functions/ directory included. If the problem continues, please call us at +91 93102 44463.";
         }
         throw new Error("The enquiry could not be sent.");
       }
