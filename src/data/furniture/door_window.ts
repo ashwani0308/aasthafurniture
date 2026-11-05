@@ -25,7 +25,7 @@ const doorWindowFurniture = {
     description:
       "Doors and windows help define the character of your home, bringing together privacy, natural light, security, and style. From elegant main doors and practical interior doors to beautifully finished wooden window frames, our collection focuses on thoughtful design and careful craftsmanship. By manufacturing our products ourselves and selling directly, we aim to offer lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/section_image/doors-window-sec.png",
+      src: "/images/section_image/doors-window-sec.webp",
       alt: "Beautifully crafted wooden main door",
     },
     features: [
@@ -57,20 +57,15 @@ const doorWindowFurniture = {
     description:
       "Discuss your requirements, explore suitable designs, and find options for your home or project.",
     primaryButton: {
-      label: "View Collection",
-      href: "/gallery",
+      label: "Contact Us",
+      href: "/contact",
     },
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
-  gallery: [
-    {
-      src: "/images/furniture/door-and-window/door-and-window.webp",
-      alt: "Wooden doors and windows",
-    },
-  ],
+  gallery: [],
 } as const satisfies FurnitureCategory;
 
 export default doorWindowFurniture;

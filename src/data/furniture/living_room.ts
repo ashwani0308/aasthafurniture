@@ -25,7 +25,7 @@ const livingRoomFurniture = {
     description:
       "Your living room is where you relax, welcome guests, and spend time with the people who matter most. From comfortable sofa sets and elegant coffee tables to practical TV units and stylish accent chairs, our furniture brings comfort and functionality together. By manufacturing our furniture ourselves and selling directly, we aim to deliver lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/section_image/livingroom-sec.png",
+      src: "/images/section_image/livingroom-sec.webp",
       alt: "Thoughtfully crafted sofa set in a modern living room",
     },
     features: [
@@ -57,48 +57,15 @@ const livingRoomFurniture = {
     description:
       "Explore furniture designed to complement your space, reflect your style, and make everyday living more comfortable.",
     primaryButton: {
-      label: "View Collection",
-      href: "/gallery",
+      label: "Contact Us",
+      href: "/contact",
     },
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
-  gallery: [
-    {
-      src: "/images/furniture/living_room/sofa_set.webp",
-      alt: "Sofa set",
-    },
-    {
-      src: "/images/furniture/living_room/sectional_sofas.webp",
-      alt: "Sectional sofa",
-    },
-    {
-      src: "/images/furniture/living_room/coffee_tables.webp",
-      alt: "Coffee table",
-    },
-    {
-      src: "/images/furniture/living_room/tv_units.webp",
-      alt: "TV unit",
-    },
-    {
-      src: "/images/furniture/living_room/side_tables.webp",
-      alt: "Side table",
-    },
-    {
-      src: "/images/furniture/living_room/console_tables.webp",
-      alt: "Console table",
-    },
-    {
-      src: "/images/furniture/living_room/bookshelves.webp",
-      alt: "Bookshelf",
-    },
-    {
-      src: "/images/furniture/living_room/accent_chairs.webp",
-      alt: "Accent chair",
-    },
-  ],
+  gallery: [],
 } as const satisfies FurnitureCategory;
 
 export default livingRoomFurniture;

@@ -94,7 +94,7 @@ export const factoryDirectContent: FactoryDirectContent = {
   description:
     "We manufacture our furniture ourselves. By selling directly, we reduce unnecessary overheads and middlemen — giving you better value without compromising on quality.",
   image: {
-    src: "/images/section_image/why_pay_showroom.png",
+    src: "/images/section_image/why_pay_showroom.webp",
     alt: "Custom-made furniture showcase",
   },
   features: [

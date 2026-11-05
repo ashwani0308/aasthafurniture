@@ -26,9 +26,11 @@ const { heading, subheading, buttonLabel, href } = Astro.props;
     {buttonLabel}
     {
       href.startsWith("/contact") ? (
-        <Mail class="h-5 w-5" />
+        <Mail class="hidden h-5 w-5 sm:block" />
       ) : (
-        href.startsWith("/") && <ArrowRight class="h-5 w-5" />
+        href.startsWith("/") && (
+          <ArrowRight class="hidden h-5 w-5 sm:block" />
+        )
       )
     }
   </a>

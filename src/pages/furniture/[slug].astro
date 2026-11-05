@@ -30,7 +30,7 @@ const heroContent: ServiceHeroContent = {
   description: category.description,
   image: category.hero.image,
   imageAlt: category.title,
-  primaryButton: { label: "View Collection", href: "/gallery" },
+  primaryButton: { label: "Contact Us", href: "/contact" },
   secondaryButton: { label: "Call Now", href: "tel:+919310244463" },
 };
 const galleryContent = {
@@ -50,13 +50,12 @@ const galleryContent = {
 
   {category.gallery.length > 0 && <ImageGallery content={galleryContent} />}
 
-  <CTAText content={homepageCtaContent} />
   {
     category.textImageContent && (
       <TextImage content={category.textImageContent} />
     )
   }
-  <Testimonials />
   <CTAImageBg content={category.ctaImageContent ?? homepageCTAImageContent} />
+  <Testimonials />
   <InstagramSlider />
 </MainLayout>

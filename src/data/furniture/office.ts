@@ -25,7 +25,7 @@ const officeFurniture = {
     description:
       "A well-designed workspace helps you stay organised, focused, and comfortable throughout the day. From functional office desks and storage cabinets to meeting tables and workstations, our furniture is designed to support the way you work. By manufacturing our furniture ourselves and selling directly, we aim to deliver thoughtful design and lasting value without unnecessary middlemen.",
     image: {
-      src: "/images/section_image/office-sec.png",
+      src: "/images/section_image/office-sec.webp",
       alt: "Thoughtfully crafted wooden office desk in a modern workspace",
     },
     features: [
@@ -57,20 +57,15 @@ const officeFurniture = {
     description:
       "Whether you're furnishing a home office or a professional workspace, let's find furniture that suits your needs.",
     primaryButton: {
-      label: "View Collection",
-      href: "/gallery",
+      label: "Contact Us",
+      href: "/contact",
     },
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
-  gallery: [
-    {
-      src: "/images/furniture/office-furniture/office-furniture.webp",
-      alt: "Office furniture",
-    },
-  ],
+  gallery: [],
 } as const satisfies FurnitureCategory;
 
 export default officeFurniture;

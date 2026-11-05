@@ -63,7 +63,7 @@ export const aboutHeritageContent: AboutImageTextContent = {
     "For us, furniture is more than wood and craftsmanship. It is a family tradition that continues to grow with every generation.",
   ],
   image: {
-    src: "/images/section_image/custom-furniture-sec.png",
+    src: "/images/section_image/custom-furniture-sec.webp",
     alt: "Custom wooden furniture crafted by Aastha Furniture",
   },
 };
@@ -78,7 +78,7 @@ export const aboutCraftsmanshipContent: AboutTextImageContent = {
     "Whether you are furnishing a new home, upgrading your interiors, or looking for made-to-order wooden furniture, our aim is to deliver practical designs with the warmth and character of wood.",
   ],
   image: {
-    src: "/images/hero/three.image.png",
+    src: "/images/section_image/why_pay_showroom.webp",
     alt: "Wooden furniture combining traditional craftsmanship and modern design",
   },
 };
@@ -91,7 +91,7 @@ export const aboutManufacturingContent: AboutImageTextContent = {
     "We offer a wide range of wooden furniture for homes, offices, and commercial spaces. From ready-to-buy furniture to custom-designed pieces and bulk furniture orders, we work to understand your requirements and provide suitable solutions.",
   ],
   image: {
-    src: "/images/section_image/wholesale-furniture-sec.png",
+    src: "/images/section_image/wholesale-furniture-sec.webp",
     alt: "Furniture made and supplied by Aastha Furniture",
   },
   services: [

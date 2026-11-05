@@ -25,7 +25,7 @@ const diningRoomFurniture = {
     description:
       "Your dining space is where everyday meals become meaningful moments. From inviting dining tables and comfortable chairs to practical crockery units and bar cabinets, our furniture is designed to balance style, functionality, and lasting value. By manufacturing our furniture ourselves and selling directly, we aim to offer quality craftsmanship without unnecessary middlemen.",
     image: {
-      src: "/images/section_image/dining-sec.png",
+      src: "/images/section_image/dining-sec.webp",
       alt: "Thoughtfully crafted wooden dining table",
     },
     features: [
@@ -57,44 +57,15 @@ const diningRoomFurniture = {
     description:
       "Explore dining tables, chairs, and storage pieces crafted for your home and lifestyle.",
     primaryButton: {
-      label: "View Collection",
-      href: "/gallery",
+      label: "Contact Us",
+      href: "/contact",
     },
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
-  gallery: [
-    {
-      src: "/images/furniture/dining_room/dining_tables.webp",
-      alt: "Dining table",
-    },
-    {
-      src: "/images/furniture/dining_room/4_seater_dining_sets.webp",
-      alt: "Four-seater dining set",
-    },
-    {
-      src: "/images/furniture/dining_room/6_seater_dining_sets.webp",
-      alt: "Six-seater dining set",
-    },
-    {
-      src: "/images/furniture/dining_room/8_seater_dining_sets.webp",
-      alt: "Eight-seater dining set",
-    },
-    {
-      src: "/images/furniture/dining_room/dining_chairs.webp",
-      alt: "Dining chairs",
-    },
-    {
-      src: "/images/furniture/dining_room/crockery_units.webp",
-      alt: "Crockery unit",
-    },
-    {
-      src: "/images/furniture/dining_room/bar_cabinets.webp",
-      alt: "Bar cabinet",
-    },
-  ],
+  gallery: [],
 } as const satisfies FurnitureCategory;
 
 export default diningRoomFurniture;
