@@ -45,7 +45,7 @@ const {
 ---
 
 <section
-  class="relative"
+  class="relative px-4"
   data-loop={loop}
   data-autoplay={autoplay}
   data-delay={autoplayDelay}
@@ -62,7 +62,7 @@ const {
     <div class="embla__container">
       {
         items.map((item) => (
-          <div class="embla__slide px-1">
+          <div class="embla__slide category-carousel__slide px-2">
             <CategoryCard
               title={item.title}
               image={item.image}
@@ -161,3 +161,32 @@ const {
 
   document.addEventListener("astro:page-load", initEmbla);
 </script>
+
+<style>
+  .category-carousel__slide {
+    flex-basis: 50%;
+  }
+
+  @media (min-width: 640px) {
+    .category-carousel__slide {
+      flex-basis: 33.333333%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .category-carousel__slide {
+      flex-basis: 25%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .category-carousel__slide {
+      flex-basis: 20%;
+    }
+
+  @media (min-width: 1600px) {
+    .category-carousel__slide {
+      flex-basis: 16.666667%;
+    }
+  }
+</style>
