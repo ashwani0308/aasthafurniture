@@ -80,9 +80,7 @@ export async function onRequestPost(context: {
   }
 
   if (!env.RESEND_API_KEY) {
-    console.error(
-      "The contact form email API key is not configured.",
-    );
+    console.error("The contact form email API key is not configured.");
     return jsonResponse(
       {
         ok: false,
@@ -113,7 +111,7 @@ export async function onRequestPost(context: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "onboarding@resend.dev",
+        from: "info@aasthafurniture.in",
         to: [recipient],
         reply_to: fields.email,
         subject: `Website enquiry from ${fields.name.replace(/[\r\n]/g, " ")}`,
