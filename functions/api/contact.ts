@@ -1,6 +1,5 @@
 interface Env {
   RESEND_API_KEY: string;
-  CONTACT_FROM_EMAIL: string;
 }
 
 interface ContactFields {
@@ -80,15 +79,15 @@ export async function onRequestPost(context: {
     );
   }
 
-  if (!env.RESEND_API_KEY || !env.CONTACT_FROM_EMAIL) {
+  if (!env.RESEND_API_KEY) {
     console.error(
-      "Contact form email environment variables are not configured.",
+      "The contact form email API key is not configured.",
     );
     return jsonResponse(
       {
         ok: false,
         error:
-          "Email delivery is not configured. Add RESEND_API_KEY and CONTACT_FROM_EMAIL to the Cloudflare Pages production environment, then redeploy.",
+          "Email delivery is not configured. Add RESEND_API_KEY to the Cloudflare Pages production environment, then redeploy.",
       },
       503,
     );
@@ -114,7 +113,7 @@ export async function onRequestPost(context: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: env.CONTACT_FROM_EMAIL,
+        from: "onboarding@resend.dev",
         to: [recipient],
         reply_to: fields.email,
         subject: `Website enquiry from ${fields.name.replace(/[\r\n]/g, " ")}`,
@@ -131,7 +130,7 @@ export async function onRequestPost(context: {
         emailResponse.status === 401
           ? "The email API key was rejected. Check RESEND_API_KEY in Cloudflare."
           : emailResponse.status === 403 || emailResponse.status === 422
-            ? "The sender was rejected. Verify aasthafurniture.in in Resend and check CONTACT_FROM_EMAIL."
+            ? "Resend rejected the sender or recipient. Confirm the recipient is verified in your Resend account, or verify your own sending domain."
             : `The email provider returned HTTP ${emailResponse.status}. Check the Cloudflare function logs and Resend email logs.`;
       return jsonResponse({ ok: false, error }, 502);
     }

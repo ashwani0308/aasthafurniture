@@ -53,19 +53,19 @@ The contact form is sent by a Cloudflare Pages Function at
 
 To enable delivery in Cloudflare:
 
-1. Add and verify `aasthafurniture.in` in Resend, and add its sending
-   authentication records (such as SPF/DKIM) in Cloudflare. Keep the existing
-   email-routing MX records intact. Email forwarding alone does not authorize
-   outgoing email.
-2. In the Cloudflare Pages project, add `RESEND_API_KEY` as a secret and
-   `CONTACT_FROM_EMAIL` as an environment variable. Set the sender to an address
-   on the verified domain, such as `Aastha Furniture <info@aasthafurniture.in>`.
-   Add both variables to production and preview environments if both need to send.
+1. In the Cloudflare Pages project, add `RESEND_API_KEY` as a secret using a
+   Resend API key. Add it to production and preview environments if both need
+   to send. Never put the key in source code.
+2. The function currently uses Resend's `onboarding@resend.dev` sender, which
+   is intended for testing and may only deliver to a recipient verified in
+   your Resend account. For regular delivery, verify your own domain in Resend,
+   configure its sending authentication records, and change the `from` address
+   in `functions/api/contact.ts` to an address on that domain.
 3. Deploy the site as a Cloudflare Pages project with the repository root as the
    build directory and `dist` as the build output directory. Keep the top-level
    `functions` directory in the deployed repository so Cloudflare deploys the
    `/api/contact` function with the static site.
-4. After adding or changing the variables, trigger a new production deployment.
+4. After adding or changing the secret, trigger a new production deployment.
 
 If a submission fails, the form now displays the server's configuration error.
 For other provider errors, check the Cloudflare Pages function logs and Resend's
