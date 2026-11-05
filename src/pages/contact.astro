@@ -171,6 +171,8 @@ const contactHeroContent: ServiceHeroContent = {
     if (submitButton) submitButton.disabled = true;
     status.className = "rounded-md bg-primary/5 px-4 py-3 text-sm text-primary";
     status.textContent = "Sending your enquiry...";
+    let failureMessage =
+      "We couldn't send your enquiry. Please try again or call us at +91 93102 44463.";
 
     try {
       const response = await fetch(form.action, {
@@ -178,9 +180,32 @@ const contactHeroContent: ServiceHeroContent = {
         body: new FormData(form),
         headers: { Accept: "application/json" },
       });
+      const result: unknown = await response.json().catch(() => null);
 
       if (!response.ok) {
+        if (
+          typeof result === "object" &&
+          result !== null &&
+          "error" in result &&
+          typeof result.error === "string"
+        ) {
+          failureMessage = result.error;
+        } else if (response.status === 404 || response.status === 405) {
+          failureMessage =
+            "The contact form service is unavailable. Please call us at +91 93102 44463.";
+        }
         throw new Error("The enquiry could not be sent.");
+      }
+
+      if (
+        typeof result !== "object" ||
+        result === null ||
+        !("ok" in result) ||
+        result.ok !== true
+      ) {
+        failureMessage =
+          "The contact form service returned an unexpected response. Please call us at +91 93102 44463.";
+        throw new Error("Unexpected contact form response.");
       }
 
       form.reset();
@@ -190,8 +215,7 @@ const contactHeroContent: ServiceHeroContent = {
         "Thank you. Your enquiry has been sent, and our team will be in touch.";
     } catch {
       status.className = "rounded-md bg-red-50 px-4 py-3 text-sm text-red-800";
-      status.textContent =
-        "We couldn't send your enquiry. Please try again or call us at +91 93102 44463.";
+      status.textContent = failureMessage;
     } finally {
       if (submitButton) submitButton.disabled = false;
     }

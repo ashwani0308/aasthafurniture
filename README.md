@@ -65,3 +65,8 @@ To enable delivery in Cloudflare:
    build directory and `dist` as the build output directory. Keep the top-level
    `functions` directory in the deployed repository so Cloudflare deploys the
    `/api/contact` function with the static site.
+4. After adding or changing the variables, trigger a new production deployment.
+
+If a submission fails, the form now displays the server's configuration error.
+For other provider errors, check the Cloudflare Pages function logs and Resend's
+email logs for the matching submission time.

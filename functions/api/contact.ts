@@ -85,7 +85,11 @@ export async function onRequestPost(context: {
       "Contact form email environment variables are not configured.",
     );
     return jsonResponse(
-      { ok: false, error: "Email delivery is not configured." },
+      {
+        ok: false,
+        error:
+          "Email delivery is not configured. Add RESEND_API_KEY and CONTACT_FROM_EMAIL to the Cloudflare Pages production environment, then redeploy.",
+      },
       503,
     );
   }
@@ -123,10 +127,13 @@ export async function onRequestPost(context: {
         "Contact form email provider returned",
         emailResponse.status,
       );
-      return jsonResponse(
-        { ok: false, error: "Email delivery failed. Please try again later." },
-        502,
-      );
+      const error =
+        emailResponse.status === 401
+          ? "The email API key was rejected. Check RESEND_API_KEY in Cloudflare."
+          : emailResponse.status === 403 || emailResponse.status === 422
+            ? "The sender was rejected. Verify aasthafurniture.in in Resend and check CONTACT_FROM_EMAIL."
+            : `The email provider returned HTTP ${emailResponse.status}. Check the Cloudflare function logs and Resend email logs.`;
+      return jsonResponse({ ok: false, error }, 502);
     }
   } catch (error) {
     console.error("Contact form email request failed.", error);
