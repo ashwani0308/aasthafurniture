@@ -1,9 +1,11 @@
 ---
 import Container from "../Container.astro";
+import SectionHeading from "../SectionHeading.astro";
 import type { FactoryDirectContent } from "../../data";
+import type { AboutTextImageContent } from "../../data/about";
 
 interface Props {
-  content: FactoryDirectContent;
+  content: FactoryDirectContent | AboutTextImageContent;
 }
 
 const { content } = Astro.props;
@@ -16,33 +18,41 @@ const { content } = Astro.props;
     className="relative z-10 flex flex-col gap-10 overflow-hidden sm:gap-4 md:gap-8 lg:flex-row lg:gap-16"
   >
     <div class="flex flex-col justify-center lg:w-1/2">
-      <span
-        class="inline-block rounded-full py-2 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
-        >{content.eyebrow}</span
-      >
+      <SectionHeading
+        eyebrow={content.eyebrow}
+        heading={content.heading}
+        align="left"
+        className="mb-3"
+      />
 
-      <h2 class="heading-lg pb-3">{content.heading}</h2>
-
-      <p class="subtitle text-md">
-        {content.description}
-      </p>
-      <div class="mt-6 space-y-4">
-        {
-          content.features.map((feature, index) => (
-            <div
-              class:list={[
-                "border-b border-gray-200 pb-4",
-                { "border-t pt-4": index === 0 },
-              ]}
-            >
-              <h3 class="heading-lg pb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
-                {feature.heading}
-              </h3>
-              <p class="subtitle">{feature.description}</p>
+      {
+        "paragraphs" in content ? (
+          <div class="space-y-4">
+            {content.paragraphs.map((paragraph) => (
+              <p class="subtitle text-md">{paragraph}</p>
+            ))}
+          </div>
+        ) : (
+          <>
+            <p class="subtitle text-md">{content.description}</p>
+            <div class="mt-6 space-y-4">
+              {content.features.map((feature, index) => (
+                <div
+                  class:list={[
+                    "border-b border-gray-200 pb-4",
+                    { "border-t pt-4": index === 0 },
+                  ]}
+                >
+                  <h3 class="heading-lg mt-2 pb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                    {feature.heading}
+                  </h3>
+                  <p class="subtitle">{feature.description}</p>
+                </div>
+              ))}
             </div>
-          ))
-        }
-      </div>
+          </>
+        )
+      }
     </div>
     <div class="flex lg:w-1/2">
       <img

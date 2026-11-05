@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import CategoryHero from "../../components/furniture/CategoryHero.astro";
+import Hero from "../../components/Hero.astro";
 import ImageGallery from "../../components/sections/ImageGallery.astro";
 import CTAText from "../../components/sections/CTAText.astro";
 import TextImage from "../../components/sections/TextImage.astro";
@@ -10,6 +10,7 @@ import InstagramSlider from "../../components/sections/InstagramSlider.astro";
 
 import { homepageCTAImageContent, homepageCtaContent } from "../../data";
 import { furnitureCategories } from "../../data/furniture.ts";
+import type { ServiceHeroContent } from "../../data/services/types";
 
 export function getStaticPaths() {
   return furnitureCategories.map((category) => ({
@@ -23,6 +24,15 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.props;
+const heroContent: ServiceHeroContent = {
+  eyebrow: "Premium Furniture Since 1998",
+  heading: category.title,
+  description: category.description,
+  image: category.hero.image,
+  imageAlt: category.title,
+  primaryButton: { label: "View Collection", href: "/gallery" },
+  secondaryButton: { label: "Call Now", href: "tel:+919310244463" },
+};
 const galleryContent = {
   eyebrow: category.gallerySection?.eyebrow ?? "Explore Our Collection",
   heading: category.gallerySection?.heading ?? category.title,
@@ -36,11 +46,7 @@ const galleryContent = {
 ---
 
 <MainLayout title={category.title}>
-  <CategoryHero
-    title={category.title}
-    subtitle={category.description}
-    image={category.hero.image}
-  />
+  <Hero content={heroContent} />
 
   {category.gallery.length > 0 && <ImageGallery content={galleryContent} />}
 

@@ -1,14 +1,29 @@
 ---
 import Hero from "../components/Hero.astro";
+import ImageText from "../components/sections/ImageText.astro";
 import TextImage from "../components/sections/TextImage.astro";
 import CTAText from "../components/sections/CTAText.astro";
 import { homepageCtaContent } from "../data";
-import { aboutHeroContent, aboutTextImageContent } from "../data/about";
+import {
+  aboutCTAImageContent,
+  aboutHeroContent,
+  aboutCraftsmanshipContent,
+  aboutHeritageContent,
+  aboutManufacturingContent,
+} from "../data/about";
 import MainLayout from "../layouts/MainLayout.astro";
+import CTAImageBg from "../components/sections/CTAImageBg.astro";
 ---
 
-<MainLayout title="About Us">
+<MainLayout
+  title="About Aastha Furniture | Furniture Manufacturer in Muzaffarpur"
+  description="Aastha Furniture, a family-run wooden furniture business since 1970 in Muzaffarpur. Explore custom furniture, retail, wholesale, and furniture manufacturing."
+>
   <Hero content={aboutHeroContent} />
-  <TextImage content={aboutTextImageContent} />
+  <ImageText content={aboutHeritageContent} />
+  <CTAText content={homepageCtaContent} />
+  <TextImage content={aboutCraftsmanshipContent} />
+  <CTAImageBg content={aboutCTAImageContent} />
+  <ImageText content={aboutManufacturingContent} />
   <CTAText content={homepageCtaContent} />
 </MainLayout>

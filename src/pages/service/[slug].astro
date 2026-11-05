@@ -4,7 +4,7 @@ import Container from "../../components/Container.astro";
 import FAQAccordion from "../../components/FAQAccordion.astro";
 import CTAText from "../../components/sections/CTAText.astro";
 import TextImage from "../../components/sections/TextImage.astro";
-import { ArrowRight } from "@lucide/astro";
+import { ArrowRight, Mail } from "@lucide/astro";
 import { homepageCtaContent } from "../../data";
 import { servicePages } from "../../data/services";
 import MainLayout from "../../layouts/MainLayout.astro";
@@ -42,7 +42,11 @@ const { service } = Astro.props;
           class="btn btn-secondary btn-lg btn-icon-right mt-7"
         >
           {service.faqSection.primaryButton.label}
-          <ArrowRight />
+          {service.faqSection.primaryButton.href.startsWith("/contact") ? (
+            <Mail />
+          ) : (
+            <ArrowRight />
+          )}
         </a>
       </div>
       <FAQAccordion items={service.faqSection.faqs} />

@@ -1,4 +1,6 @@
 ---
+import { ArrowRight, Mail } from "@lucide/astro";
+
 interface Props {
   heading: string;
   subheading: string;
@@ -18,9 +20,16 @@ const { heading, subheading, buttonLabel, href } = Astro.props;
     >
       {heading}
     </h3>
-    <p class="mt-4 leading-7 text-cream/85">{subheading}</p>
+    <p class="mt-4 hidden leading-7 text-cream/85 sm:block">{subheading}</p>
   </div>
-  <a href={href} class="btn btn-secondary btn-md mt-auto">
+  <a href={href} class="btn btn-secondary btn-sm mt-auto">
     {buttonLabel}
+    {
+      href.startsWith("/contact") ? (
+        <Mail class="h-5 w-5" />
+      ) : (
+        href.startsWith("/") && <ArrowRight class="h-5 w-5" />
+      )
+    }
   </a>
 </article>

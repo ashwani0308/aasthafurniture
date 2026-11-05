@@ -14,7 +14,7 @@ const customFurniture: ServicePageContent = {
       desktop: "/images/hero/custom_furniture_1600.webp",
     },
     primaryButton: { label: "Discuss Your Project", href: "/contact" },
-    secondaryButton: { label: "Call Now", href: "tel:+919999999999" },
+    secondaryButton: { label: "Call Now", href: "tel:+919310244463" },
   },
   textImageContent: {
     eyebrow: "MADE TO MEASURE",

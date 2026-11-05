@@ -143,8 +143,8 @@ export const homepageHeroSlides = [
     heading: "Luxury Furniture. Less Markup.",
     description: "Exceptional furniture, straight from the source.",
     primaryButton: {
-      label: "Discover the Difference",
-      href: "/furniture/bedroom",
+      label: "Read More",
+      href: "/about",
     },
     secondaryButton: { label: "Contact Us", href: "/contact" },
   },
@@ -159,8 +159,8 @@ export const homepageHeroSlides = [
     description:
       "We create custom wooden furniture tailored to your space, style, and requirements.",
     primaryButton: {
-      label: "Explore Custom Furniture",
-      href: "/furniture/bedroom",
+      label: "Read More",
+      href: "/service/custom-made-furniture",
     },
     secondaryButton: { label: "Contact Us", href: "/contact" },
   },
@@ -174,8 +174,8 @@ export const homepageHeroSlides = [
     heading: "Bulk Furniture Orders.",
     description: "Discuss your quantities, designs, and requirements with us.",
     primaryButton: {
-      label: "Enquire for Bulk Orders",
-      href: "/furniture/bedroom",
+      label: "Wholesale & Bulk Furniture",
+      href: "/service/bulk-wholesale-furniture",
     },
     secondaryButton: { label: "Contact Us", href: "/contact" },
   },
@@ -206,7 +206,7 @@ export const homepageCtaContent: HomepageCtaContent = {
   },
   callButton: {
     label: "Call Now",
-    href: "tel:+919999999999",
+    href: "tel:+919310244463",
   },
 };
 
@@ -214,27 +214,29 @@ export interface CTAImageContent {
   backgroundImage: string;
   heading: string;
   description: string;
-  primaryButton: {
+  primaryButton?: {
     label: string;
     href: string;
   };
   secondaryButton: {
     label: string;
     href: string;
+    icon?: "phone" | "email";
   };
 }
 
 export const homepageCTAImageContent: CTAImageContent = {
   backgroundImage: "/images/cta/cta-bg.jpg",
-  heading: "Browse Furniture Categories",
-  description: "Discover handcrafted furniture designed for every room.",
+  heading: "Ready to Choose. Made to Order. Available in Bulk.",
+  description:
+    "Explore ready-made wooden furniture, create custom designs, or source furniture in bulk. Whatever your needs, Aastha Furniture has the right solutions for you.",
   primaryButton: {
-    label: "View Collection",
-    href: "/gallery",
+    label: "Custom Designs",
+    href: "/service/custom-made-furniture",
   },
   secondaryButton: {
-    label: "Call Now",
-    href: "tel:+919999999999",
+    label: "Wholesale & Bulk Orders",
+    href: "/service/bulk-wholesale-furniture",
   },
 };
 

@@ -14,7 +14,7 @@ const furnitureRepair: ServicePageContent = {
       desktop: "/images/hero/furniture_restoration-1600.webp",
     },
     primaryButton: { label: "Ask About a Repair", href: "/contact" },
-    secondaryButton: { label: "Call Now", href: "tel:+919999999999" },
+    secondaryButton: { label: "Call Now", href: "tel:+919310244463" },
   },
   textImageContent: {
     eyebrow: "REPAIR AND RESTORATION",

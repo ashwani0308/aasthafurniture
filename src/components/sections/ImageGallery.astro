@@ -12,12 +12,14 @@ const { content } = Astro.props;
 ---
 
 <section class="section-background bg-white px-4 py-16 sm:px-8 lg:px-10">
-  <SectionHeading
-    eyebrow={content.eyebrow}
-    heading={content.heading}
-    subtext={content.description}
-    headingId="recent-works-title"
-  />
+  <Container>
+    <SectionHeading
+      eyebrow={content.eyebrow}
+      heading={content.heading}
+      subtext={content.description}
+      headingId="recent-works-title"
+    />
+  </Container>
   <Container className="relative z-10">
     <div class="justified-gallery">
       {

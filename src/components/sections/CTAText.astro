@@ -1,5 +1,5 @@
 ---
-import { Phone, ArrowRight } from "@lucide/astro";
+import { Phone, ArrowRight, Mail } from "@lucide/astro";
 import Container from "../Container.astro";
 import type { HomepageCtaContent } from "../../data";
 
@@ -8,6 +8,9 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const QuoteIcon = content.quoteButton.href.startsWith("/contact")
+  ? Mail
+  : ArrowRight;
 ---
 
 <section class="px-4 py-8 sm:px-8 lg:px-10">
@@ -25,10 +28,10 @@ const { content } = Astro.props;
           >{content.eyebrow}</span
         >
 
-        <h2 class="heading-lg mt-0 color-heading">{content.heading}</h2>
+        <h2 class="heading-lg mb-4 color-heading">{content.heading}</h2>
 
         <p
-          class="mt-4 max-w-xl text-base leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8 md:max-w-xl"
+          class="pt-4 max-w-xl text-base leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8 md:max-w-xl"
         >
           {content.description}
         </p>
@@ -42,7 +45,7 @@ const { content } = Astro.props;
           class="btn btn-primary btn-lg btn-icon-right w-full sm:w-auto"
         >
           {content.quoteButton.label}
-          <ArrowRight />
+          <QuoteIcon />
         </a>
 
         <a

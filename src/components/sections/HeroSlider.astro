@@ -1,4 +1,6 @@
 ---
+import { ArrowRight, Mail } from "@lucide/astro";
+
 interface Slide {
   image: {
     desktop: string;
@@ -84,12 +86,26 @@ const loop = slides.length > 1;
             <div class="mt-4 flex flex-wrap gap-4">
               <a class="btn btn-primary btn-lg" href={slide.primaryButton.href}>
                 {slide.primaryButton.label}
+                {slide.primaryButton.href.startsWith("/contact") ? (
+                  <Mail class="h-5 w-5" />
+                ) : (
+                  slide.primaryButton.href.startsWith("/") && (
+                    <ArrowRight class="h-5 w-5" />
+                  )
+                )}
               </a>
               <a
                 class="btn btn-secondary btn-lg"
                 href={slide.secondaryButton.href}
               >
                 {slide.secondaryButton.label}
+                {slide.secondaryButton.href.startsWith("/contact") ? (
+                  <Mail class="h-5 w-5" />
+                ) : (
+                  slide.secondaryButton.href.startsWith("/") && (
+                    <ArrowRight class="h-5 w-5" />
+                  )
+                )}
               </a>
             </div>
           </div>

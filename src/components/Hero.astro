@@ -1,12 +1,23 @@
 ---
 import type { ServiceHeroContent } from "../data/services/types";
-import { Phone, ArrowRight } from "@lucide/astro";
+import { Phone, ArrowRight, Mail } from "@lucide/astro";
 
 interface Props {
   content: ServiceHeroContent;
 }
 
 const { content } = Astro.props;
+const getButtonIcon = (href: string) =>
+  href.startsWith("/contact")
+    ? Mail
+    : href.startsWith("/")
+      ? ArrowRight
+      : Phone;
+const PrimaryIcon = getButtonIcon(content.primaryButton?.href ?? "");
+const SecondaryIcon =
+  content.secondaryButton.icon === "email"
+    ? Mail
+    : getButtonIcon(content.secondaryButton.href);
 const imageSource =
   typeof content.image === "string" ? content.image : content.image.desktop;
 const responsiveImage =
@@ -28,7 +39,7 @@ const responsiveImage =
     }
     <img
       src={imageSource}
-      alt=""
+      alt={content.imageAlt ?? ""}
       class="h-full w-full object-cover"
       loading="eager"
       fetchpriority="high"
@@ -46,31 +57,35 @@ const responsiveImage =
     <div class="mx-auto max-w-4xl text-center">
       <!-- Tagline -->
       <span
-        class="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-medium tracking-[0.3em] uppercase text-white backdrop-blur"
+        class="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-1 text-xs font-medium tracking-[0.3em] uppercase text-white backdrop-blur"
       >
         {content.eyebrow}
       </span>
 
-      <h1 class="display text-cream heading-lg pb-4">
+      <h1 class="display text-cream heading-lg pb-2">
         {content.heading}
       </h1>
 
-      <p class="lead text-white/90">
+      <p class="subtitle text-cream">
         {content.description}
       </p>
 
       <!-- Buttons -->
-      <div class="flex flex-wrap justify-center gap-4 mt-10">
-        <a
-          href={content.primaryButton.href}
-          class="btn btn-primary btn-lg btn-icon-right"
-        >
-          <ArrowRight />
-          {content.primaryButton.label}
-        </a>
+      <div class="flex flex-wrap justify-center gap-4 mt-5">
+        {
+          content.primaryButton && (
+            <a
+              href={content.primaryButton.href}
+              class="btn btn-primary btn-lg btn-icon-right"
+            >
+              <PrimaryIcon />
+              {content.primaryButton.label}
+            </a>
+          )
+        }
 
         <a href={content.secondaryButton.href} class="btn btn-secondary btn-lg">
-          <Phone class="h-5 w-5" />
+          <SecondaryIcon class="h-5 w-5" />
           {content.secondaryButton.label}
         </a>
       </div>

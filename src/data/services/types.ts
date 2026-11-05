@@ -11,13 +11,15 @@ export interface ServiceHeroContent {
         tablet: string;
         mobile: string;
       };
-  primaryButton: {
+  imageAlt?: string;
+  primaryButton?: {
     label: string;
     href: string;
   };
   secondaryButton: {
     label: string;
     href: string;
+    icon?: "phone" | "email";
   };
 }
 

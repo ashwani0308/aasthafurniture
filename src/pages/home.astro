@@ -6,6 +6,7 @@ import CTAText from "../components/sections/CTAText.astro";
 import TextImage from "../components/sections/TextImage.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
 import TheProcess from "../components/sections/TheProcess.astro";
 import InstagramSlider from "../components/sections/InstagramSlider.astro";
 import Testimonials from "../components/sections/Testimonials.astro";
@@ -38,7 +39,9 @@ import {
       eyebrow={homepageServices.eyebrow}
       heading={homepageServices.heading}
       subtext={homepageServices.subtext}
+      subtextClassName="hidden sm:block"
     />
+
     <CardRow items={homepageServices.items} />
   </Section>
   <ImageGallery content={homepageRecentWorkContent} />

@@ -62,7 +62,7 @@ const livingRoomFurniture = {
     },
     secondaryButton: {
       label: "Call Now",
-      href: "tel:+919999999999",
+      href: "tel:+919310244463",
     },
   },
   gallery: [

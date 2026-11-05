@@ -14,7 +14,7 @@ const bulkWholesaleFurniture: ServicePageContent = {
       desktop: "/images/hero/slider_image_4_1600.webp",
     },
     primaryButton: { label: "Enquire About Bulk Orders", href: "/contact" },
-    secondaryButton: { label: "Call Now", href: "tel:+919999999999" },
+    secondaryButton: { label: "Call Now", href: "tel:+919310244463" },
   },
   textImageContent: {
     eyebrow: "BULK AND WHOLESALE ORDERS",

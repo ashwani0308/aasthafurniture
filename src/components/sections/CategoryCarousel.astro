@@ -1,5 +1,6 @@
 ---
 import CategoryCard from "../cards/CategoryCard.astro";
+import Container from "../Container.astro";
 import SectionHeading from "../SectionHeading.astro";
 
 interface Category {
@@ -50,11 +51,13 @@ const {
   data-delay={autoplayDelay}
   data-show-dots={showDots}
 >
-  <SectionHeading
-    eyebrow={headingContent.eyebrow}
-    heading={headingContent.heading}
-    subtext={headingContent.subtext}
-  />
+  <Container>
+    <SectionHeading
+      eyebrow={headingContent.eyebrow}
+      heading={headingContent.heading}
+      subtext={headingContent.subtext}
+    />
+  </Container>
   <div class="embla overflow-hidden pt-4 pb-6">
     <div class="embla__container">
       {
