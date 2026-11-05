@@ -49,7 +49,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 The contact form is sent by a Cloudflare Pages Function at
 `functions/api/contact.ts`. It delivers enquiries to
-`info@aasthafurniture.in` through the Resend email API.
+`iamashwanisharma@gmail.com` through the Resend email API.
 
 To enable delivery in Cloudflare:
 

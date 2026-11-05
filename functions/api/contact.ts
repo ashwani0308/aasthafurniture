@@ -12,7 +12,7 @@ interface ContactFields {
   website: string;
 }
 
-const recipient = "info@aasthafurniture.in";
+const recipient = "iamashwanisharma@gmail.com";
 const allowedServices = new Set([
   "custom-made-furniture",
   "bulk-wholesale-furniture",
