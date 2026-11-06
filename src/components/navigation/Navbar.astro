@@ -1,6 +1,10 @@
 ---
 import { navigation } from "../../data/navigation";
 import { ChevronDown, Phone, Menu } from "@lucide/astro";
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isCurrentPage = (url: string) =>
+  (url.replace(/\/+$/, "") || "/") === currentPath;
 ---
 
 <header
@@ -26,37 +30,61 @@ import { ChevronDown, Phone, Menu } from "@lucide/astro";
     <nav class="hidden lg:block h-full">
       <ul class="flex items-center gap-10 h-full">
         {
-          navigation.map((item) => (
-            <li class="group relative h-full flex items-center">
-              {item.children ? (
-                <>
-                  <button class="nav-color flex items-center gap-1 h-full text-[15px] font-medium transition-colors duration-300 hover:text-primary">
+          navigation.map((item) => {
+            const isItemActive = item.url
+              ? isCurrentPage(item.url)
+              : (item.children?.some((child) => isCurrentPage(child.url)) ??
+                false);
+
+            return (
+              <li class="group relative h-full flex items-center">
+                {item.children ? (
+                  <>
+                    <button
+                      class:list={[
+                        "nav-color flex items-center gap-1 h-full text-[15px] font-medium transition-colors duration-300",
+                        isItemActive ? "text-secondary" : "hover:text-primary",
+                      ]}
+                    >
+                      {item.title}
+
+                      <ChevronDown class="h-4 w-4 transition duration-300 group-hover:rotate-180" />
+                    </button>
+
+                    <div class="absolute left-0 top-full hidden w-72 overflow-hidden bg-cream shadow-2xl group-hover:block">
+                      {item.children.map((child) => (
+                        <a
+                          href={child.url}
+                          aria-current={
+                            isCurrentPage(child.url) ? "page" : undefined
+                          }
+                          class:list={[
+                            "block px-6 py-3 text-[15px] transition",
+                            isCurrentPage(child.url)
+                              ? "bg-secondary-50 text-secondary"
+                              : "hover:bg-stone-50 hover:text-primary",
+                          ]}
+                        >
+                          {child.title}
+                        </a>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <a
+                    href={item.url}
+                    aria-current={isItemActive ? "page" : undefined}
+                    class:list={[
+                      "nav-color h-full flex items-center text-[15px] font-medium transition-colors duration-300",
+                      isItemActive ? "text-secondary" : "hover:text-primary",
+                    ]}
+                  >
                     {item.title}
-
-                    <ChevronDown class="h-4 w-4 transition duration-300 group-hover:rotate-180" />
-                  </button>
-
-                  <div class="absolute left-0 top-full hidden w-72 overflow-hidden bg-cream shadow-2xl group-hover:block">
-                    {item.children.map((child) => (
-                      <a
-                        href={child.url}
-                        class="block px-6 py-3 text-[15px] transition hover:bg-stone-50 hover:text-primary"
-                      >
-                        {child.title}
-                      </a>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <a
-                  href={item.url}
-                  class="nav-color h-full flex items-center text-[15px] font-medium transition-colors duration-300 hover:text-primary"
-                >
-                  {item.title}
-                </a>
-              )}
-            </li>
-          ))
+                  </a>
+                )}
+              </li>
+            );
+          })
         }
       </ul>
     </nav>
@@ -91,34 +119,61 @@ import { ChevronDown, Phone, Menu } from "@lucide/astro";
     <nav class="px-6 py-6">
       <ul class="space-y-1">
         {
-          navigation.map((item) => (
-            <li>
-              {item.children ? (
-                <details>
-                  <summary class="cursor-pointer py-3 text-[15px] font-medium">
-                    {item.title}
-                  </summary>
+          navigation.map((item) => {
+            const isItemActive = item.url
+              ? isCurrentPage(item.url)
+              : (item.children?.some((child) => isCurrentPage(child.url)) ??
+                false);
 
-                  <ul class="ml-5 mt-2 space-y-2">
-                    {item.children.map((child) => (
-                      <li>
-                        <a
-                          href={child.url}
-                          class="block py-2 text-sm text-stone-600"
-                        >
-                          {child.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              ) : (
-                <a href={item.url} class="block py-3 text-[15px] font-medium">
-                  {item.title}
-                </a>
-              )}
-            </li>
-          ))
+            return (
+              <li>
+                {item.children ? (
+                  <details open={isItemActive}>
+                    <summary
+                      class:list={[
+                        "cursor-pointer py-3 text-[15px] font-medium",
+                        isItemActive && "text-secondary",
+                      ]}
+                    >
+                      {item.title}
+                    </summary>
+
+                    <ul class="ml-5 mt-2 space-y-2">
+                      {item.children.map((child) => (
+                        <li>
+                          <a
+                            href={child.url}
+                            aria-current={
+                              isCurrentPage(child.url) ? "page" : undefined
+                            }
+                            class:list={[
+                              "block py-2 text-sm",
+                              isCurrentPage(child.url)
+                                ? "text-secondary"
+                                : "text-stone-600",
+                            ]}
+                          >
+                            {child.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ) : (
+                  <a
+                    href={item.url}
+                    aria-current={isItemActive ? "page" : undefined}
+                    class:list={[
+                      "block py-3 text-[15px] font-medium",
+                      isItemActive ? "text-secondary" : "",
+                    ]}
+                  >
+                    {item.title}
+                  </a>
+                )}
+              </li>
+            );
+          })
         }
       </ul>
 
