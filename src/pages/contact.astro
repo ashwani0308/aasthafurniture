@@ -38,19 +38,19 @@ const contactHeroContent: ServiceHeroContent = {
         </p>
       </header>
 
+      <div
+        id="contact-form-status"
+        class="hidden mx-auto mb-4 w-full max-w-2xl rounded-md px-4 py-3 text-center text-sm"
+        role="status"
+        aria-live="polite"
+      >
+      </div>
       <form
         id="contact-form"
         action="/api/contact"
         method="post"
         class="mx-auto grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2 sm:p-6"
       >
-        <div
-          id="contact-form-status"
-          class="hidden rounded-md px-4 py-3 text-sm sm:col-span-2"
-          role="status"
-          aria-live="polite"
-        >
-        </div>
         <input
           name="website"
           type="text"
@@ -154,7 +154,8 @@ const contactHeroContent: ServiceHeroContent = {
       'button[type="submit"]',
     );
     if (submitButton) submitButton.disabled = true;
-    status.className = "rounded-md bg-primary/5 px-4 py-3 text-sm text-primary";
+    status.className =
+      "mx-auto mb-4 w-full max-w-2xl rounded-md bg-primary/5 px-4 py-3 text-center text-sm text-primary";
     status.textContent = "Sending your enquiry...";
     let failureMessage =
       "We couldn't send your enquiry. Please try again or call us at +91 93102 44463.";
@@ -195,11 +196,12 @@ const contactHeroContent: ServiceHeroContent = {
 
       form.reset();
       status.className =
-        "rounded-md bg-green-50 px-4 py-3 text-sm text-green-800";
+        "mx-auto mb-4 w-full max-w-2xl rounded-md bg-green-50 px-4 py-3 text-center text-sm text-green-800";
       status.textContent =
         "Thank you. Your enquiry has been sent, and our team will be in touch.";
     } catch {
-      status.className = "rounded-md bg-red-50 px-4 py-3 text-sm text-red-800";
+      status.className =
+        "mx-auto mb-4 w-full max-w-2xl rounded-md bg-red-50 px-4 py-3 text-center text-sm text-red-800";
       status.textContent = failureMessage;
     } finally {
       if (submitButton) submitButton.disabled = false;
