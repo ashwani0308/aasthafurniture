@@ -2,9 +2,11 @@ import { furnitureCategories } from "../data/furniture";
 import { servicePages } from "../data/services";
 
 const pagePaths = [
-  "/home",
+  "/",
   "/about",
   "/contact",
+  "/privacy-policy",
+  "/terms-and-conditions",
   ...furnitureCategories.map((category) => `/furniture/${category.slug}`),
   ...servicePages.map((service) => `/service/${service.slug}`),
 ];

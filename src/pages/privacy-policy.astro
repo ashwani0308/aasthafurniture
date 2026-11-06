@@ -1,0 +1,199 @@
+---
+import Container from "../components/Container.astro";
+import Section from "../components/Section.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const lastUpdated = "6 November 2026";
+
+const sections = [
+  {
+    title: "1. About This Privacy Policy",
+    content: [
+      'Aastha Furniture ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we collect, use, store, and protect information when you visit https://aasthafurniture.in, contact us, submit an enquiry, or communicate with us through WhatsApp, phone, or email.',
+      "Our website is an informational website. It allows visitors to explore our furniture, learn about our services, and contact us for product details, custom furniture requirements, quotations, and wholesale or bulk enquiries. We do not currently offer online checkout or payment through this website.",
+    ],
+  },
+  {
+    title: "2. Information We Collect",
+    content: [
+      "When you submit our website contact form, we may collect the following information:",
+    ],
+    bullets: [
+      "Name – to identify and address you.",
+      "Phone number – to contact you about your enquiry.",
+      "Email address – to respond to your enquiry, where provided.",
+      "Message – details about the furniture, product, service, quotation, or other requirement you wish to discuss.",
+    ],
+    after: [
+      "If you contact us by phone, email, or WhatsApp, we may receive the information you choose to share in that conversation, such as your name, contact details, furniture preferences, photographs, measurements, or delivery-area information.",
+      "When you visit our website, technical information may also be processed by our hosting and security infrastructure. This can include IP address, browser type, device information, pages requested, and basic server or security logs.",
+    ],
+  },
+  {
+    title: "3. How We Use Your Information",
+    content: [
+      "We use the information collected for legitimate business and communication purposes, including:",
+    ],
+    bullets: [
+      "Responding to product and furniture enquiries.",
+      "Discussing custom-made furniture designs, dimensions, materials, and finishes.",
+      "Providing quotations and information about availability or order requirements.",
+      "Responding to retail, wholesale, dealer, business, and bulk-order enquiries.",
+      "Contacting you by phone, email, or WhatsApp in relation to your enquiry.",
+      "Operating, maintaining, and protecting our website and preventing spam, misuse, or security incidents.",
+      "Maintaining relevant business records and meeting applicable legal obligations.",
+    ],
+  },
+  {
+    title: "4. Contact Form and Cloudflare",
+    content: [
+      "Our website is hosted using Cloudflare Pages. Contact form submissions are intended to be processed through a Cloudflare Pages Function or related Cloudflare infrastructure.",
+      "The information you enter in the contact form is used to receive and respond to your enquiry. Depending on the email-delivery configuration connected to our form function, your enquiry may also be processed by an email service provider so that it can be delivered to our business inbox.",
+      "Cloudflare and any configured service providers may process limited technical or personal information as necessary to host the website, transmit form submissions, deliver messages, protect the website, and maintain service security.",
+      "We do not sell your contact-form information.",
+    ],
+  },
+  {
+    title: "5. WhatsApp, Phone and Email",
+    content: [
+      "Our website may contain links that allow you to contact us through WhatsApp, phone, or email. If you choose to use these services, the relevant service provider will process information in accordance with its own terms and privacy policy.",
+      "For example, WhatsApp is operated by Meta. Information you send through WhatsApp is subject to WhatsApp's privacy practices. Please avoid sharing payment details, passwords, or other sensitive information through ordinary messages.",
+      "You can contact us directly at info@aasthafurniture.in or +91 93102 44463.",
+    ],
+  },
+  {
+    title: "6. Cookies, Analytics and Similar Technologies",
+    content: [
+      "Our hosting, security, or website infrastructure may use cookies or similar technologies where necessary for website operation, security, or performance.",
+      "We have not confirmed that optional visitor analytics or advertising-tracking tools are enabled on this website. If we add tools such as Google Analytics, advertising pixels, or other optional tracking technologies, we will update this policy to explain what information they collect and why, and provide any required choices or notices.",
+      "You can manage cookies through your browser settings. Blocking certain cookies may affect some website functionality.",
+    ],
+  },
+  {
+    title: "7. When We Share Information",
+    content: [
+      "We do not sell, rent, or trade your personal information. We may share limited information only where reasonably necessary:",
+    ],
+    bullets: [
+      "With website hosting, security, form-processing, or email-delivery providers that help us operate the website and respond to enquiries.",
+      "With professional advisers or service providers where necessary for our business operations.",
+      "With government authorities, regulators, or law-enforcement agencies when required by applicable law or a valid legal request.",
+      "To protect our rights, business, customers, website, or the safety of others.",
+    ],
+    after: [
+      "Where service providers process information for us, they should use it only for the services they provide and in accordance with applicable requirements.",
+    ],
+  },
+  {
+    title: "8. Data Storage and Retention",
+    content: [
+      "We keep enquiry information only for as long as reasonably necessary to respond to your request, maintain relevant business records, resolve disputes, protect our business, or comply with legal requirements.",
+      "Information may be retained in our business email inbox, contact-form delivery systems, or other business records. Technical logs may be retained by hosting or security providers according to their own retention practices.",
+      "When information is no longer required, we take reasonable steps to delete it or otherwise dispose of it, subject to applicable legal and operational requirements.",
+    ],
+  },
+  {
+    title: "9. Data Security",
+    content: [
+      "We take reasonable steps to protect the information shared with us against unauthorised access, misuse, loss, alteration, or disclosure. Website hosting and security services may provide additional technical safeguards.",
+      "However, no website, internet transmission, email, or electronic storage system can be guaranteed to be completely secure. Please share only the information reasonably necessary for your enquiry.",
+    ],
+  },
+  {
+    title: "10. Your Choices and Privacy Requests",
+    content: [
+      "You may contact us to ask about the personal information you have shared with us, request correction of inaccurate details, or ask us to stop using information for an enquiry where we no longer need it.",
+      "Some information may need to be retained where required by law, for legitimate business records, or to resolve a dispute.",
+      "To make a privacy request or raise a concern, email us at info@aasthafurniture.in. Please include enough information for us to identify the relevant enquiry. We may need to verify your identity before acting on a request.",
+    ],
+  },
+  {
+    title: "11. Children's Privacy",
+    content: [
+      "Our website and furniture enquiry services are intended for general audiences and are not directed specifically at children. We do not knowingly request personal information from children for independent use of our enquiry services. A parent or lawful guardian may contact us if they believe a child has shared personal information with us.",
+    ],
+  },
+  {
+    title: "12. External Websites",
+    content: [
+      "Our website may contain links to third-party websites or services, including WhatsApp and social media platforms. We do not control those websites and are not responsible for their content, security, or privacy practices. Please review their privacy policies before sharing information with them.",
+    ],
+  },
+  {
+    title: "13. Changes to This Policy",
+    content: [
+      "We may update this Privacy Policy when our website, services, technology, or legal requirements change. The revised version will be published on this page with an updated date. We encourage visitors to review this page periodically.",
+    ],
+  },
+  {
+    title: "14. Contact Us",
+    content: [
+      "If you have questions about this Privacy Policy or how we handle your information, please contact us:",
+    ],
+    bullets: [
+      "Business: Aastha Furniture",
+      "Address: Basanti Lane, Dewan Road, Muzaffarpur, Bihar – 842001, India",
+      "Email: info@aasthafurniture.in",
+      "Phone / WhatsApp: +91 93102 44463",
+      "Website: https://aasthafurniture.in",
+    ],
+  },
+];
+---
+
+<MainLayout
+  title="Privacy Policy | Aastha Furniture"
+  description="Read how Aastha Furniture collects, uses, stores, and protects information shared through our website and contact channels."
+>
+  <Section padding="px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+    <Container className="max-w-3xl">
+      <article class="space-y-8 text-slate-700">
+        <header class="space-y-3 pt-8">
+          <h1 class="heading-lg text-primary">Privacy Policy</h1>
+          <p>
+            Your privacy matters to us. Learn how Aastha Furniture handles
+            information shared through our website and communication channels.
+          </p>
+          <p class="text-sm text-slate-500">Last updated: {lastUpdated}</p>
+        </header>
+
+        <p
+          class="rounded-md border border-primary/10 bg-primary/5 px-3 py-0 leading-7"
+        >
+          This policy applies to &nbsp;
+          <a
+            href="https://aasthafurniture.in"
+            class="font-medium text-secondary underline underline-offset-4"
+          >
+            aasthafurniture.in &nbsp;
+          </a>
+          and information you share with Aastha Furniture through our contact form,
+          phone, email, or WhatsApp.
+        </p>
+
+        <div class="space-y-8 py-4">
+          {
+            sections.map((section) => (
+              <section class="space-y-3">
+                <h2 class="heading-sm text-primary">{section.title}</h2>
+                {section.content.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+                {section.bullets && (
+                  <ul class="list-disc space-y-2 pl-6 marker:text-secondary">
+                    {section.bullets.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.after?.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </section>
+            ))
+          }
+        </div>
+      </article>
+    </Container>
+  </Section>
+</MainLayout>

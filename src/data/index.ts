@@ -137,14 +137,18 @@ export const homepageHeroSlides = [
       tablet: "/images/hero/slider_image_1_1024.webp",
       mobile: "/images/hero/slider_image_1_640.webp",
     },
-    eyebrow: "SINCE 1920",
-    heading: "Our Family Tradition",
-    description: "A love for wood, passed down through five generations.",
+    eyebrow: "A FAMILY LEGACY SINCE 1970",
+    heading: "A Tradition of Craftsmanship.",
+    description:
+      "Built on generations of experience, guided by a passion for creating beautiful wooden furniture.",
     primaryButton: {
       label: "Discover Our Story",
       href: "/about",
     },
-    secondaryButton: { label: "Get in Touch", href: "/contact" },
+    secondaryButton: {
+      label: "Explore Our Collection",
+      href: "/gallery",
+    },
   },
   {
     image: {
@@ -152,14 +156,18 @@ export const homepageHeroSlides = [
       tablet: "/images/hero/slider_image_2_1024.webp",
       mobile: "/images/hero/slider_image_2_640.webp",
     },
-    eyebrow: "Factory-direct savings",
-    heading: "Luxury Furniture. Less Markup.",
-    description: "Exceptional furniture, straight from the source.",
+    eyebrow: "DIRECT FROM OUR WORKSHOP",
+    heading: "Exceptional Furniture. Better Value.",
+    description:
+      "Discover thoughtfully crafted wooden furniture with the advantage of buying directly from the manufacturer.",
     primaryButton: {
-      label: "Read More",
-      href: "/about",
+      label: "Explore Our Furniture",
+      href: "/gallery",
     },
-    secondaryButton: { label: "Contact Us", href: "/contact" },
+    secondaryButton: {
+      label: "Get in Touch",
+      href: "/contact",
+    },
   },
   {
     image: {
@@ -168,14 +176,17 @@ export const homepageHeroSlides = [
       mobile: "/images/hero/slider_image_3_640.webp",
     },
     eyebrow: "CUSTOM DESIGNS. PERSONAL TOUCH.",
-    heading: "Furniture Made for Your Space.",
+    heading: "Your Space. Your Style. Our Craft.",
     description:
-      "We create custom wooden furniture tailored to your space, style, and requirements.",
+      "From thoughtful designs to the perfect finish, we create custom wooden furniture around your needs.",
     primaryButton: {
-      label: "Read More",
+      label: "Explore Custom Furniture",
       href: "/service/custom-made-furniture",
     },
-    secondaryButton: { label: "Contact Us", href: "/contact" },
+    secondaryButton: {
+      label: "Discuss Your Design",
+      href: "/contact",
+    },
   },
   {
     image: {
@@ -184,13 +195,17 @@ export const homepageHeroSlides = [
       mobile: "/images/hero/slider_image_4_640.webp",
     },
     eyebrow: "FOR DEALERS. BUSINESSES. BULK BUYERS.",
-    heading: "Bulk Furniture Orders.",
-    description: "Discuss your quantities, designs, and requirements with us.",
+    heading: "Your Partner for Bulk Furniture.",
+    description:
+      "Reliable furniture sourcing directly from our workshop for retailers, businesses, and larger projects.",
     primaryButton: {
-      label: "Wholesale & Bulk Furniture",
+      label: "Explore Wholesale Options",
       href: "/service/bulk-wholesale-furniture",
     },
-    secondaryButton: { label: "Contact Us", href: "/contact" },
+    secondaryButton: {
+      label: "Enquire Now",
+      href: "/contact",
+    },
   },
 ];
 

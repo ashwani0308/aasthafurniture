@@ -27,9 +27,9 @@ const { content } = Astro.props;
 
       {
         "paragraphs" in content ? (
-          <div class="space-y-4">
+          <div>
             {content.paragraphs.map((paragraph) => (
-              <p class="subtitle text-md">{paragraph}</p>
+              <p class="subtitle text-md my-4">{paragraph}</p>
             ))}
           </div>
         ) : (

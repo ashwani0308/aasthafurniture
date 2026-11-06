@@ -1,0 +1,222 @@
+---
+import Container from "../components/Container.astro";
+import Section from "../components/Section.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const lastUpdated = "6 November 2026";
+
+const sections = [
+  {
+    title: "1. Introduction",
+    content: [
+      "Welcome to Aastha Furniture. These Terms & Conditions govern your access to and use of https://aasthafurniture.in.",
+      "By accessing or using this website, you agree to these terms. If you do not agree, please do not use the website.",
+      "This website is intended to provide information about our furniture, manufacturing capabilities, services, and business. It allows visitors to contact us for product information, custom furniture requirements, quotations, and retail, wholesale, or bulk enquiries. It does not currently provide online checkout or online payment facilities.",
+    ],
+  },
+  {
+    title: "2. About Aastha Furniture",
+    content: [
+      "Aastha Furniture is a family-run furniture business based at Basanti Lane, Dewan Road, Muzaffarpur, Bihar – 842001, India. Our family furniture heritage dates back to 1970.",
+      "We offer information and enquiries relating to wooden furniture, furniture manufacturing, custom-made furniture, and retail, wholesale, and bulk requirements. The availability of any particular product, material, design, or service must be confirmed with us.",
+    ],
+  },
+  {
+    title: "3. Website Information and Product Images",
+    content: [
+      "We make reasonable efforts to keep the information on this website useful and up to date. However, product descriptions, photographs, illustrations, dimensions, finishes, colours, and other details are provided for general information and may not represent the exact appearance or specifications of a finished item.",
+      "The appearance of wood grain, natural colour, polish, texture, upholstery, and other materials may vary between individual furniture pieces. Images may show examples, inspiration, or previously completed work.",
+      "Please contact us to confirm the actual product specifications, materials, dimensions, finish, and availability before making a purchase decision.",
+    ],
+  },
+  {
+    title: "4. Enquiries and Quotations",
+    content: [
+      "Submitting an enquiry through our website, email, phone, or WhatsApp does not create a confirmed purchase order or a binding commitment to supply furniture.",
+      "Any quotation or estimate shared by us is subject to confirmation of the product design, dimensions, materials, finish, quantity, availability, and other agreed requirements.",
+      "A quotation becomes part of an agreed transaction only when the relevant details and terms have been accepted by both parties. Please obtain written confirmation of the final specifications, price, payment schedule, and delivery or collection arrangements before proceeding.",
+      "Prices, estimates, and availability may change until the relevant order terms have been confirmed.",
+    ],
+  },
+  {
+    title: "5. Custom-Made Furniture",
+    content: [
+      "Custom-made furniture is prepared according to requirements discussed with the customer. These may include design references, measurements, materials, wood selection, finishes, colours, and other specifications.",
+      "Customers are responsible for checking and approving the final measurements, design details, and specifications shared for confirmation before work begins.",
+      "Because custom furniture is made to individual requirements, the finished item may have natural variations in wood grain, shade, texture, and other material characteristics.",
+      "Any advance payment, changes to an approved design, cancellation, completion schedule, or other custom-order conditions will be discussed and agreed separately before the order is confirmed.",
+    ],
+  },
+  {
+    title: "6. Retail, Wholesale and Bulk Orders",
+    content: [
+      "We may receive enquiries from individual customers, retailers, dealers, businesses, and project buyers for retail, wholesale, or bulk furniture requirements.",
+      "The availability of products, minimum quantities, pricing, production arrangements, transportation, delivery, and payment terms depend on the specific enquiry and must be agreed separately.",
+      "No minimum order quantity, discount, delivery timeline, or wholesale rate is guaranteed by the general information on this website. Please contact us for details relevant to your requirement.",
+    ],
+  },
+  {
+    title: "7. Orders, Payments and Delivery",
+    content: [
+      "This website does not currently accept online orders or online payments. Any purchase or furniture order is discussed and confirmed directly with Aastha Furniture.",
+      "Before an order is accepted, the customer and Aastha Furniture should agree on the relevant product details, final price, payment terms, delivery or collection arrangements, and any other applicable conditions.",
+      "Payment should be made only through a method and to an account or recipient confirmed directly by Aastha Furniture. Do not rely on payment instructions received from an unverified third party.",
+      "Delivery charges, transportation arrangements, installation, unloading, and delivery timelines, where applicable, will be discussed and confirmed separately for the relevant order.",
+    ],
+  },
+  {
+    title: "8. Cancellations, Changes and Returns",
+    content: [
+      "This website does not publish a general online return or cancellation facility. Any cancellation, change, replacement, repair, or return request relating to a confirmed purchase must be discussed directly with us and will be handled according to the terms agreed for that transaction and applicable law.",
+      "For custom-made or made-to-order furniture, customers should confirm all specifications before production begins. Any request to change or cancel an order after confirmation may be subject to the terms agreed between the parties and work already completed.",
+      "Nothing in these terms is intended to limit any consumer right or remedy that cannot lawfully be excluded under applicable Indian law.",
+    ],
+  },
+  {
+    title: "9. Website Use and Acceptable Conduct",
+    content: [
+      "You agree to use this website only for lawful purposes. You must not:",
+    ],
+    bullets: [
+      "Use the website in a way that violates applicable laws or regulations.",
+      "Attempt to gain unauthorised access to the website, server, contact form, or related systems.",
+      "Introduce malware, harmful code, spam, or other material that may disrupt the website.",
+      "Submit false, misleading, abusive, or unlawful information through our contact channels.",
+      "Copy, scrape, reproduce, or commercially exploit website content without permission, except where permitted by law.",
+    ],
+    after: [
+      "We may restrict access or take appropriate action where we reasonably believe the website is being misused.",
+    ],
+  },
+  {
+    title: "10. Intellectual Property",
+    content: [
+      "Unless otherwise stated, the website's text, branding, logos, graphics, photographs, design elements, and other original content belong to Aastha Furniture or are used with permission.",
+      "You may view and use the website for personal, non-commercial information and enquiry purposes. You must not reproduce, modify, publish, distribute, or commercially use our content without prior written permission, except where permitted by applicable law.",
+      "If a photograph or other item belongs to a third party, the rights of that third party remain unaffected.",
+    ],
+  },
+  {
+    title: "11. Third-Party Links and Services",
+    content: [
+      "Our website may link to third-party services such as WhatsApp, maps, social media platforms, or other external websites. These services are operated independently and are subject to their own terms and policies.",
+      "We do not control and are not responsible for the availability, content, security, or practices of third-party websites and services. Your use of them is at your own discretion.",
+    ],
+  },
+  {
+    title: "12. Website Availability and Disclaimer",
+    content: [
+      "We aim to keep our website accessible and its information accurate, but we do not guarantee uninterrupted availability, error-free operation, or that all information will always be complete or current.",
+      "The website and its content are provided for general information and enquiry purposes. To the extent permitted by applicable law, we disclaim warranties that cannot be reasonably guaranteed for an informational website.",
+      "Nothing in these terms excludes liability where such exclusion is prohibited by applicable law, including rights and remedies available to consumers under Indian law.",
+    ],
+  },
+  {
+    title: "13. Limitation of Liability",
+    content: [
+      "To the extent permitted by applicable law, Aastha Furniture will not be responsible for indirect or consequential loss arising solely from the use of, or inability to use, this informational website.",
+      "This section does not exclude or restrict liability that cannot legally be excluded or restricted, or any consumer rights and remedies available under applicable law.",
+      "Any issue concerning a confirmed furniture purchase or service will be considered in light of the specific terms agreed for that transaction and applicable law.",
+    ],
+  },
+  {
+    title: "14. Privacy",
+    content: [
+      "Your use of this website and the information you share with us are also subject to our Privacy Policy.",
+      "Please read our Privacy Policy to understand how we handle contact-form submissions and information shared through phone, email, and WhatsApp.",
+    ],
+    link: {
+      label: "Read our Privacy Policy",
+      href: "/privacy-policy",
+    },
+  },
+  {
+    title: "15. Changes to These Terms",
+    content: [
+      "We may update these Terms & Conditions when our website, services, or business practices change. Updated terms will be published on this page with a revised date.",
+      "Your continued use of the website after revised terms are published indicates your acceptance of the updated terms, to the extent permitted by applicable law.",
+    ],
+  },
+  {
+    title: "16. Governing Law and Jurisdiction",
+    content: [
+      "These Terms & Conditions are governed by the laws of India.",
+      "Subject to applicable law and the jurisdiction of any competent consumer forum, court, or authority, disputes relating to the use of this website shall be subject to the jurisdiction of the competent courts at Muzaffarpur, Bihar.",
+    ],
+  },
+  {
+    title: "17. Contact Us",
+    content: [
+      "For questions about these Terms & Conditions, furniture enquiries, quotations, or business-related matters, please contact us:",
+    ],
+    bullets: [
+      "Business: Aastha Furniture",
+      "Address: Basanti Lane, Dewan Road, Muzaffarpur, Bihar – 842001, India",
+      "Email: info@aasthafurniture.in",
+      "Phone / WhatsApp: +91 93102 44463",
+      "Website: https://aasthafurniture.in",
+    ],
+  },
+];
+---
+
+<MainLayout
+  title="Terms & Conditions | Aastha Furniture"
+  description="Read the terms and conditions for using the Aastha Furniture website and submitting furniture enquiries."
+>
+  <Section padding="px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+    <Container className="max-w-3xl">
+      <article class="space-y-8 text-slate-700">
+        <header class="space-y-3 pt-8">
+          <h1 class="heading-lg text-primary">Terms & Conditions</h1>
+          <p>
+            Please read these terms before using the Aastha Furniture website or
+            submitting a furniture enquiry.
+          </p>
+          <p class="text-sm text-slate-500">Last updated: {lastUpdated}</p>
+        </header>
+
+        <p
+          class="rounded-md border border-primary/10 bg-primary/5 px-3 py-0 leading-7"
+        >
+          Aastha Furniture's website is an informational and enquiry platform.
+          Product purchases, custom orders, quotations, payment terms, and
+          delivery arrangements are confirmed directly with our team.
+        </p>
+
+        <div class="space-y-8 pt-4">
+          {
+            sections.map((section) => (
+              <section class="space-y-3">
+                <h2 class="heading-sm text-primary">{section.title}</h2>
+                {section.content.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+                {section.bullets && (
+                  <ul class="list-disc space-y-2 pl-6 marker:text-secondary">
+                    {section.bullets.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.after?.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+                {section.link && (
+                  <p>
+                    <a
+                      href={section.link.href}
+                      class="font-medium text-secondary underline underline-offset-4 hover:text-primary"
+                    >
+                      {section.link.label}
+                    </a>
+                  </p>
+                )}
+              </section>
+            ))
+          }
+        </div>
+      </article>
+    </Container>
+  </Section>
+</MainLayout>
