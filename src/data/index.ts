@@ -89,30 +89,36 @@ export interface FactoryDirectContent {
 }
 
 export const factoryDirectContent: FactoryDirectContent = {
-  eyebrow: "FACTORY DIRECT. BETTER VALUE.",
-  heading: "Why Pay for the Showroom?",
+  eyebrow: "DIRECT FROM OUR WORKSHOP. BETTER VALUE.",
+  heading: "Quality Wooden Furniture, Direct from the Manufacturer",
   description:
-    "We manufacture our furniture ourselves. By selling directly, we reduce unnecessary overheads and middlemen — giving you better value without compromising on quality.",
+    "At Aastha Furniture, we manufacture and supply wooden furniture directly from our own workshop in Muzaffarpur, Bihar. By connecting customers directly with the manufacturer, we reduce unnecessary middlemen and offer quality craftsmanship, personalised furniture solutions, and better value for homes, businesses, and bulk buyers.",
+
   image: {
     src: "/images/section_image/why_pay_showroom.webp",
-    alt: "Custom-made furniture showcase",
+    alt: "Wooden furniture crafted by Aastha Furniture, a furniture manufacturer in Muzaffarpur",
   },
+
   features: [
     {
-      heading: "Made by Us",
-      description: "Furniture manufactured in our own facility.",
+      heading: "Made in Our Own Workshop",
+      description:
+        "We manufacture wooden furniture with care and attention to detail, backed by our family's furniture-making experience since 1970.",
     },
     {
-      heading: "Factory Direct Pricing",
-      description: "Fewer middlemen means better value.",
+      heading: "Factory-Direct Pricing",
+      description:
+        "Buy directly from the manufacturer and avoid unnecessary middlemen for better value on your furniture purchase.",
     },
     {
-      heading: "Quality Craftsmanship",
-      description: "Built with attention to materials and finishing.",
+      heading: "Craftsmanship You Can Trust",
+      description:
+        "From wooden beds and sofa sets to dining tables and custom furniture, every piece receives attention to construction, design, and finishing.",
     },
     {
-      heading: "For Homes & Businesses",
-      description: "Individual customers and furniture retailers welcome.",
+      heading: "Retail, Wholesale & Bulk Orders",
+      description:
+        "Whether you are furnishing your home, sourcing furniture for your business, or placing a bulk order, we offer solutions to suit your requirements.",
     },
   ],
 };
@@ -194,14 +200,13 @@ export interface HomepageCtaContent {
     href: string;
   };
 }
-
 export const homepageCtaContent: HomepageCtaContent = {
-  eyebrow: "Premium Furniture Manufacturer",
-  heading: "Your Space. Your Style. Our Craft.",
+  eyebrow: "QUALITY WOODEN FURNITURE IN MUZAFFARPUR",
+  heading: "Find Your Perfect Furniture.",
   description:
-    "Explore our furniture collection and talk to us about finding the right pieces for your home or business.",
+    "Explore ready-made wooden furniture, get custom designs, or enquire about wholesale and bulk orders. Quality craftsmanship from Aastha Furniture, since 1970.",
   quoteButton: {
-    label: "Get Free Quote",
+    label: "Enquire Now",
     href: "/contact",
   },
   callButton: {
@@ -227,15 +232,15 @@ export interface CTAImageContent {
 
 export const homepageCTAImageContent: CTAImageContent = {
   backgroundImage: "/images/cta/cta-bg.jpg",
-  heading: "Ready to Choose. Made to Order. Available in Bulk.",
+  heading: "Furniture Made for Every Need.",
   description:
-    "Explore ready-made wooden furniture, create custom designs, or source furniture in bulk. Whatever your needs, Aastha Furniture has the right solutions for you.",
+    "Explore ready-made wooden furniture, bring your custom designs to life, or source furniture directly from our workshop at factory-direct value.",
   primaryButton: {
-    label: "Custom Designs",
+    label: "Explore Custom Furniture",
     href: "/service/custom-made-furniture",
   },
   secondaryButton: {
-    label: "Wholesale & Bulk Orders",
+    label: "Wholesale & Bulk Enquiries",
     href: "/service/bulk-wholesale-furniture",
   },
 };

@@ -2,10 +2,12 @@ import type { FurnitureCategory } from "../furniture.ts";
 
 const diningRoomFurniture = {
   slug: "dining-room",
-  title: "Dining Room Furniture",
+  title: "Wooden Dining Room Furniture",
   description:
-    "Create a welcoming dining space with thoughtfully crafted furniture designed for everyday meals and special gatherings.",
+    "Explore wooden dining room furniture at Aastha Furniture, Muzaffarpur. Discover dining tables, dining chair sets, crockery units, and custom dining furniture.",
+
   cardImage: "/images/furniture/dining-room.webp",
+
   hero: {
     image: {
       mobile: "/images/hero/dining-room-furniture-640.webp",
@@ -13,58 +15,66 @@ const diningRoomFurniture = {
       desktop: "/images/hero/dining-room-furniture-1600.webp",
     },
   },
+
   gallerySection: {
-    eyebrow: "Explore Our Collections",
-    heading: "Dining Room Furniture",
+    eyebrow: "EXPLORE DINING ROOM FURNITURE",
+    heading: "Wooden Dining Furniture for Every Home",
     description:
-      "Discover dining furniture that brings people together in comfort and style.",
+      "Discover wooden dining tables, dining table sets, chairs, crockery units, and bar cabinets. Find furniture that brings comfort, functionality, and style to your dining space.",
   },
+
   textImageContent: {
-    eyebrow: "MADE FOR GATHERING",
-    heading: "Beautifully Crafted. Made to Bring People Together.",
+    eyebrow: "MADE FOR GATHERING. CRAFTED WITH CARE.",
+    heading: "Beautiful Wooden Dining Furniture for Everyday Living",
     description:
-      "Your dining space is where everyday meals become meaningful moments. From inviting dining tables and comfortable chairs to practical crockery units and bar cabinets, our furniture is designed to balance style, functionality, and lasting value. By manufacturing our furniture ourselves and selling directly, we aim to offer quality craftsmanship without unnecessary middlemen.",
+      "A dining space brings family and friends together, and the right furniture makes every gathering more special. At Aastha Furniture, we manufacture and supply wooden dining room furniture in Muzaffarpur, including dining tables, dining chairs, crockery units, and custom-made designs. With our family's furniture heritage since 1970, we combine traditional woodworking experience with modern designs to create dining furniture that suits your home and lifestyle.",
+
     image: {
       src: "/images/section_image/dining-sec.webp",
-      alt: "Thoughtfully crafted wooden dining table",
+      alt: "Wooden dining table and dining furniture crafted by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Made by Us",
+        heading: "Wooden Dining Tables & Sets",
         description:
-          "Dining furniture crafted through our own manufacturing process.",
+          "Explore dining tables and matching chair sets in different designs and sizes for your dining space.",
       },
       {
-        heading: "Designed for Gathering",
+        heading: "Dining Room Storage",
         description:
-          "Furniture suited to family meals, celebrations, and everyday living.",
+          "Discover crockery units, display cabinets, and bar cabinets for organised and stylish dining spaces.",
       },
       {
-        heading: "Quality Craftsmanship",
+        heading: "Custom-Made Dining Furniture",
         description:
-          "Careful attention to construction, materials, and finishing details.",
+          "Get dining furniture made to suit your preferred dimensions, design, seating requirements, and home interiors.",
       },
       {
-        heading: "Factory-Direct Value",
+        heading: "Manufacturer-Direct Value",
         description:
-          "Buy directly from the manufacturer for value without unnecessary middlemen.",
+          "Buy directly from Aastha Furniture and enjoy a personal buying experience focused on craftsmanship and value.",
       },
     ],
   },
+
   ctaImageContent: {
     backgroundImage: "/images/cta/cta-bg.jpg",
-    heading: "Find the Right Dining Furniture",
+    heading: "Bring Your Dining Space Together",
     description:
-      "Explore dining tables, chairs, and storage pieces crafted for your home and lifestyle.",
+      "Explore wooden dining tables, chairs, and custom dining furniture. Find the right design for your home with Aastha Furniture.",
+
     primaryButton: {
-      label: "Contact Us",
+      label: "Enquire About Dining Furniture",
       href: "/contact",
     },
+
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
+
   gallery: [],
 } as const satisfies FurnitureCategory;
 

@@ -17,8 +17,10 @@ const contactHeroContent: ServiceHeroContent = {
 
 <MainLayout title="Contact">
   <Hero content={contactHeroContent} />
-  <section class="px-4 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-    <Container>
+  <section
+    class="mx-auto max-w-3xl px-4 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24"
+  >
+    <Container maxWidth="768px">
       <header class="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
         <span
           class="inline-block rounded-full py-2 text-xs font-medium uppercase tracking-[0.2em] text-secondary"
@@ -32,127 +34,112 @@ const contactHeroContent: ServiceHeroContent = {
         </p>
       </header>
 
-      <div
-        class="grid grid-cols-1 items-stretch gap-8 overflow-hidden md:grid-cols-2 lg:gap-12"
+      <form
+        id="contact-form"
+        action="/api/contact"
+        method="post"
+        class="mx-auto max-w-2xl space-y-5 p-6 sm:p-8"
       >
-        <div class="h-full min-h-72">
-          <img
-            src="/images/section_image/contact-sec.png"
-            alt="Thoughtfully crafted furniture for your home"
-            class="h-full min-h-72 w-full object-cover md:min-h-0"
-            loading="lazy"
+        <div
+          id="contact-form-status"
+          class="hidden rounded-md px-4 py-3 text-sm"
+          role="status"
+          aria-live="polite"
+        >
+        </div>
+        <input
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+          hidden
+        />
+        <div>
+          <label for="name" class="mb-2 block font-medium text-primary">
+            Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
           />
         </div>
 
-        <form
-          id="contact-form"
-          action="/api/contact"
-          method="post"
-          class="space-y-5 p-6 sm:p-8 lg:p-10"
-        >
-          <div
-            id="contact-form-status"
-            class="hidden rounded-md px-4 py-3 text-sm"
-            role="status"
-            aria-live="polite"
-          >
-          </div>
+        <div>
+          <label for="email" class="mb-2 block font-medium text-primary">
+            Email
+          </label>
           <input
-            name="website"
-            type="text"
-            tabindex="-1"
-            autocomplete="off"
-            hidden
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            maxlength="254"
+            required
+            class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
           />
-          <div>
-            <label for="name" class="mb-2 block font-medium text-primary">
-              Name
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autocomplete="name"
-              required
-              class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-            />
-          </div>
+        </div>
 
-          <div>
-            <label for="email" class="mb-2 block font-medium text-primary">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              maxlength="254"
-              required
-              class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-            />
-          </div>
+        <div>
+          <label for="phone" class="mb-2 block font-medium text-primary">
+            Phone
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+            class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+          />
+        </div>
 
-          <div>
-            <label for="phone" class="mb-2 block font-medium text-primary">
-              Phone
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              autocomplete="tel"
-              required
-              class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-            />
-          </div>
-
-          <div>
-            <label for="service" class="mb-2 block font-medium text-primary">
-              Service Interested In
-            </label>
-            <select
-              id="service"
-              name="service"
-              required
-              class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-            >
-              <option value="" disabled selected>Select a service</option>
-              <option value="custom-made-furniture"
-                >Custom-Made Furniture</option
-              >
-              <option value="bulk-wholesale-furniture"
-                >Bulk & Wholesale Furniture</option
-              >
-              <option value="furniture-repair-restoration">
-                Furniture Repair & Restoration
-              </option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="message" class="mb-2 block font-medium text-primary">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              class="w-full resize-y rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary btn-lg btn-icon-right w-full sm:w-auto"
+        <div>
+          <label for="service" class="mb-2 block font-medium text-primary">
+            Service Interested In
+          </label>
+          <select
+            id="service"
+            name="service"
+            required
+            class="w-full rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
           >
-            Send Enquiry
-            <ArrowRight />
-          </button>
-        </form>
-      </div>
+            <option value="" disabled selected>Select a service</option>
+            <option value="custom-made-furniture">Custom-Made Furniture</option>
+            <option value="bulk-wholesale-furniture"
+              >Bulk & Wholesale Furniture</option
+            >
+            <option value="furniture-repair-restoration">
+              Furniture Repair & Restoration
+            </option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="mb-2 block font-medium text-primary">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full resize-y rounded-md border border-primary/20 bg-white px-4 py-3 text-primary outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg btn-icon-right w-full sm:w-auto"
+        >
+          Send Enquiry
+          <ArrowRight />
+        </button>
+      </form>
     </Container>
   </section>
 </MainLayout>

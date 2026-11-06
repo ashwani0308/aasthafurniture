@@ -2,10 +2,12 @@ import type { FurnitureCategory } from "../furniture.ts";
 
 const bedroomFurniture = {
   slug: "bedroom",
-  title: "Bedroom Furniture",
+  title: "Wooden Bedroom Furniture",
   description:
-    "Create a comfortable and beautiful bedroom with thoughtfully crafted furniture.",
+    "Explore wooden bedroom furniture at Aastha Furniture, Muzaffarpur. Discover beautifully crafted beds, wardrobes, bedside tables, and custom bedroom furniture.",
+
   cardImage: "/images/furniture/bedroom.webp",
+
   hero: {
     image: {
       mobile: "/images/hero/bedroom-furniture-640.webp",
@@ -13,52 +15,66 @@ const bedroomFurniture = {
       desktop: "/images/hero/bedroom-furniture-1600.webp",
     },
   },
+
   gallerySection: {
-    eyebrow: "Explore Our Collections",
-    heading: "Bedroom Furniture",
-    description: "Find the right pieces to make your bedroom feel like home.",
-  },
-  textImageContent: {
-    eyebrow: "MADE WITH CARE",
-    heading: "Thoughtful Design. Lasting Craftsmanship.",
+    eyebrow: "EXPLORE BEDROOM FURNITURE",
+    heading: "Wooden Bedroom Furniture for Every Home",
     description:
-      "We believe bedroom furniture should do more than look good. It should fit your space, support your everyday routine, and offer lasting value. By manufacturing our furniture ourselves and selling directly, we aim to bring you thoughtfully made furniture without unnecessary middlemen.",
+      "Discover wooden beds, double beds, king-size beds, queen-size beds, wardrobes, bedside tables, and more. Explore designs for different bedroom spaces, styles, and requirements.",
+  },
+
+  textImageContent: {
+    eyebrow: "CRAFTED FOR COMFORT. BUILT TO LAST.",
+    heading: "Beautiful Wooden Bedroom Furniture, Made with Care",
+    description:
+      "Your bedroom deserves furniture that combines comfort, functionality, and timeless design. At Aastha Furniture, we manufacture and supply wooden bedroom furniture in Muzaffarpur, including beds, wardrobes, bedside tables, and custom-made designs. With our family's furniture heritage since 1970, we bring traditional craftsmanship and modern styles together, offering quality furniture directly from our workshop.",
+
     image: {
       src: "/images/section_image/bedroom-sec.webp",
-      alt: "Thoughtfully crafted bedroom bed",
+      alt: "Wooden bedroom furniture featuring a beautifully crafted bed by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Made by Us",
-        description: "Furniture crafted through our own manufacturing process.",
+        heading: "Wooden Beds for Every Bedroom",
+        description:
+          "Explore single, double, king-size, and queen-size wooden beds in designs suited to different spaces and preferences.",
       },
       {
-        heading: "Designed for Everyday Living",
-        description: "Practical styles for different spaces and needs.",
+        heading: "Functional Bedroom Storage",
+        description:
+          "Discover wardrobes, bedside tables, and practical storage furniture to keep your bedroom organised.",
       },
       {
-        heading: "Quality Craftsmanship",
-        description: "Attention to construction, details, and finish.",
+        heading: "Custom-Made Bedroom Furniture",
+        description:
+          "Get furniture made to suit your preferred dimensions, design, wood selection, and bedroom requirements.",
       },
       {
-        heading: "Factory-Direct Value",
-        description: "A direct buying experience focused on value and quality.",
+        heading: "Manufacturer-Direct Value",
+        description:
+          "Buy directly from Aastha Furniture and enjoy a personal buying experience with a focus on craftsmanship and value.",
       },
     ],
   },
+
   ctaImageContent: {
     backgroundImage: "/images/cta/cta-bg.jpg",
-    heading: "Browse Furniture Categories",
-    description: "Discover handcrafted furniture designed for every room.",
+    heading: "Find the Perfect Bed for Your Bedroom",
+    description:
+      "Explore wooden beds and bedroom furniture or discuss a custom design made for your space. Visit Aastha Furniture in Muzaffarpur or get in touch with our team.",
+
     primaryButton: {
-      label: "Contact Us",
+      label: "Enquire About Bedroom Furniture",
       href: "/contact",
     },
+
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
+
   gallery: [],
 } as const satisfies FurnitureCategory;
 

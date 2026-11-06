@@ -4,8 +4,10 @@ const outdoorFurniture = {
   slug: "outdoor-furniture",
   title: "Outdoor Furniture",
   description:
-    "Transform your outdoor spaces with thoughtfully crafted furniture designed for relaxation, entertaining, and everyday enjoyment.",
+    "Explore outdoor furniture at Aastha Furniture, Muzaffarpur. Discover wooden garden furniture, outdoor seating, garden benches, patio tables, and custom designs.",
+
   cardImage: "/images/furniture/outdoor-furniture/outdoor-furniture.webp",
+
   hero: {
     image: {
       mobile: "/images/hero/outdoor-furniture-640.webp",
@@ -13,58 +15,66 @@ const outdoorFurniture = {
       desktop: "/images/hero/outdoor-furniture-1600.webp",
     },
   },
+
   gallerySection: {
-    eyebrow: "Explore Our Collections",
-    heading: "Outdoor Furniture",
+    eyebrow: "EXPLORE OUTDOOR FURNITURE",
+    heading: "Outdoor Furniture for Every Open Space",
     description:
-      "Discover inviting outdoor furniture for gardens, balconies, patios, terraces, and open-air spaces.",
+      "Discover wooden garden furniture, outdoor chairs, garden benches, patio tables, and balcony furniture designed to make your outdoor spaces comfortable and inviting.",
   },
+
   textImageContent: {
-    eyebrow: "MADE FOR THE OUTDOORS",
-    heading: "Relax Outdoors. Live Beautifully.",
+    eyebrow: "MADE FOR OUTDOOR LIVING. CRAFTED WITH CARE.",
+    heading: "Beautiful Outdoor Furniture for Gardens, Balconies & Patios",
     description:
-      "Make the most of your outdoor spaces with furniture that brings comfort, style, and functionality together. From garden seating and patio tables to outdoor benches and balcony furniture, our collection helps you create welcoming spaces for relaxing and spending time together. By manufacturing our furniture ourselves and selling directly, we aim to offer thoughtful design and lasting value without unnecessary middlemen.",
+      "Make your outdoor spaces more welcoming with furniture that combines comfort, functionality, and thoughtful design. At Aastha Furniture, we manufacture and supply outdoor furniture in Muzaffarpur, including wooden garden seating, outdoor benches, patio tables, and custom-made furniture. With our family's woodworking heritage since 1970, we bring traditional craftsmanship and modern designs together to create furniture suited to your space and outdoor lifestyle.",
+
     image: {
       src: "/images/section_image/outdoor-sec.webp",
-      alt: "Comfortable outdoor garden furniture in a welcoming garden setting",
+      alt: "Wooden outdoor garden furniture with comfortable seating by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Made by Us",
+        heading: "Garden Seating & Benches",
         description:
-          "Outdoor furniture crafted through our own manufacturing process.",
+          "Explore wooden garden benches and outdoor seating designed for relaxing and enjoying your outdoor spaces.",
       },
       {
-        heading: "Designed for Outdoor Living",
+        heading: "Patio & Balcony Furniture",
         description:
-          "Furniture for relaxing, entertaining, and enjoying your outdoor spaces.",
+          "Discover practical furniture for balconies, patios, terraces, gardens, and other open spaces.",
       },
       {
-        heading: "Quality Craftsmanship",
+        heading: "Custom-Made Outdoor Furniture",
         description:
-          "Careful attention to construction, materials, and finishing details.",
+          "Get outdoor furniture made according to your preferred dimensions, design, and space requirements.",
       },
       {
-        heading: "Factory-Direct Value",
+        heading: "Manufacturer-Direct Value",
         description:
-          "Buy directly from the manufacturer for value without unnecessary middlemen.",
+          "Buy directly from Aastha Furniture and enjoy a personal buying experience focused on craftsmanship and value.",
       },
     ],
   },
+
   ctaImageContent: {
     backgroundImage: "/images/cta/cta-bg.jpg",
-    heading: "Create Your Perfect Outdoor Space",
+    heading: "Make More of Your Outdoor Space",
     description:
-      "Explore outdoor furniture for your garden, balcony, patio, or terrace, and discuss options to suit your space.",
+      "Explore garden furniture, outdoor seating, and custom designs for your balcony, patio, terrace, or garden.",
+
     primaryButton: {
-      label: "Contact Us",
+      label: "Enquire About Outdoor Furniture",
       href: "/contact",
     },
+
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
+
   gallery: [],
 } as const satisfies FurnitureCategory;
 

@@ -2,10 +2,12 @@ import type { FurnitureCategory } from "../furniture.ts";
 
 const storageFurniture = {
   slug: "storage",
-  title: "Storage Furniture",
+  title: "Wooden Storage Furniture",
   description:
-    "Keep your home organised with thoughtfully crafted storage furniture that combines practical functionality with timeless style.",
+    "Explore wooden storage furniture at Aastha Furniture, Muzaffarpur. Discover storage cabinets, drawer units, display cabinets, bookshelves, and custom storage solutions.",
+
   cardImage: "/images/furniture/storage/storage_cabinets.webp",
+
   hero: {
     image: {
       mobile: "/images/hero/storage-furniture-640.webp",
@@ -13,58 +15,66 @@ const storageFurniture = {
       desktop: "/images/hero/storage-furniture-1600.webp",
     },
   },
+
   gallerySection: {
-    eyebrow: "Explore Our Collections",
-    heading: "Storage Furniture",
+    eyebrow: "EXPLORE STORAGE FURNITURE",
+    heading: "Wooden Storage Furniture for Every Space",
     description:
-      "Discover practical and stylish storage solutions designed to keep every space organised and clutter-free.",
+      "Discover wooden storage cabinets, drawer units, display cabinets, bookshelves, and practical storage furniture designed to keep your home organised.",
   },
+
   textImageContent: {
-    eyebrow: "SMART STORAGE. TIMELESS STYLE.",
-    heading: "Organised Spaces. Thoughtfully Crafted.",
+    eyebrow: "SMART STORAGE. CRAFTED WITH CARE.",
+    heading: "Functional & Stylish Wooden Storage Solutions",
     description:
-      "A well-organised home starts with furniture that gives everything its place. From versatile cabinets and spacious chests of drawers to elegant display units and practical storage shelves, our furniture helps you make the most of your space without compromising on style. By manufacturing our furniture ourselves and selling directly, we aim to offer lasting value without unnecessary middlemen.",
+      "A well-organised home needs furniture that makes everyday storage simple and convenient. At Aastha Furniture, we manufacture and supply wooden storage furniture in Muzaffarpur, including storage cabinets, drawer units, display cabinets, bookshelves, and custom-made storage solutions. With our family's furniture heritage since 1970, we combine traditional woodworking experience with modern designs to create practical furniture that complements your home and makes better use of your space.",
+
     image: {
       src: "/images/section_image/storage-sec.webp",
-      alt: "Thoughtfully crafted wooden storage cabinet",
+      alt: "Wooden storage cabinet crafted by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Made by Us",
+        heading: "Wooden Storage Cabinets",
         description:
-          "Storage furniture crafted through our own manufacturing process.",
+          "Explore practical wooden cabinets and cupboards for organising household essentials and everyday belongings.",
       },
       {
-        heading: "Designed for Everyday Living",
+        heading: "Drawers & Display Units",
         description:
-          "Practical storage solutions to help keep your home organised and functional.",
+          "Discover drawer units, display cabinets, and shelving furniture that combine storage with attractive design.",
       },
       {
-        heading: "Quality Craftsmanship",
+        heading: "Custom-Made Storage Furniture",
         description:
-          "Careful attention to construction, materials, and finishing details.",
+          "Get storage furniture designed according to your preferred dimensions, layout, style, and space requirements.",
       },
       {
-        heading: "Factory-Direct Value",
+        heading: "Manufacturer-Direct Value",
         description:
-          "Buy directly from the manufacturer for value without unnecessary middlemen.",
+          "Buy directly from Aastha Furniture and enjoy a personal buying experience focused on craftsmanship and value.",
       },
     ],
   },
+
   ctaImageContent: {
     backgroundImage: "/images/cta/cta-bg.jpg",
-    heading: "Find the Right Storage for Your Space",
+    heading: "Make Space for Better Living",
     description:
-      "Explore furniture that brings order, functionality, and style to every corner of your home.",
+      "Explore wooden storage cabinets, display units, and custom storage furniture designed around your home and everyday needs.",
+
     primaryButton: {
-      label: "Contact Us",
+      label: "Enquire About Storage Furniture",
       href: "/contact",
     },
+
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
+
   gallery: [],
 } as const satisfies FurnitureCategory;
 

@@ -2,10 +2,12 @@ import type { FurnitureCategory } from "../furniture.ts";
 
 const doorWindowFurniture = {
   slug: "door-window",
-  title: "Doors & Windows",
+  title: "Wooden Doors & Windows",
   description:
-    "Enhance your home with thoughtfully crafted wooden doors and windows that combine timeless style, functionality, and quality craftsmanship.",
+    "Explore wooden doors and windows at Aastha Furniture, Muzaffarpur. Discover main entrance doors, interior doors, wooden window frames, and custom designs.",
+
   cardImage: "/images/furniture/door-and-window/door-and-window.webp",
+
   hero: {
     image: {
       mobile: "/images/hero/doors-window-640.webp",
@@ -13,58 +15,66 @@ const doorWindowFurniture = {
       desktop: "/images/hero/doors-window-1600.webp",
     },
   },
+
   gallerySection: {
-    eyebrow: "Explore Our Collections",
-    heading: "Doors & Windows",
+    eyebrow: "EXPLORE WOODEN DOORS & WINDOWS",
+    heading: "Wooden Doors & Windows for Every Home",
     description:
-      "Discover beautifully crafted doors and windows designed to complement your architecture and everyday living.",
+      "Discover beautifully crafted wooden main doors, interior doors, door frames, window frames, and custom wooden designs to complement your home and architecture.",
   },
+
   textImageContent: {
-    eyebrow: "CRAFTED FOR YOUR HOME",
-    heading: "Timeless Designs. Lasting Craftsmanship.",
+    eyebrow: "CRAFTED WITH CARE. MADE TO LAST.",
+    heading: "Beautiful Wooden Doors & Windows, Made for Your Home",
     description:
-      "Doors and windows help define the character of your home, bringing together privacy, natural light, security, and style. From elegant main doors and practical interior doors to beautifully finished wooden window frames, our collection focuses on thoughtful design and careful craftsmanship. By manufacturing our products ourselves and selling directly, we aim to offer lasting value without unnecessary middlemen.",
+      "Doors and windows are an essential part of every home, adding character, privacy, and functionality to your space. At Aastha Furniture, we manufacture and supply wooden doors and windows in Muzaffarpur, including main entrance doors, interior doors, door frames, and wooden window frames. With our family's woodworking heritage since 1970, we bring traditional craftsmanship and modern designs together to create wooden solutions tailored to your requirements.",
+
     image: {
       src: "/images/section_image/doors-window-sec.webp",
-      alt: "Beautifully crafted wooden main door",
+      alt: "Beautifully crafted wooden main entrance door by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Made by Us",
+        heading: "Wooden Main Entrance Doors",
         description:
-          "Doors and windows crafted through our own manufacturing process.",
+          "Explore wooden main doors in attractive designs to create a welcoming entrance for your home.",
       },
       {
-        heading: "Designed for Your Space",
+        heading: "Interior Doors & Frames",
         description:
-          "Styles to complement different home designs and architectural needs.",
+          "Discover wooden doors and frames designed for bedrooms, living spaces, and other interiors.",
       },
       {
-        heading: "Quality Craftsmanship",
+        heading: "Custom-Made Doors & Windows",
         description:
-          "Careful attention to materials, construction, and finishing details.",
+          "Get wooden doors, window frames, and designs made according to your preferred dimensions and requirements.",
       },
       {
-        heading: "Factory-Direct Value",
+        heading: "Manufacturer-Direct Value",
         description:
-          "Buy directly from the manufacturer for value without unnecessary middlemen.",
+          "Buy directly from Aastha Furniture and benefit from a personal buying experience focused on craftsmanship and value.",
       },
     ],
   },
+
   ctaImageContent: {
     backgroundImage: "/images/cta/cta-bg.jpg",
-    heading: "Find the Right Doors & Windows",
+    heading: "Find the Right Doors & Windows for Your Home",
     description:
-      "Discuss your requirements, explore suitable designs, and find options for your home or project.",
+      "Explore wooden door and window designs or discuss a custom solution for your home or project with Aastha Furniture.",
+
     primaryButton: {
-      label: "Contact Us",
+      label: "Enquire About Doors & Windows",
       href: "/contact",
     },
+
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
+
   gallery: [],
 } as const satisfies FurnitureCategory;
 

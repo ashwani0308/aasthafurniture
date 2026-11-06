@@ -4,8 +4,10 @@ const officeFurniture = {
   slug: "office",
   title: "Office Furniture",
   description:
-    "Create a productive and professional workspace with thoughtfully crafted office furniture designed for comfort, functionality, and style.",
+    "Explore office furniture at Aastha Furniture, Muzaffarpur. Discover wooden office tables, executive desks, workstations, storage cabinets, and custom office furniture.",
+
   cardImage: "/images/furniture/office-furniture/office-furniture.webp",
+
   hero: {
     image: {
       mobile: "/images/hero/office-furniture-640.webp",
@@ -13,58 +15,66 @@ const officeFurniture = {
       desktop: "/images/hero/office-furniture-1600.webp",
     },
   },
+
   gallerySection: {
-    eyebrow: "Explore Our Collections",
-    heading: "Office Furniture",
+    eyebrow: "EXPLORE OFFICE FURNITURE",
+    heading: "Office Furniture for Every Workspace",
     description:
-      "Discover practical and stylish furniture for home offices, workspaces, and professional environments.",
+      "Discover wooden office tables, executive desks, workstations, storage cabinets, and custom furniture designed for home offices, businesses, and professional workspaces.",
   },
+
   textImageContent: {
-    eyebrow: "MADE FOR PRODUCTIVITY",
-    heading: "Work Better. Feel Comfortable. Stay Inspired.",
+    eyebrow: "BUILT FOR WORK. CRAFTED WITH CARE.",
+    heading: "Functional & Stylish Office Furniture for Modern Workspaces",
     description:
-      "A well-designed workspace helps you stay organised, focused, and comfortable throughout the day. From functional office desks and storage cabinets to meeting tables and workstations, our furniture is designed to support the way you work. By manufacturing our furniture ourselves and selling directly, we aim to deliver thoughtful design and lasting value without unnecessary middlemen.",
+      "A well-organised workspace starts with furniture that combines comfort, functionality, and professional design. At Aastha Furniture, we manufacture and supply office furniture in Muzaffarpur, including wooden office tables, executive desks, workstations, and storage cabinets. With our family's furniture heritage since 1970, we bring traditional woodworking experience and modern designs together to create furniture for home offices, businesses, and commercial spaces.",
+
     image: {
       src: "/images/section_image/office-sec.webp",
-      alt: "Thoughtfully crafted wooden office desk in a modern workspace",
+      alt: "Wooden office desk and office furniture crafted by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Made by Us",
+        heading: "Office Tables & Executive Desks",
         description:
-          "Office furniture crafted through our own manufacturing process.",
+          "Explore functional wooden office tables and executive desks for professional and home office setups.",
       },
       {
-        heading: "Designed for Productivity",
+        heading: "Workstations & Storage",
         description:
-          "Functional furniture for focused work, collaboration, and everyday organisation.",
+          "Discover practical workstations, office cabinets, and storage furniture to keep your workspace organised.",
       },
       {
-        heading: "Quality Craftsmanship",
+        heading: "Custom-Made Office Furniture",
         description:
-          "Careful attention to construction, materials, and finishing details.",
+          "Get office furniture designed around your available space, preferred dimensions, layout, and business requirements.",
       },
       {
-        heading: "Factory-Direct Value",
+        heading: "Furniture for Businesses",
         description:
-          "Buy directly from the manufacturer for value without unnecessary middlemen.",
+          "Source furniture for offices, commercial spaces, and bulk requirements directly from Aastha Furniture.",
       },
     ],
   },
+
   ctaImageContent: {
     backgroundImage: "/images/cta/cta-bg.jpg",
-    heading: "Create a Workspace That Works for You",
+    heading: "Build a Better Workspace",
     description:
-      "Whether you're furnishing a home office or a professional workspace, let's find furniture that suits your needs.",
+      "Explore office furniture or discuss custom desks, workstations, and storage solutions for your business or home office.",
+
     primaryButton: {
-      label: "Contact Us",
+      label: "Enquire About Office Furniture",
       href: "/contact",
     },
+
     secondaryButton: {
       label: "Call Now",
       href: "tel:+919310244463",
     },
   },
+
   gallery: [],
 } as const satisfies FurnitureCategory;
 
