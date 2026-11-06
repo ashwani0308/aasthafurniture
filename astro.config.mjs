@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  site: "https://aasthafurniture.in",
   redirects: {
     "/service/custom-furniture": "/service/custom-made-furniture",
     "/service/office-furniture": "/service/bulk-wholesale-furniture",

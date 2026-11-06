@@ -3,71 +3,106 @@ import type { ServicePageContent } from "./types";
 const furnitureRepair: ServicePageContent = {
   slug: "furniture-repair-restoration",
   title: "Furniture Repair & Restoration",
+  description:
+    "Looking for wooden furniture repair in Muzaffarpur? Contact Aastha Furniture to discuss furniture restoration, damaged wood, loose joints, worn polish, and repair requirements.",
+
   hero: {
-    eyebrow: "GIVE GOOD FURNITURE MORE TIME",
-    heading: "Bring Your Furniture Back to Life",
+    eyebrow: "RESTORE. REFRESH. REUSE.",
+    heading: "Give Your Furniture a New Lease of Life",
     description:
-      "From worn finishes to loose joints, talk to our team about restoring the furniture you already know and love.",
+      "From loose joints and damaged wooden parts to scratches and worn finishes, discuss your furniture repair and restoration requirements with our team.",
+
     image: {
       mobile: "/images/hero/furniture_restoration-640.webp",
       tablet: "/images/hero/furniture_restoration-1024.webp",
       desktop: "/images/hero/furniture_restoration-1600.webp",
     },
-    primaryButton: { label: "Ask About a Repair", href: "/contact" },
-    secondaryButton: { label: "Call Now", href: "tel:+919310244463" },
+
+    primaryButton: {
+      label: "Enquire About Furniture Repair",
+      href: "/contact",
+    },
+    secondaryButton: {
+      label: "Call Now",
+      href: "tel:+919310244463",
+    },
   },
+
   textImageContent: {
-    eyebrow: "REPAIR AND RESTORATION",
-    heading: "Keep the pieces worth keeping.",
+    eyebrow: "WOODEN FURNITURE REPAIR & RESTORATION",
+    heading: "Restore the Furniture You Love",
     description:
-      "Furniture can have a long life with the right attention. Tell us what needs care, and we will help you understand the next step for your piece.",
+      "Good furniture deserves proper care. Over time, everyday use can lead to loose joints, damaged wooden parts, scratches, and worn finishes. At Aastha Furniture, we welcome enquiries about wooden furniture repair and restoration in Muzaffarpur. Share details and photographs of your furniture so our team can understand its condition and discuss suitable repair or restoration options. With our family's woodworking heritage since 1970, we value thoughtful craftsmanship and making the most of well-loved furniture.",
+
     image: {
       src: "/images/section_image/restoration-sec.webp",
-      alt: "Well-crafted wooden furniture ready for renewed use",
+      alt: "Wooden furniture restoration and repair by Aastha Furniture",
     },
+
     features: [
       {
-        heading: "Careful assessment",
+        heading: "Wooden Furniture Repairs",
         description:
-          "Share the furniture type and issue so we can discuss suitable repair options.",
+          "Discuss issues such as loose joints, damaged wooden components, broken parts, and everyday wear.",
       },
       {
-        heading: "Attention to detail",
+        heading: "Polish & Finish Restoration",
         description:
-          "Our team considers the construction, finish, and character of each piece.",
+          "Enquire about refreshing scratched, faded, or worn furniture finishes based on the condition of the piece.",
       },
       {
-        heading: "A practical next step",
+        heading: "Careful Assessment",
         description:
-          "Get in touch with details and photos to start a conversation about your repair.",
+          "Share photographs, furniture details, and the repair required so our team can discuss suitable options.",
+      },
+      {
+        heading: "Craftsmanship You Can Trust",
+        description:
+          "Benefit from our family's woodworking experience and attention to construction, materials, and finishing details.",
       },
     ],
   },
+
   faqSection: {
-    heading: "Questions about furniture repair?",
+    heading: "Frequently Asked Questions About Furniture Repair",
     description:
-      "Not sure what your furniture needs? These answers can help you decide what to share with us.",
-    primaryButton: { label: "Ask About a Repair", href: "/contact" },
+      "Have a damaged or worn piece of furniture? Here are some common questions to help you get started.",
+
+    primaryButton: {
+      label: "Discuss Your Repair",
+      href: "/contact",
+    },
+
     faqs: [
       {
-        question: "What kinds of furniture can you repair?",
+        question: "What types of furniture can I enquire about repairing?",
         answer:
-          "Contact us with the type of furniture and a description of the issue. We can review the details and let you know whether we can help.",
+          "You can contact us about wooden beds, sofa frames, dining tables, chairs, wardrobes, cabinets, doors, and other wooden furniture. Our team can review the condition and discuss whether the repair is suitable.",
+      },
+      {
+        question: "Can you repair loose joints or broken wooden parts?",
+        answer:
+          "You can share details and photographs of loose joints, broken components, or damaged wooden parts. We will review the issue and discuss possible repair options.",
+      },
+      {
+        question: "Can you restore old or scratched wooden furniture?",
+        answer:
+          "We can discuss restoration options for scratched, faded, or worn wooden furniture, depending on its condition, construction, and existing finish.",
       },
       {
         question: "How much does furniture repair cost?",
         answer:
-          "Repair costs depend on the condition of the piece, the work required, and its materials and finish. Share a description and photos so we can discuss an assessment.",
+          "The cost depends on the furniture type, extent of damage, materials, and work required. Share photographs and details with us to discuss an estimate.",
       },
       {
-        question: "Can you restore a damaged or worn finish?",
+        question: "What information should I share for a repair enquiry?",
         answer:
-          "We can discuss finish restoration based on the furniture and its condition. Photos and details about the piece will help us understand what may be suitable.",
+          "Share the furniture type, a short description of the issue, approximate dimensions, and a few clear photographs showing the damaged areas. This will help us understand your requirements.",
       },
       {
-        question: "What should I share when asking about a repair?",
+        question: "Do you accept all furniture repair requests?",
         answer:
-          "Tell us what the piece is, what needs attention, and where it is located. A few clear photos and approximate dimensions are also useful.",
+          "Repair suitability depends on the furniture type, its condition, and the work involved. Contact our team with the details so we can discuss whether we can assist.",
       },
     ],
   },

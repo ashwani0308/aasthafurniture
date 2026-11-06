@@ -22,10 +22,14 @@ import {
   homepageCTAImageContent,
   homepageRecentWorkContent,
   homepageServices,
+  homepagePageHead,
 } from "../data";
 ---
 
-<MainLayout title="Crafted Living | Premium Furniture">
+<MainLayout
+  title={homepagePageHead.title}
+  description={homepagePageHead.description}
+>
   <HeroSlider slides={homepageHeroSlides} />
 
   <Section padding="py-4 sm:py-4 lg:py-6">

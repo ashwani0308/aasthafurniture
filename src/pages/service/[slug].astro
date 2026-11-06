@@ -19,7 +19,7 @@ export function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<MainLayout title={service.title}>
+<MainLayout title={service.title} description={service.description}>
   <Hero content={service.hero} />
   <TextImage content={service.textImageContent} />
   <CTAText content={homepageCtaContent} />

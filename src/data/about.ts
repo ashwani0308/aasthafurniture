@@ -1,6 +1,13 @@
 import type { CTAImageContent } from "./index";
 import type { ServiceHeroContent } from "./services/types";
 
+export const aboutPageHead = {
+  slug: "about",
+  title: "About Aastha Furniture | Our Story Since 1970",
+  description:
+    "Discover the story of Aastha Furniture, a family-run wooden furniture manufacturer in Muzaffarpur since 1970. Learn about our craftsmanship, heritage, and custom furniture.",
+} as const;
+
 interface AboutService {
   heading: string;
   description: string;

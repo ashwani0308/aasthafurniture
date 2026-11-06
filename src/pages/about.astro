@@ -5,6 +5,7 @@ import TextImage from "../components/sections/TextImage.astro";
 import CTAText from "../components/sections/CTAText.astro";
 import { homepageCtaContent } from "../data";
 import {
+  aboutPageHead,
   aboutCTAImageContent,
   aboutHeroContent,
   aboutCraftsmanshipContent,
@@ -16,8 +17,8 @@ import CTAImageBg from "../components/sections/CTAImageBg.astro";
 ---
 
 <MainLayout
-  title="About Aastha Furniture | Furniture Manufacturer in Muzaffarpur"
-  description="Aastha Furniture, a family-run wooden furniture business since 1970 in Muzaffarpur. Explore custom furniture, retail, wholesale, and furniture manufacturing."
+  title={aboutPageHead.title}
+  description={aboutPageHead.description}
 >
   <Hero content={aboutHeroContent} />
   <ImageText content={aboutHeritageContent} />

@@ -1,3 +1,10 @@
+export const homepagePageHead = {
+  slug: "home",
+  title: "Furniture Shop in Muzaffarpur | Aastha Furniture",
+  description:
+    "Explore wooden furniture at Aastha Furniture in Muzaffarpur. Discover beds, sofas, dining and office furniture, custom designs and wholesale options. Since 1970.",
+} as const;
+
 export const homepageCategoryCarousel = {
   items: [
     {

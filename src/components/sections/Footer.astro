@@ -79,7 +79,7 @@ import { furnitureCategories } from "../../data/furniture.ts";
                     href={`/furniture/${category.slug}`}
                     class="footer-link transition"
                   >
-                    {category.title}
+                    {category.title.replace(/^Wooden\s+/, "")}
                   </a>
                 </li>
               ))

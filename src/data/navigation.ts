@@ -9,7 +9,7 @@ export const navigation = [
   {
     title: "Furniture",
     children: furnitureCategories.map((category) => ({
-      title: category.title,
+      title: category.title.replace(/^Wooden\s+/, ""),
       url: `/furniture/${category.slug}`,
     })),
   },
