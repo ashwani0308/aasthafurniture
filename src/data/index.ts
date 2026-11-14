@@ -290,7 +290,7 @@ export const homepageRecentWorkContent: RecentWorkContent = {
     const number = index + 1;
 
     return {
-      src: `/images/gallery/recent/recent-${number}.jpg`,
+      src: `/images/gallery/recent/recent-${number}.${number <= 5 ? "webp" : "jpg"}`,
       alt: `Recent furniture project ${number}`,
     };
   }),

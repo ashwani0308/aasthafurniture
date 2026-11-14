@@ -1,5 +1,5 @@
 ---
-import { Phone, Mail, MapPin, Clock3, Globe } from "@lucide/astro";
+import { Phone, Mail, MapPin, Globe } from "@lucide/astro";
 import Container from "../Container.astro";
 import { furnitureCategories } from "../../data/furniture.ts";
 ---
@@ -12,10 +12,10 @@ import { furnitureCategories } from "../../data/furniture.ts";
         class="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-12 lg:gap-14"
       >
         <!-- ================================================= -->
-        <!-- Company -->
+        <!-- Brand -->
         <!-- ================================================= -->
 
-        <div class="sm:col-span-2 lg:col-span-4">
+        <div class="sm:col-span-2 lg:col-span-3">
           <a href="/" class="inline-flex">
             <img
               src="/images/brand/aastha_furniture_light.svg"
@@ -24,67 +24,48 @@ import { furnitureCategories } from "../../data/furniture.ts";
             />
           </a>
 
-          <div class="mt-4 space-y-5">
-            <div class="flex items-start gap-3">
-              <MapPin class="mt-1 h-5 w-5 shrink-0 text-secondary" />
-
-              <p class="text-white/70">
-                Basanti Lane, Dewan Road
-                <br />
-                Muzaffarpur, Bihar 842001, India
-              </p>
-            </div>
-
+          <div class="mt-6 flex items-center gap-4">
             <a
-              href="tel:+919310244463"
-              class="footer-link flex items-center gap-3 transition"
+              href="https://www.instagram.com/aasthafurniture.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Aashta Furniture on Instagram"
+              class="footer-link transition"
             >
-              <Phone class="h-5 w-5 shrink-0 text-secondary" />
-
-              +91 93102 44463
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r=".75" fill="currentColor"></circle>
+              </svg>
             </a>
-
             <a
-              href="https://aasthafurniture.in"
-              class="footer-link flex items-center gap-3 transition"
+              href="https://www.facebook.com/profile.php?id=61596259326034"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Aashta Furniture on Facebook"
+              class="footer-link transition"
             >
-              <Globe class="h-5 w-5 shrink-0 text-secondary" />
-
-              aasthafurniture.in
-            </a>
-
-            <a
-              href="mailto:hello@woodsy.in"
-              class="footer-link flex items-center gap-3 transition"
-            >
-              <Mail class="h-5 w-5 shrink-0 text-secondary" />
-
-              info@aasthafurniture.in
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z"
+                ></path>
+              </svg>
             </a>
           </div>
-        </div>
-
-        <!-- ================================================= -->
-        <!-- Furniture Categories -->
-        <!-- ================================================= -->
-
-        <div class="lg:col-span-2">
-          <h3 class="heading-sm text-cream">Furniture</h3>
-
-          <ul class="mt-4 space-y-2">
-            {
-              furnitureCategories.map((category) => (
-                <li>
-                  <a
-                    href={`/furniture/${category.slug}`}
-                    class="footer-link transition"
-                  >
-                    {category.title.replace(/^Wooden\s+/, "")}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
         </div>
 
         <!-- ================================================= -->
@@ -110,6 +91,29 @@ import { furnitureCategories } from "../../data/furniture.ts";
                 Contact
               </a>
             </li>
+          </ul>
+        </div>
+
+        <!-- ================================================= -->
+        <!-- Furniture Categories -->
+        <!-- ================================================= -->
+
+        <div class="lg:col-span-2">
+          <h3 class="heading-sm text-cream">Furniture</h3>
+
+          <ul class="mt-4 space-y-2">
+            {
+              furnitureCategories.map((category) => (
+                <li>
+                  <a
+                    href={`/furniture/${category.slug}`}
+                    class="footer-link transition"
+                  >
+                    {category.title.replace(/^Wooden\s+/, "")}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
 
@@ -148,6 +152,53 @@ import { furnitureCategories } from "../../data/furniture.ts";
               </a>
             </li>
           </ul>
+        </div>
+
+        <!-- ================================================= -->
+        <!-- Contact Info -->
+        <!-- ================================================= -->
+
+        <div class="lg:col-span-3">
+          <h3 class="heading-sm text-cream">Contact info</h3>
+
+          <div class="mt-4 space-y-4">
+            <div class="flex items-start gap-3">
+              <MapPin class="mt-1 h-5 w-5 shrink-0 text-secondary" />
+
+              <p class="text-white/70">
+                Basanti Lane, Dewan Road
+                <br />
+                Muzaffarpur, Bihar 842001, India
+              </p>
+            </div>
+
+            <a
+              href="tel:+919310244463"
+              class="footer-link flex items-center gap-3 transition"
+            >
+              <Phone class="h-5 w-5 shrink-0 text-secondary" />
+
+              +91 93102 44463
+            </a>
+
+            <a
+              href="https://aasthafurniture.in"
+              class="footer-link flex items-center gap-3 transition"
+            >
+              <Globe class="h-5 w-5 shrink-0 text-secondary" />
+
+              aasthafurniture.in
+            </a>
+
+            <a
+              href="mailto:hello@woodsy.in"
+              class="footer-link flex items-center gap-3 transition"
+            >
+              <Mail class="h-5 w-5 shrink-0 text-secondary" />
+
+              info@aasthafurniture.in
+            </a>
+          </div>
         </div>
 
       </div>
